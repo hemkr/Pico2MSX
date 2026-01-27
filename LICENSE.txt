@@ -1,0 +1,62 @@
+# LICENCIAS DEL PROYECTO PICOMSX
+
+Este proyecto combina múltiples componentes con diferentes licencias:
+
+## Componente fMSX (core del emulador MSX)
+- Ubicación: `picomsx/`
+- Autor: Marat Fayzullin
+- Licencia: Licencia fMSX (uso no comercial permitido)
+- Más información: http://fms.komkon.org/fMSX/
+
+## Raspberry Pi Pico SDK
+- Ubicación: `pico-sdk/`
+- Copyright: Raspberry Pi Ltd.
+- Licencia: BSD 3-Clause License
+- Repositorio: https://github.com/raspberrypi/pico-sdk
+
+## Pico Extras
+- Ubicación: `pico-extras/`
+- Copyright: Raspberry Pi Ltd.
+- Licencia: BSD 3-Clause License
+- Repositorio: https://github.com/raspberrypi/pico-extras
+
+## Pico-PIO-USB
+- Ubicación: `pico-pio-usb/`
+- Autor: sekigon-gonnoc
+- Licencia: MIT License
+- Repositorio: https://github.com/sekigon-gonnoc/Pico-PIO-USB
+
+## TinyUSB
+- Incluido en: Pico SDK
+- Licencia: MIT License
+- Repositorio: https://github.com/hathach/tinyusb
+
+## FatFS
+- Ubicación: `fatfs/`
+- Autor: ChaN
+- Licencia: BSD-style license
+- Website: http://elm-chan.org/fsw/ff/00index_e.html
+
+## Modificaciones y adaptación para RP2350
+- Port RP2350 con HDMI y USB host
+- Copyright: 2025
+- Licencia: Compatible con componentes base
+- Basado en: MCUME por Jean-Marc Harvengt
+
+## AVISO LEGAL
+
+Este software se proporciona "tal cual", sin garantía de ningún tipo, expresa o implícita.
+En ningún caso los autores serán responsables de daños derivados del uso de este software.
+
+Para uso educativo y de desarrollo. No se permite uso comercial sin permiso de los titulares
+de derechos correspondientes.
+
+## ROMs MSX
+
+Este proyecto NO incluye ROMs MSX con derechos de autor. Los usuarios deben proporcionar
+sus propias ROMs legalmente obtenidas.
+
+## Más información
+
+Consulta los archivos LICENSE específicos en cada subdirectorio para detalles completos
+sobre las licencias de cada componente.

@@ -1,0 +1,6 @@
+# Configuración de teclado para PicoMSX
+# Copia este archivo a la raíz de tu tarjeta SD
+
+# Layout de teclado
+# Valores soportados: uk, be
+keyboard=uk

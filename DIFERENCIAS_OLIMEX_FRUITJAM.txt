@@ -1,0 +1,517 @@
+================================================================================
+DIFERENCIAS DE CÓDIGO ENTRE OLIMEX RP2350-PC Y ADAFRUIT FEATHER RP2350 (FRUITJAM)
+================================================================================
+
+Este documento describe las diferencias de implementación entre las dos
+plataformas soportadas en PicoMSX.
+
+================================================================================
+1. CONFIGURACIÓN DE COMPILACIÓN (CMakeLists.txt)
+================================================================================
+
+La selección de plataforma se realiza mediante la variable BOARD_TYPE:
+  - BOARD_TYPE=OLIMEXPC → Olimex RP2350-PC
+  - BOARD_TYPE=FRUITJAM → Adafruit Feather RP2350
+
+Scripts de compilación:
+  - build_olimexpc.sh    → Compila para Olimex
+  - build_fruitjam.sh    → Compila para FruitJam (también _msx2_fruitjam.sh)
+
+--------------------------------------------------------------------------------
+1.1. Definiciones del preprocesador
+--------------------------------------------------------------------------------
+
+OLIMEX:
+  - USE_USB_OLIMEXPC     → Habilita driver USB nativo
+  - DEBUG                → Activa logs de depuración
+  - CFG_TUSB_DEBUG=1     → Debug de TinyUSB
+
+FRUITJAM:
+  - (ninguna específica) → Usa configuración por defecto
+
+--------------------------------------------------------------------------------
+1.2. Archivos fuente incluidos
+--------------------------------------------------------------------------------
+
+OLIMEX:
+  Añade:
+    - usb_olimexpc/common/*.c
+    - usb_olimexpc/usb/*.c
+    - usb_olimexpc/msx_keyboard_adapter.c
+  
+  Incluye directorio:
+    - usb_olimexpc/
+
+FRUITJAM:
+  Añade:
+    - pico-pio-usb/src/pio_usb.c
+    - pico-pio-usb/src/pio_usb_host.c
+    - pico-pio-usb/src/usb_crc.c
+  
+  Incluye directorios:
+    - pico-pio-usb/src/
+  
+  Linkea bibliotecas:
+    - pico_pio_usb (condicional después de crear el target)
+    - hardware_pio
+    
+
+--------------------------------------------------------------------------------
+1.3. Configuración UART para logs
+--------------------------------------------------------------------------------
+
+OLIMEX:
+  - UART0_TX_PIN=0
+  - UART0_RX_PIN=1
+
+FRUITJAM:
+  - UART0_TX_PIN=44
+  - UART0_RX_PIN=45
+
+================================================================================
+2. INICIALIZACIÓN USB (display/emuapi.cpp)
+================================================================================
+
+--------------------------------------------------------------------------------
+2.1. Olimex (USB nativo)
+--------------------------------------------------------------------------------
+
+#ifdef USE_USB_OLIMEXPC
+  Inicialización:
+    - USBInitialise()              // Inicializa stack USB nativo
+    - msx_keyboard_adapter_init()  // Registra handler de teclado
+  
+  Polling continuo:
+    - COMUpdate()                  // Llama en cada frame para procesar USB
+
+  Bibliotecas TinyUSB utilizadas:
+    - tinyusb_host (modo host nativo del SDK)
+    - tinyusb_board (definiciones de placa)
+  
+  Implementación:
+    - TinyUSB en modo host nativo
+    - Usa pines USB nativos del RP2350 (GPIO 66/67)
+    - Handler directo de reportes HID
+
+--------------------------------------------------------------------------------
+2.2. FruitJam (PIO-USB)
+--------------------------------------------------------------------------------
+
+#else (configuración por defecto)
+  Inicialización:
+    - pio_usb_configuration_t pio_cfg = PIO_USB_DEFAULT_CONFIG
+    - pio_cfg.pinout y pio_cfg.pin_dp se toman de PIN_USB_HOST_DP/DM (config/board_fruitjam.h)
+    - tuh_configure(...)           // Configura TinyUSB con PIO
+    - tuh_init(...)                // Inicializa stack USB
+  
+  Bibliotecas utilizadas:
+    - pico_pio_usb (emulación USB por PIO)
+    - tinyusb_host (capa host de TinyUSB sobre PIO)
+    - tinyusb_board
+    - hardware_pio (acceso a bloques PIO del RP2350)
+    
+  
+  Implementación:
+    - PIO-USB (emulación por software)
+    - Usa GPIOs configurables (por defecto GPIO1/2 para D+/D- y GPIO11 para VBUS)
+    - TinyUSB procesa automáticamente los reportes HID
+
+--------------------------------------------------------------------------------
+2.3. Diferencias en configuración TinyUSB (tusb_config.h)
+--------------------------------------------------------------------------------
+
+Archivos implicados:
+  - General (compartido): tusb_config.h
+  - Específico Olimex: usb_olimexpc/include/tusb_config.h
+
+Diferencias clave (Olimex vs general):
+  - CFG_TUSB_DEBUG
+    - General: no definido (equivale a 0)
+    - Olimex: CFG_TUSB_DEBUG = 2 (logs detallados de USB)
+
+  - Selección de controlador host
+    - General: lógica para PIO-USB (define CFG_TUH_RPI_PIO_USB = 1 si HAS_USBPIO)
+    - Olimex: no usa PIO-USB; controlador USB nativo (BOARD_TUH_RHPORT por defecto 0)
+
+  - Clases habilitadas (Host)
+    - CDC (serial):
+      - General: CFG_TUH_CDC = 0 (deshabilitado)
+      - Olimex: CFG_TUH_CDC = 1, además FTDI/CP210X/CH34X = 1
+    - HID:
+      - General: CFG_TUH_HID = 4
+      - Olimex: CFG_TUH_HID = (3*CFG_TUH_DEVICE_MAX)
+    - MSC (almacenamiento masivo):
+      - General: CFG_TUH_MSC = 0
+      - Olimex: CFG_TUH_MSC = 1
+
+  - Número máximo de dispositivos
+    - General: CFG_TUH_DEVICE_MAX = (CFG_TUH_HUB ? 4 : 1)
+    - Olimex: CFG_TUH_DEVICE_MAX = (3*CFG_TUH_HUB + 1)
+
+  - Tamaños de buffer HID
+    - General: CFG_TUH_HID_EP_BUFSIZE = 64
+    - Olimex: CFG_TUH_HID_EPIN_BUFSIZE = 64 y CFG_TUH_HID_EPOUT_BUFSIZE = 64
+
+  - Velocidad por defecto
+    - General: define BOARD_DEVICE_RHPORT_SPEED = OPT_MODE_HIGH_SPEED
+    - Olimex: no redefine esta macro (usa BOARD_TUH_MAX_SPEED = OPT_MODE_DEFAULT_SPEED)
+
+Estas diferencias reflejan que Olimex usa el host USB nativo del RP2350 con más clases
+host habilitadas (CDC/MSC) y buffers HID bidireccionales, mientras que la configuración
+general está optimizada para PIO-USB y un conjunto mínimo de clases.
+
+--------------------------------------------------------------------------------
+2.4. Reloj de sistema y HSTX (picomsx/picomsx.cpp)
+--------------------------------------------------------------------------------
+
+Condicionales utilizados:
+  - HAS_USBPIO → activa ruta específica para FruitJam (PIO-USB)
+
+Configuración de reloj al arrancar (main):
+  - FruitJam (HAS_USBPIO):
+    - set_sys_clock_khz(132000, true)
+    - Registro CLK_HSTX_DIV = (5 << 16) → HSTX = sysclk/5 = 26.4 MHz
+    - Motivo: PIO-USB requiere múltiplos de 48 MHz; 132 MHz = 48 * 2.75. 26.4 MHz se aproxima
+      al pixel clock VGA (25.175 MHz) para HDMI/VGA en capturadoras.
+
+  - Olimex (USB nativo, sin HAS_USBPIO):
+    - set_sys_clock_khz(250000, true)
+    - Registro CLK_HSTX_DIV = (2 << 16) → HSTX = sysclk/2 = 125 MHz
+    - Motivo: Configuración usada por el resto de emuladores del proyecto con HDMI estable.
+
+Sincronización de frame (emu_DrawVsync):
+  - FruitJam (HAS_USBPIO): no espera explícitamente vsync (evita interferir con timing PIO-USB)
+  - Olimex: espera vsync
+    - Si USE_VGA: tft.waitSync()
+    - Si no: espera por flip de vbl (bucle sobre variable vbl)
+
+--------------------------------------------------------------------------------
+2.5. Capa de sistema y USB en emuapi (display/emuapi.cpp)
+--------------------------------------------------------------------------------
+
+Inicialización de UART/log (solo Olimex):
+  - Olimex (USE_USB_OLIMEXPC): init temprano de UART0 @115200 en GPIO0(TX)/GPIO1(RX)
+    y mensajes de arranque por UART. No se llama a stdio_init_all() (lo hace USBInitialise).
+  - FruitJam: stdio por UART0 en GPIO44/45 (USB/CDC deshabilitado en esta build).
+
+Inicialización USB:
+  - Olimex (USE_USB_OLIMEXPC):
+    - USBInitialise(); msx_keyboard_adapter_init();
+    - Ventana de enumeración inicial (~3s) con COMUpdate() en bucle
+    - Notas sobre VBUS: puerto host debe estar alimentado (hub con alimentación o jumper)
+  - FruitJam PIO-USB (HAS_USBPIO):
+    - Construye pio_usb_configuration_t con pinout DP/DM (pines definidos en config)
+    - Activa VBUS por GPIO si PIN_USB_HOST_VBUS está definido
+    - tuh_configure(..., TUH_CFGID_RPI_PIO_USB_CONFIGURATION, &pio_cfg)
+    - tuh_init(BOARD_TUH_RHPORT)
+  - FruitJam con USB nativo (sin HAS_USBPIO):
+    - board_init(); tuh_init(BOARD_TUH_RHPORT)
+
+Estrategia de polling USB en tiempo de ejecución:
+  - emu_DebounceLocalKeys():
+    - Olimex: COMUpdate() (ejecuta tuh_task() a 50 Hz)
+    - FruitJam: tuh_task() directo
+
+Teclado y joystick:
+  - kbd_signal_raw_key(): ruta unificada; teclas especiales y modificadores comunes.
+  - El D-pad/NAV del teclado USB se mapea a máscaras de joystick (común a ambas plataformas).
+
+--------------------------------------------------------------------------------
+2.6. Parámetros de plataforma (config/platform_config.h)
+--------------------------------------------------------------------------------
+
+Archivo: config/platform_config.h
+
+Definiciones comunes:
+  - HAS_USBHOST = 1        → El proyecto compila con soporte de host USB en todas las placas.
+  - KEYLAYOUT = KLAYOUT_ES → Distribución de teclado por defecto (tablas ES); puede cambiarse a UK o BE si se desea.
+  - INVX = 1               → Invierte eje X del joystick analógico.
+  - HAS_SND = 1            → Habilita subsistema de audio.
+  - USE_VGA = 1            → Habilita salida VGA/HDMI por HSTX.
+  - PSRAM_CHIP_SELECT      → Por defecto 47u, salvo que la placa lo sobrescriba.
+
+Selección de USB por placa:
+  - Si BOARD_FRUITJAM está definido: HAS_USBPIO = 1
+    → Se utiliza el backend PIO-USB (GPIO) y se configura en emuapi con PIN_USB_HOST_DP/DM.
+  - En otras placas (p. ej. Olimex): no se define HAS_USBPIO
+    → Se usa el controlador USB nativo del RP2350 (usb_olimexpc en este proyecto).
+
+Nota PSRAM:
+  - El valor de PSRAM_CHIP_SELECT puede ser reemplazado por la cabecera específica de la placa.
+    En Olimex (config/board_olimexpc.h) se fuerza PSRAM_CHIP_SELECT = 8u.
+
+================================================================================
+3. MANEJO DE TECLADO USB
+================================================================================
+
+Ambas plataformas usan el sistema unificado de códigos de teclas definido
+en usb_kbd/kbd.h, pero con implementaciones diferentes.
+
+--------------------------------------------------------------------------------
+3.1. Olimex: Adaptador específico (usb_olimexpc/msx_keyboard_adapter.c)
+--------------------------------------------------------------------------------
+
+Flujo:
+  1. TinyUSB recibe reporte HID → hid_report_received()
+  2. Adaptador traduce HID a códigos MSX → msx_keyboard_report_handler()
+  3. Llama kbd_signal_raw_key() con códigos traducidos
+
+Características:
+  - Tabla de conversión HID → ASCII + teclas especiales (actualmente UK)
+  - Soporta dos layouts: UK (por defecto) y BE (belga) - ES próximamente
+  - Manejo explícito de modificadores (Shift, Ctrl, Alt)
+  - Detecta press/release de cada tecla individual
+
+Mapeo de teclas especiales:
+  HID 0x28 → KBD_KEY_ENTER  (Enter)
+  HID 0x29 → KBD_KEY_ESC    (Escape)
+  HID 0x2A → KBD_KEY_BS     (Backspace)
+  HID 0x3A → KBD_KEY_F1     (F1)
+  HID 0x3B → KBD_KEY_F2     (F2)
+  HID 0x3C → KBD_KEY_F3     (F3)
+  HID 0x3D → KBD_KEY_F4     (F4)
+  HID 0x3E → KBD_KEY_F5     (F5)
+  HID 0x3F..0x45 → F6..F12
+  HID 0x4F → KBD_KEY_RIGHT  (Flecha derecha)
+  HID 0x50 → KBD_KEY_LEFT   (Flecha izquierda)
+  HID 0x51 → KBD_KEY_DOWN   (Flecha abajo)
+  HID 0x52 → KBD_KEY_UP     (Flecha arriba)
+  HID 0x4A → KBD_KEY_HOME
+  HID 0x4B → KBD_KEY_PGUP
+  HID 0x4D → KBD_KEY_END
+  HID 0x4E → KBD_KEY_PGDN
+
+--------------------------------------------------------------------------------
+3.2. FruitJam: Handler genérico (usb_kbd/hid_app.c)
+--------------------------------------------------------------------------------
+
+Flujo:
+  1. TinyUSB recibe reporte → tuh_hid_report_received_cb()
+  2. Handler genérico traduce → process_kbd_report()
+  3. Llama kbd_signal_raw_key() con códigos traducidos
+
+Características:
+  - Tres tablas de conversión: conv_table_uk, conv_table_be y conv_table_es
+  - Mismos códigos de teclas especiales que Olimex
+  - Detección de press/release comparando reportes
+  - Manejo idéntico de modificadores
+
+Ambos usan:
+  - KBD_FLAG_LSHIFT, KBD_FLAG_RSHIFT
+  - KBD_FLAG_LCONTROL, KBD_FLAG_RCONTROL
+  - KBD_FLAG_LALT, KBD_FLAG_RALT
+
+--------------------------------------------------------------------------------
+3.3. Diferencias específicas en hid_app.c (FruitJam)
+--------------------------------------------------------------------------------
+
+Ámbito de uso:
+  - Este archivo solo se compila para FruitJam (ruta PIO-USB). En Olimex se usa
+    el adaptador específico `usb_olimexpc/msx_keyboard_adapter.c` con la pila usb_olimexpc.
+
+Modelo de integración con TinyUSB:
+  - hid_app.c utiliza callbacks TinyUSB de host: `tuh_hid_mount_cb`,
+    `tuh_hid_report_received_cb` y vuelve a llamar `tuh_hid_receive_report()`
+    para obtener el siguiente informe. No depende de `COMUpdate()`.
+  - En Olimex, el adaptador se registra con `USBInstallHandler()` y las
+    notificaciones llegan vía `COMUpdate()` del stack usb_olimexpc.
+
+Tablas de layout y localización:
+  - FruitJam: soporta tres layouts (UK, BE y ES) con `conv_table_uk`, `conv_table_be` y `conv_table_es` y
+    expone `kbd_set_locale()` para cambiar el layout en tiempo de ejecución.
+  - Olimex: actualmente usa tabla UK (`conv_table_uk`). La función `kbd_set_locale()`
+    es un stub en msx_keyboard_adapter.c.
+
+Detección de teclas y modificadores:
+  - FruitJam: compara el reporte actual con el previo (prev_report) para emitir
+    KEY_PRESSED/KEY_RELEASED por tecla; también emite eventos de “solo modificadores”
+    cuando cambia `report->modifier` llamando `kbd_signal_raw_key(0,0,0,flags,pressed)`.
+  - Olimex: implementa lógica equivalente con arrays `prev_keys[]`/`prev_modifier` y
+    la misma convención de flags KBD_FLAG_* y KEY_PRESSED/RELEASED.
+
+Soporte de gamepad HID:
+  - FruitJam: incluye `process_gamepad_report()` que decodifica un mapeo HID sencillo
+    (joy/d-pad y botones) y llama `kbd_signal_raw_gamepad()` cuando el protocolo
+    de interfaz es `HID_ITF_PROTOCOL_NONE` con `len >= 8`.
+  - Olimex: el adaptador actual no implementa decodificación de gamepad HID.
+
+Teclas especiales y ruta al emulador:
+  - Ambos generan los mismos códigos especiales (Enter, ESC, Backspace, F1–F12, flechas,
+    Home/PgUp/End/PgDn) y pasan por `kbd_signal_raw_key()` hacia `emuapi.cpp` → `fmsx.c`.
+  - El tratamiento especial de Backspace y F1–F5 se realiza en `fmsx.c`, común a ambas placas.
+
+================================================================================
+4. RECEPCIÓN DE TECLAS EN EL EMULADOR (display/emuapi.cpp)
+================================================================================
+
+Función unificada para ambas plataformas:
+
+void kbd_signal_raw_key(int keycode, int code, int codeshifted, 
+                        int flags, int pressed)
+
+Comportamiento:
+  - Teclas ASCII/alfanuméricas → emu_KeyboardOnDown/Up(codeshifted, flags)
+  - Teclas de navegación (↑↓←→, Home, etc.) → se mapean a máscaras de joystick
+  - Modificadores solos → emu_KeyboardOnDown/Up(0, flags)
+
+El emulador recibe el mismo formato de datos independientemente de la plataforma.
+
+================================================================================
+5. PROCESAMIENTO EN fMSX (picomsx/fmsx.c)
+================================================================================
+
+emu_KeyboardOnDown/Up():
+  - Almacena tecla en 'iusbhk' y flags en 'iusbhk_flags'
+  - Manejo especial de CAPS Lock (toggle)
+  - Nota: no hay condicionales por placa (#ifdef) en este archivo; el comportamiento es común en ambas plataformas y depende únicamente de los códigos/flags que llegan desde emuapi.
+
+msx_Step():
+  - Backspace: convierte 0x14 → 0x7F
+  - F1: 1011 → matriz MSX bits para F1
+  - F2: 1012 → matriz MSX bits para F2
+  - F3: 1013 → matriz MSX bits para F3
+  - F4: 1014 → matriz MSX bits para F4
+  - F5: 1015 → matriz MSX bits para F5
+  - Aplica modificadores (Shift, Ctrl, Graph) según flags
+  - No existen caminos específicos por placa; F1–F5, Backspace, flechas y modificadores se procesan igual para Olimex y FruitJam.
+
+================================================================================
+6. CONFIGURACIÓN DE HARDWARE ADICIONAL
+================================================================================
+
+--------------------------------------------------------------------------------
+6.1. Botones de usuario
+--------------------------------------------------------------------------------
+
+OLIMEX:
+  - Botón USER deshabilitado (conflicto con UART/PSRAM)
+  - Pines GPIO evitados: 0, 1, 19
+
+FRUITJAM:
+  - Sin botones de usuario configurados
+
+--------------------------------------------------------------------------------
+6.2. Audio I2S (codec WM8960)
+--------------------------------------------------------------------------------
+
+OLIMEX:
+  - Intenta inicializar codec I2S
+  - Fallback a PWM si no hay codec presente
+  - Pines I2S en config/platform_config.h
+  
+  Bibliotecas de audio:
+    - pico_audio (pico-extras/src/common/pico_audio)
+    - pico_audio_i2s (pico-extras/src/rp2_common/pico_audio_i2s)
+    - pico_util_buffer
+    - hardware_i2c (para comunicación con codec)
+    - hardware_pwm (para audio PWM como fallback)
+
+FRUITJAM:
+  - Solo PWM (sin codec I2S)
+  
+  Bibliotecas de audio:
+    - pico_audio (pico-extras/src/common/pico_audio)
+    - pico_audio_i2s (pico-extras/src/rp2_common/pico_audio_i2s)
+    - pico_util_buffer
+    - hardware_pwm
+
+--------------------------------------------------------------------------------
+6.3. PSRAM (memoria externa)
+--------------------------------------------------------------------------------
+
+Ambas plataformas:
+  - Soporte para PSRAM SPI (APS6404)
+  - Configuración en psram/psram_spi.c
+  - Pines definidos en config/board_*.h
+  
+  Bibliotecas utilizadas:
+    - hardware_spi (comunicación con PSRAM)
+    - hardware_dma (transferencias DMA para PSRAM)
+    - hardware_pio (PIO para protocolo PSRAM optimizado)
+
+================================================================================
+7. ARCHIVOS DE CONFIGURACIÓN ESPECÍFICOS
+================================================================================
+
+OLIMEX:
+  - config/board_olimexpc.h      → Definiciones de hardware
+  - usb_olimexpc/                → Stack USB completo
+  - build_olimexpc.sh            → Script de compilación
+  - build_msx2_olimexpc.sh       → Script MSX2
+
+FRUITJAM:
+  - config/board_fruitjam.h      → Definiciones de hardware
+  - usb_kbd/                     → Handler de teclado USB
+  - build_fruitjam.sh            → Script de compilación
+  - build_msx2_fruitjam.sh       → Script MSX2
+
+Compartidos:
+  - usb_kbd/kbd.h                → Definiciones de códigos de teclas
+  - display/emuapi.cpp           → Capa de abstracción
+  - picomsx/fmsx.c               → Núcleo del emulador
+  - config/iopins.h              → Configuración de pines
+  - config/platform_config.h     → Configuración general
+
+Bibliotecas comunes (ambas plataformas):
+  - pico_stdlib (funciones básicas del SDK)
+  - pico_multicore (soporte multi-núcleo)
+  - hardware_uart (UART para logs)
+  - hardware_gpio (control de GPIOs)
+  - hardware_irq (manejo de interrupciones)
+  - pico_time (temporización)
+  - pico_sync (primitivas de sincronización)
+  - FatFs (sistema de archivos FAT en SD)
+
+================================================================================
+8. RESUMEN DE DIFERENCIAS CLAVE
+================================================================================
+
++------------------+-------------------------+-------------------------+
+| Aspecto          | Olimex RP2350-PC        | Adafruit Feather RP2350 |
++------------------+-------------------------+-------------------------+
+| USB Host         | Nativo (HW)             | PIO-USB (SW)            |
+| Pines USB        | GPIO 66/67 (nativos)    | GPIO 1/2 (PIO)          |
+| Stack USB        | usb_olimexpc/           | pico-pio-usb/           |
+| Lib USB          | tinyusb_host            | pico_pio_usb +          |
+|                  |                         | tinyusb_host            |
+| Keyboard Handler | msx_keyboard_adapter.c  | hid_app.c               |
+| UART TX/RX       | GPIO 0/1                | GPIO 44/45              |
+| Codec I2S        | Sí (opcional)           | No                      |
+| Lib Audio        | pico_audio +            | pico_audio +            |
+|                  | pico_audio_i2s          | pico_audio_i2s          |
+| Polling USB      | COMUpdate() manual      | Automático TinyUSB      |
+| Definición       | USE_USB_OLIMEXPC        | (por defecto)           |
++------------------+-------------------------+-------------------------+
+
+Bibliotecas específicas del SDK Pico:
+
+OLIMEX adicional:
+  - tinyusb_host (modo host nativo)
+  - tinyusb_board
+  - pico_audio_i2s (audio I2S para codec WM8960)
+  - hardware_i2c (comunicación I2C con codec)
+
+FRUITJAM adicional:
+  - pico_pio_usb (stack USB sobre PIO)
+  - hardware_pio (bloques PIO para USB)
+  
+
+================================================================================
+9. COMPATIBILIDAD DE CÓDIGO
+================================================================================
+
+El código del emulador (picomsx/) es 100% compartido entre ambas plataformas.
+
+Las diferencias están aisladas en:
+  1. CMakeLists.txt (selección de archivos)
+  2. Capa USB (usb_olimexpc/ vs usb_kbd/ + pico-pio-usb/)
+  3. Inicialización en emu_init() (display/emuapi.cpp)
+
+Todas las teclas especiales (F1-F5, Backspace, flechas) funcionan idénticamente
+en ambas plataformas gracias al sistema unificado de códigos en kbd.h.
+
+================================================================================
+FIN DEL DOCUMENTO
+================================================================================
+Última actualización: 1 de noviembre de 2025
+Versión: 1.1
