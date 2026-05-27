@@ -24,6 +24,10 @@
  * This file is part of the TinyUSB stack.
  */
 
+/* metadata:
+   manufacturer: STMicroelectronics
+*/
+
 #include "stm32f3xx_hal.h"
 #include "bsp/board_api.h"
 #include "board.h"
@@ -64,10 +68,13 @@ void USBWakeUp_RMP_IRQHandler(void) {
 void board_init(void) {
   SystemClock_Config();
 
-  #if CFG_TUSB_OS == OPT_OS_NONE
+#if CFG_TUSB_OS == OPT_OS_NONE
   // 1ms tick timer
   SysTick_Config(SystemCoreClock / 1000);
-  #endif
+#elif CFG_TUSB_OS == OPT_OS_FREERTOS
+  // Explicitly disable systick to prevent its ISR from running before scheduler start
+  SysTick->CTRL &= ~1U;
+#endif
 
   // Remap the USB interrupts
   __HAL_RCC_SYSCFG_CLK_ENABLE();

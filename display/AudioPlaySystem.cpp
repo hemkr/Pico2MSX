@@ -1,6 +1,6 @@
 #include "emuapi.h"
 
-#ifdef HAS_SND
+#ifdef USE_LIBDVI
 
 #include "AudioPlaySystem.h"
 

@@ -741,7 +741,7 @@ int emu_ReadKeys(void)
     retval |= MASK_OSKB; 
   }  
 #endif  
-  
+
   return (retval);
 }
 
@@ -756,12 +756,14 @@ unsigned short emu_DebounceLocalKeys(void)
   // PIO-USB or other: Call tuh_task() directly
   tuh_task();
   #endif
+
+  // Periodic alive counter - logs every ~500 calls (~10s at 50Hz, ~8s at 60Hz)
+  static uint32_t tuh_task_count = 0;
+  tuh_task_count++;
+  if ((tuh_task_count % 500) == 0) {
+    printf("[USB] tuh_task alive: count=%u\r\n", tuh_task_count);
+  }
 #endif
-  
-  // Also force a direct tuh_task() call for extra polling reliability
-  #ifdef USE_USB_OLIMEXPC
-  // Removed debug heartbeat logging for production use
-  #endif
   
   uint16_t bCurState = emu_ReadKeys();
   uint16_t bClick = bCurState & ~bLastState;
@@ -1227,6 +1229,7 @@ static bool kbdasjoy = true;
 #endif
 
 static void signal_joy (int code, int pressed, int flags) {
+
   if ( (code == KBD_KEY_DOWN) && (pressed) ) usbnavpad |= MASK_JOY2_DOWN;
   if ( (code == KBD_KEY_DOWN) && (!pressed) ) usbnavpad &= ~MASK_JOY2_DOWN;
   if ( (code == KBD_KEY_UP) && (pressed) ) usbnavpad |= MASK_JOY2_UP;
@@ -1263,7 +1266,7 @@ static void signal_joy (int code, int pressed, int flags) {
 void kbd_signal_raw_key (int keycode, int code, int codeshifted, int flags, int pressed) {
   // Debug logging disabled for production use
   // Uncomment below for USB keyboard debugging
-  /*
+/*
   if (pressed == KEY_PRESSED) {
     printf("MSX: Key DOWN - keycode=0x%02X code=0x%02X shifted=0x%02X flags=0x%02X\r\n", 
            keycode, code, codeshifted, flags);
@@ -1271,7 +1274,7 @@ void kbd_signal_raw_key (int keycode, int code, int codeshifted, int flags, int 
     printf("MSX: Key UP   - keycode=0x%02X code=0x%02X shifted=0x%02X flags=0x%02X\r\n", 
            keycode, code, codeshifted, flags);
   }
-  */
+*/
   
   //printf("k %d\r\n", keycode); 
   // Treat F-keys (F1..F12) as pure keyboard input regardless of joystick mode when not in menu
@@ -1349,12 +1352,14 @@ int emu_FileOpen(const char * filepath, const char * mode)
     return 0;
   }
   
-  if( !(f_open(&files_pool[slot], filepath, FA_READ)) ) {
+  FRESULT fr = f_open(&files_pool[slot], filepath, FA_READ);
+  if( !fr ) {
     files_used[slot] = true;
     retval = slot + 1;  // Return 1-based handle
   }
   else {
-    emu_printf("FileOpen failed");
+    emu_printf("FileOpen failed with FRESULT=");
+    emu_printi((int)fr);
   }
   return (retval);
 }
@@ -1771,6 +1776,17 @@ void emu_init(void)
   board_init();
   #endif
   printf("TinyUSB Host HID Controller Example\r\n");
+
+  // CRITICAL: Set default HID protocol to REPORT before tuh_init().
+  // TinyUSB's internal hidh_set_config() calls SET_PROTOCOL with
+  // _hidh_default_protocol (default: BOOT) for all boot-capable devices.
+  // The Weltrend WT6571 (VID=040b) ACKs SET_PROTOCOL(BOOT) but then
+  // responds to interrupt IN tokens with 0-byte DATA packets.
+  // Switching to REPORT protocol makes the keyboard use its HID report
+  // descriptor format, which for this device is identical to boot
+  // protocol (8-byte keyboard report) and produces valid data.
+  tuh_hid_set_default_protocol(HID_PROTOCOL_REPORT);
+
   bool init_ok = tuh_init(BOARD_TUH_RHPORT);
   if (!init_ok) {
     printf("TinyUSB host init failed on rhport %d.\r\n", BOARD_TUH_RHPORT);

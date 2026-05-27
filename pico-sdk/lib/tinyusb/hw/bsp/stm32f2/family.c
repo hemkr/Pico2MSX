@@ -24,6 +24,10 @@
  * This file is part of the TinyUSB stack.
  */
 
+/* metadata:
+   manufacturer: STMicroelectronics
+*/
+
 #include "stm32f2xx_hal.h"
 #include "bsp/board_api.h"
 #include "board.h"
@@ -52,6 +56,9 @@ void board_init(void) {
   #if CFG_TUSB_OS == OPT_OS_NONE
   // 1ms tick timer
   SysTick_Config(SystemCoreClock / 1000);
+  #elif CFG_TUSB_OS == OPT_OS_FREERTOS
+  // Explicitly disable systick to prevent its ISR from running before scheduler start
+  SysTick->CTRL &= ~1U;
   #endif
 
   all_rcc_clk_enable();

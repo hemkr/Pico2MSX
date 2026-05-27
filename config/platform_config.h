@@ -5,7 +5,7 @@
 #define KEYLAYOUT      KLAYOUT_ES
 
 #define INVX           1
-#define HAS_SND        1
+#define USE_LIBDVI        1
 #define USE_VGA        1
 // If using Adafruit Metro RP2350 with HDMI, enable the alternate HSTX pinout
 // #define HDMI_PINOUT_METRO 1
@@ -28,13 +28,14 @@
 //#define FLIP_SCREEN  1
 //#define HAS_PSRAM      1
 
-#ifdef HAS_SND
+#ifdef USE_LIBDVI
 
 #define SOUNDRATE 22050                           // sound rate [Hz]
 
 //#define AUDIO_8BIT     1
 #define AUDIO_1DMA      1
-
+#define CUSTOM_SND   1      // ← 이 줄 추가
+#define CUSTOM_SND_C 1      // ← SND_Process가 C 함수이므로 추가
 
 #ifdef AUDIO_8BIT
 typedef uint8_t  audio_sample;

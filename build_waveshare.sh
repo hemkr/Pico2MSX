@@ -13,7 +13,7 @@ printf "Modelo por defecto: -DDEFAULT_MSX_VERSION=0\n\n"
 
 cmake -B "$BUILD_DIR" -S "$SCRIPT_DIR" \
   -DBOARD_TYPE=WAVESHARE \
-  -DDEFAULT_MSX_VERSION=0
+  -DDEFAULT_MSX_VERSION=1
 
 printf "Compilando...\n"
 cmake --build "$BUILD_DIR" -j

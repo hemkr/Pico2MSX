@@ -213,17 +213,26 @@ static void pipe_write_packet_ff(rusb2_reg_t * rusb, tu_fifo_t *f, volatile void
   tu_fifo_buffer_info_t info;
   tu_fifo_get_read_info(f, &info);
 
-  uint16_t count = tu_min16(total_len, info.len_lin);
-  pipe_write_packet(rusb, info.ptr_lin, fifo, count);
+  uint16_t cnt_lin = tu_min16(total_len, info.linear.len);
+  uint16_t cnt_wrap = tu_min16(total_len - cnt_lin, info.wrapped.len);
+  uint16_t const cnt_written = cnt_lin + cnt_wrap;
 
-  uint16_t rem = total_len - count;
-  if (rem) {
-    rem = tu_min16(rem, info.len_wrap);
-    pipe_write_packet(rusb, info.ptr_wrap, fifo, rem);
-    count += rem;
+  // Ensure only the last write is odd if total_len is odd
+  if (cnt_wrap == 0) {
+    pipe_write_packet(rusb, info.linear.ptr, fifo, cnt_lin);
+  } else {
+    pipe_write_packet(rusb, info.linear.ptr, fifo, cnt_lin & ~1);
+
+    if (cnt_lin & 1) {
+      uint8_t glue[2] = {info.linear.ptr[cnt_lin & ~1], info.wrapped.ptr[0]};
+      pipe_write_packet(rusb, glue, fifo, 2);
+      cnt_wrap--;
+      info.wrapped.ptr++;
+    }
+
+    pipe_write_packet(rusb, info.wrapped.ptr, fifo, cnt_wrap);
   }
-
-  tu_fifo_advance_read_pointer(f, count);
+  tu_fifo_advance_read_pointer(f, cnt_written);
 }
 
 // Read data sw fifo <-- hw fifo
@@ -231,13 +240,13 @@ static void pipe_read_packet_ff(rusb2_reg_t * rusb, tu_fifo_t *f, volatile void 
   tu_fifo_buffer_info_t info;
   tu_fifo_get_write_info(f, &info);
 
-  uint16_t count = tu_min16(total_len, info.len_lin);
-  pipe_read_packet(rusb, info.ptr_lin, fifo, count);
+  uint16_t count = tu_min16(total_len, info.linear.len);
+  pipe_read_packet(rusb, info.linear.ptr, fifo, count);
 
   uint16_t rem = total_len - count;
   if (rem) {
-    rem = tu_min16(rem, info.len_wrap);
-    pipe_read_packet(rusb, info.ptr_wrap, fifo, rem);
+    rem = tu_min16(rem, info.wrapped.len);
+    pipe_read_packet(rusb, info.wrapped.ptr, fifo, rem);
     count += rem;
   }
 
@@ -859,8 +868,24 @@ void dcd_edpt_close(uint8_t rhport, uint8_t ep_addr)
   _dcd.ep[dir][epn] = 0;
 }
 
-bool dcd_edpt_xfer(uint8_t rhport, uint8_t ep_addr, uint8_t* buffer, uint16_t total_bytes)
+#if 0
+bool dcd_edpt_iso_alloc(uint8_t rhport, uint8_t ep_addr, uint16_t largest_packet_size) {
+  (void)rhport;
+  (void)ep_addr;
+  (void)largest_packet_size;
+  return false;
+}
+
+bool dcd_edpt_iso_activate(uint8_t rhport, const tusb_desc_endpoint_t *desc_ep) {
+  (void)rhport;
+  (void)desc_ep;
+  return false;
+}
+#endif
+
+bool dcd_edpt_xfer(uint8_t rhport, uint8_t ep_addr, uint8_t * buffer, uint16_t total_bytes, bool is_isr)
 {
+  (void) is_isr;
   rusb2_reg_t* rusb = RUSB2_REG(rhport);
 
   dcd_int_disable(rhport);
@@ -870,8 +895,9 @@ bool dcd_edpt_xfer(uint8_t rhport, uint8_t ep_addr, uint8_t* buffer, uint16_t to
   return r;
 }
 
-bool dcd_edpt_xfer_fifo(uint8_t rhport, uint8_t ep_addr, tu_fifo_t * ff, uint16_t total_bytes)
+bool dcd_edpt_xfer_fifo(uint8_t rhport, uint8_t ep_addr, tu_fifo_t * ff, uint16_t total_bytes, bool is_isr)
 {
+  (void) is_isr;
   // USB buffers always work in bytes so to avoid unnecessary divisions we demand item_size = 1
   TU_ASSERT(ff->item_size == 1);
   rusb2_reg_t* rusb = RUSB2_REG(rhport);
@@ -1028,5 +1054,4 @@ void dcd_int_handler(uint8_t rhport)
     }
   }
 }
-
 #endif

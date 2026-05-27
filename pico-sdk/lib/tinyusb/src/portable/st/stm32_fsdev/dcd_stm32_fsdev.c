@@ -112,16 +112,7 @@
     !(defined(TUP_USBIP_FSDEV_CH32) && CFG_TUD_WCH_USBIP_FSDEV == 0)
 
 #include "device/dcd.h"
-
-#if defined(TUP_USBIP_FSDEV_STM32)
-  #include "fsdev_stm32.h"
-#elif defined(TUP_USBIP_FSDEV_CH32)
-  #include "fsdev_ch32.h"
-#else
-  #error "Unknown USB IP"
-#endif
-
-#include "fsdev_type.h"
+#include "fsdev_common.h"
 
 //--------------------------------------------------------------------+
 // MACRO CONSTANT TYPEDEF
@@ -162,11 +153,6 @@ static bool edpt_xfer(uint8_t rhport, uint8_t ep_num, tusb_dir_t dir);
 static uint16_t ep_buf_ptr; ///< Points to first free memory location
 static uint32_t dcd_pma_alloc(uint16_t len, bool dbuf);
 static uint8_t dcd_ep_alloc(uint8_t ep_addr, uint8_t ep_type);
-static bool dcd_write_packet_memory(uint16_t dst, const void *__restrict src, uint16_t nbytes);
-static bool dcd_read_packet_memory(void *__restrict dst, uint16_t src, uint16_t nbytes);
-
-static bool dcd_write_packet_memory_ff(tu_fifo_t *ff, uint16_t dst, uint16_t wNBytes);
-static bool dcd_read_packet_memory_ff(tu_fifo_t *ff, uint16_t src, uint16_t wNBytes);
 
 static void edpt0_open(uint8_t rhport);
 
@@ -187,23 +173,9 @@ TU_ATTR_ALWAYS_INLINE static inline xfer_ctl_t *xfer_ctl_ptr(uint8_t epnum, uint
 //--------------------------------------------------------------------+
 bool dcd_init(uint8_t rhport, const tusb_rhport_init_t* rh_init) {
   (void) rh_init;
-  // Follow the RM mentions to use a special ordering of PDWN and FRES
-  for (volatile uint32_t i = 0; i < 200; i++) { // should be a few us
-    asm("NOP");
-  }
 
-  // Perform USB peripheral reset
-  FSDEV_REG->CNTR = USB_CNTR_FRES | USB_CNTR_PDWN;
-  for (volatile uint32_t i = 0; i < 200; i++) { // should be a few us
-    asm("NOP");
-  }
+  fsdev_core_reset();
 
-  FSDEV_REG->CNTR &= ~USB_CNTR_PDWN;
-
-  // Wait startup time, for F042 and F070, this is <= 1 us.
-  for (volatile uint32_t i = 0; i < 200; i++) { // should be a few us
-    asm("NOP");
-  }
   FSDEV_REG->CNTR = 0; // Enable USB
 
 #if !defined(FSDEV_BUS_32BIT)
@@ -211,20 +183,22 @@ bool dcd_init(uint8_t rhport, const tusb_rhport_init_t* rh_init) {
   FSDEV_REG->BTABLE = FSDEV_BTABLE_BASE;
 #endif
 
-  FSDEV_REG->ISTR = 0; // Clear pending interrupts
-
-  // Reset endpoints to disabled
-  for (uint32_t i = 0; i < FSDEV_EP_COUNT; i++) {
-    // This doesn't clear all bits since some bits are "toggle", but does set the type to DISABLED.
-    ep_write(i, 0u, false);
-  }
-
+  // Enable interrupts for device mode
   FSDEV_REG->CNTR |= USB_CNTR_RESETM | USB_CNTR_ESOFM | USB_CNTR_CTRM |
-      USB_CNTR_SUSPM | USB_CNTR_WKUPM | USB_CNTR_PMAOVRM;
+                     USB_CNTR_SUSPM | USB_CNTR_WKUPM | USB_CNTR_PMAOVRM;
+
   handle_bus_reset(rhport);
 
   // Enable pull-up if supported
   dcd_connect(rhport);
+
+  return true;
+}
+
+bool dcd_deinit(uint8_t rhport) {
+  (void)rhport;
+
+  fsdev_deinit();
 
   return true;
 }
@@ -244,7 +218,7 @@ void dcd_set_address(uint8_t rhport, uint8_t dev_addr) {
   (void)dev_addr;
 
   // Respond with status
-  dcd_edpt_xfer(rhport, TUSB_DIR_IN_MASK | 0x00, NULL, 0);
+  dcd_edpt_xfer(rhport, TUSB_DIR_IN_MASK | 0x00, NULL, 0, false);
 
   // DCD can only set address after status for this request is complete.
   // do it at dcd_edpt0_status_complete()
@@ -291,7 +265,11 @@ static void handle_ctr_tx(uint32_t ep_id) {
       return;
     }
     xfer->iso_in_sending = false;
+#if FSDEV_USE_SBUF_ISO == 0
     uint8_t buf_id = (ep_reg & USB_EP_DTOG_TX) ? 0 : 1;
+#else
+    uint8_t buf_id = BTABLE_BUF_TX;
+#endif
     btable_set_count(ep_id, buf_id, 0);
   }
 
@@ -307,7 +285,7 @@ static void handle_ctr_setup(uint32_t ep_id) {
   uint16_t rx_addr = btable_get_addr(ep_id, BTABLE_BUF_RX);
   uint8_t setup_packet[8] TU_ATTR_ALIGNED(4);
 
-  dcd_read_packet_memory(setup_packet, rx_addr, rx_count);
+  fsdev_read_packet_memory(setup_packet, rx_addr, rx_count);
 
   // Clear CTR RX if another setup packet arrived before this, it will be discarded
   ep_write_clear_ctr(ep_id, TUSB_DIR_OUT);
@@ -331,8 +309,13 @@ static void handle_ctr_rx(uint32_t ep_id) {
   xfer_ctl_t* xfer = xfer_ctl_ptr(ep_num, TUSB_DIR_OUT);
 
   uint8_t buf_id;
-  if (is_iso) {
-    buf_id = (ep_reg & USB_EP_DTOG_RX) ? 0 : 1; // ISO are double buffered
+#if FSDEV_USE_SBUF_ISO == 0
+  bool const dbl_buf = is_iso;
+#else
+  bool const dbl_buf = false;
+#endif
+  if (dbl_buf) {
+    buf_id = (ep_reg & USB_EP_DTOG_RX) ? 0 : 1;
   } else {
     buf_id = BTABLE_BUF_RX;
   }
@@ -340,9 +323,9 @@ static void handle_ctr_rx(uint32_t ep_id) {
   uint16_t pma_addr = (uint16_t) btable_get_addr(ep_id, buf_id);
 
   if (xfer->ff) {
-    dcd_read_packet_memory_ff(xfer->ff, pma_addr, rx_count);
+    fsdev_read_packet_memory_ff(xfer->ff, pma_addr, rx_count);
   } else {
-    dcd_read_packet_memory(xfer->buffer + xfer->queued_len, pma_addr, rx_count);
+    fsdev_read_packet_memory(xfer->buffer + xfer->queued_len, pma_addr, rx_count);
   }
   xfer->queued_len += rx_count;
 
@@ -527,10 +510,16 @@ static uint8_t dcd_ep_alloc(uint8_t ep_addr, uint8_t ep_type)
       return i;
     }
 
+#if FSDEV_USE_SBUF_ISO == 0
+    bool const dbl_buf = ep_type == TUSB_XFER_ISOCHRONOUS;
+#else
+    bool const dbl_buf = false;
+#endif
+
     // If EP of current direction is not allocated
-    // Except for ISO endpoint, both direction should be free
+    // For double-buffered mode both directions needs to be free
     if (!ep_alloc_status[i].allocated[dir] &&
-        (ep_type != TUSB_XFER_ISOCHRONOUS || !ep_alloc_status[i].allocated[dir ^ 1])) {
+        (!dbl_buf || !ep_alloc_status[i].allocated[dir ^ 1])) {
       // Check if EP number is the same
       if (ep_alloc_status[i].ep_num == 0xFF || ep_alloc_status[i].ep_num == epnum) {
         // One EP pair has to be the same type
@@ -652,9 +641,7 @@ bool dcd_edpt_iso_alloc(uint8_t rhport, uint8_t ep_addr, uint16_t largest_packet
   uint8_t const dir = tu_edpt_dir(ep_addr);
   uint8_t const ep_idx = dcd_ep_alloc(ep_addr, TUSB_XFER_ISOCHRONOUS);
 
-  /* Create a packet memory buffer area. Enable double buffering for devices with 2048 bytes PMA,
-     for smaller devices double buffering occupy too much space. */
-#if FSDEV_PMA_SIZE > 1024u
+#if CFG_TUD_FSDEV_DOUBLE_BUFFERED_ISO_EP != 0
   uint32_t pma_addr = dcd_pma_alloc(largest_packet_size, true);
   uint16_t pma_addr2 = pma_addr >> 16;
 #else
@@ -662,8 +649,13 @@ bool dcd_edpt_iso_alloc(uint8_t rhport, uint8_t ep_addr, uint16_t largest_packet
   uint16_t pma_addr2 = pma_addr;
 #endif
 
+#if FSDEV_USE_SBUF_ISO == 0
   btable_set_addr(ep_idx, 0, pma_addr);
   btable_set_addr(ep_idx, 1, pma_addr2);
+#else
+  btable_set_addr(ep_idx, dir == TUSB_DIR_IN ? BTABLE_BUF_TX : BTABLE_BUF_RX, pma_addr);
+  (void) pma_addr2;
+#endif
 
   xfer_ctl_t* xfer = xfer_ctl_ptr(ep_num, dir);
   xfer->ep_idx = ep_idx;
@@ -684,10 +676,23 @@ bool dcd_edpt_iso_activate(uint8_t rhport, tusb_desc_endpoint_t const *desc_ep) 
 
   uint32_t ep_reg = ep_read(ep_idx) & ~USB_EPREG_MASK;
   ep_reg |= tu_edpt_number(ep_addr) | USB_EP_ISOCHRONOUS | USB_EP_CTR_TX | USB_EP_CTR_RX;
+#if FSDEV_USE_SBUF_ISO != 0
+  ep_reg |= USB_EP_KIND;
+
+  ep_change_status(&ep_reg, dir, EP_STAT_DISABLED);
+  ep_change_dtog(&ep_reg, dir, 0);
+
+  if (dir == TUSB_DIR_IN) {
+    ep_reg &= ~(USB_EPRX_STAT | USB_EP_DTOG_RX);
+  } else {
+    ep_reg &= ~(USB_EPTX_STAT | USB_EP_DTOG_TX);
+  }
+#else
   ep_change_status(&ep_reg, TUSB_DIR_IN, EP_STAT_DISABLED);
   ep_change_status(&ep_reg, TUSB_DIR_OUT, EP_STAT_DISABLED);
   ep_change_dtog(&ep_reg, dir, 0);
   ep_change_dtog(&ep_reg, (tusb_dir_t)(1 - dir), 1);
+#endif
 
   ep_write(ep_idx, ep_reg, true);
 
@@ -702,7 +707,12 @@ static void dcd_transmit_packet(xfer_ctl_t *xfer, uint16_t ep_ix) {
   bool const is_iso = ep_is_iso(ep_reg);
 
   uint8_t buf_id;
-  if (is_iso) {
+#if FSDEV_USE_SBUF_ISO == 0
+  bool const dbl_buf = is_iso;
+#else
+  bool const dbl_buf = false;
+#endif
+  if (dbl_buf) {
     buf_id = (ep_reg & USB_EP_DTOG_TX) ? 1 : 0;
   } else {
     buf_id = BTABLE_BUF_TX;
@@ -710,9 +720,9 @@ static void dcd_transmit_packet(xfer_ctl_t *xfer, uint16_t ep_ix) {
   uint16_t addr_ptr = (uint16_t) btable_get_addr(ep_ix, buf_id);
 
   if (xfer->ff) {
-    dcd_write_packet_memory_ff(xfer->ff, addr_ptr, len);
+    fsdev_write_packet_memory_ff(xfer->ff, addr_ptr, len);
   } else {
-    dcd_write_packet_memory(addr_ptr, &(xfer->buffer[xfer->queued_len]), len);
+    fsdev_write_packet_memory(addr_ptr, &(xfer->buffer[xfer->queued_len]), len);
   }
   xfer->queued_len += len;
 
@@ -740,7 +750,12 @@ static bool edpt_xfer(uint8_t rhport, uint8_t ep_num, tusb_dir_t dir) {
 
     uint16_t cnt = tu_min16(xfer->total_len, xfer->max_packet_size);
 
-    if (ep_is_iso(ep_reg)) {
+#if FSDEV_USE_SBUF_ISO == 0
+    bool const dbl_buf = ep_is_iso(ep_reg);
+#else
+    bool const dbl_buf = false;
+#endif
+    if (dbl_buf) {
       btable_set_rx_bufsize(ep_idx, 0, cnt);
       btable_set_rx_bufsize(ep_idx, 1, cnt);
     } else {
@@ -754,7 +769,8 @@ static bool edpt_xfer(uint8_t rhport, uint8_t ep_num, tusb_dir_t dir) {
   return true;
 }
 
-bool dcd_edpt_xfer(uint8_t rhport, uint8_t ep_addr, uint8_t *buffer, uint16_t total_bytes) {
+bool dcd_edpt_xfer(uint8_t rhport, uint8_t ep_addr, uint8_t * buffer, uint16_t total_bytes, bool is_isr) {
+  (void) is_isr;
   uint8_t const ep_num = tu_edpt_number(ep_addr);
   tusb_dir_t const dir = tu_edpt_dir(ep_addr);
   xfer_ctl_t *xfer = xfer_ctl_ptr(ep_num, dir);
@@ -767,7 +783,8 @@ bool dcd_edpt_xfer(uint8_t rhport, uint8_t ep_addr, uint8_t *buffer, uint16_t to
   return edpt_xfer(rhport, ep_num, dir);
 }
 
-bool dcd_edpt_xfer_fifo(uint8_t rhport, uint8_t ep_addr, tu_fifo_t *ff, uint16_t total_bytes) {
+bool dcd_edpt_xfer_fifo(uint8_t rhport, uint8_t ep_addr, tu_fifo_t * ff, uint16_t total_bytes, bool is_isr) {
+  (void) is_isr;
   uint8_t const ep_num = tu_edpt_number(ep_addr);
   tusb_dir_t const dir = tu_edpt_dir(ep_addr);
   xfer_ctl_t *xfer = xfer_ctl_ptr(ep_num, dir);
@@ -812,168 +829,22 @@ void dcd_edpt_clear_stall(uint8_t rhport, uint8_t ep_addr) {
   ep_write(ep_idx, ep_reg, true);
 }
 
-//--------------------------------------------------------------------+
-// PMA read/write
-//--------------------------------------------------------------------+
-
-// Write to packet memory area (PMA) from user memory
-// - Packet memory must be either strictly 16-bit or 32-bit depending on FSDEV_BUS_32BIT
-// - Uses unaligned for RAM (since M0 cannot access unaligned address)
-static bool dcd_write_packet_memory(uint16_t dst, const void *__restrict src, uint16_t nbytes) {
-  if (nbytes == 0) return true;
-  uint32_t n_write = nbytes / FSDEV_BUS_SIZE;
-
-  fsdev_pma_buf_t* pma_buf = PMA_BUF_AT(dst);
-  const uint8_t *src8 = src;
-
-  while (n_write--) {
-    pma_buf->value = fsdevbus_unaligned_read(src8);
-    src8 += FSDEV_BUS_SIZE;
-    pma_buf++;
-  }
-
-  // odd bytes e.g 1 for 16-bit or 1-3 for 32-bit
-  uint16_t odd = nbytes & (FSDEV_BUS_SIZE - 1);
-  if (odd) {
-    fsdev_bus_t temp = 0;
-    for(uint16_t i = 0; i < odd; i++) {
-      temp |= *src8++ << (i * 8);
-    }
-    pma_buf->value = temp;
-  }
-
-  return true;
+void dcd_int_enable(uint8_t rhport) {
+  fsdev_int_enable(rhport);
 }
 
-// Read from packet memory area (PMA) to user memory.
-// - Packet memory must be either strictly 16-bit or 32-bit depending on FSDEV_BUS_32BIT
-// - Uses unaligned for RAM (since M0 cannot access unaligned address)
-static bool dcd_read_packet_memory(void *__restrict dst, uint16_t src, uint16_t nbytes) {
-  if (nbytes == 0) return true;
-  uint32_t n_read = nbytes / FSDEV_BUS_SIZE;
-
-  fsdev_pma_buf_t* pma_buf = PMA_BUF_AT(src);
-  uint8_t *dst8 = (uint8_t *)dst;
-
-  while (n_read--) {
-    fsdevbus_unaligned_write(dst8, (fsdev_bus_t ) pma_buf->value);
-    dst8 += FSDEV_BUS_SIZE;
-    pma_buf++;
-  }
-
-  // odd bytes e.g 1 for 16-bit or 1-3 for 32-bit
-  uint16_t odd = nbytes & (FSDEV_BUS_SIZE - 1);
-  if (odd) {
-    fsdev_bus_t temp = pma_buf->value;
-    while (odd--) {
-      *dst8++ = (uint8_t) (temp & 0xfful);
-      temp >>= 8;
-    }
-  }
-
-  return true;
+void dcd_int_disable(uint8_t rhport) {
+  fsdev_int_disable(rhport);
 }
 
-// Write to PMA from FIFO
-static bool dcd_write_packet_memory_ff(tu_fifo_t *ff, uint16_t dst, uint16_t wNBytes) {
-  if (wNBytes == 0) return true;
-
-  // Since we copy from a ring buffer FIFO, a wrap might occur making it necessary to conduct two copies
-  tu_fifo_buffer_info_t info;
-  tu_fifo_get_read_info(ff, &info);
-
-  uint16_t cnt_lin = tu_min16(wNBytes, info.len_lin);
-  uint16_t cnt_wrap = tu_min16(wNBytes - cnt_lin, info.len_wrap);
-  uint16_t const cnt_total = cnt_lin + cnt_wrap;
-
-  // We want to read from the FIFO and write it into the PMA, if LIN part is ODD and has WRAPPED part,
-  // last lin byte will be combined with wrapped part To ensure PMA is always access aligned
-  uint16_t lin_even = cnt_lin & ~(FSDEV_BUS_SIZE - 1);
-  uint16_t lin_odd = cnt_lin & (FSDEV_BUS_SIZE - 1);
-  uint8_t const *src8 = (uint8_t const*) info.ptr_lin;
-
-  // write even linear part
-  dcd_write_packet_memory(dst, src8, lin_even);
-  dst += lin_even;
-  src8 += lin_even;
-
-  if (lin_odd == 0) {
-    src8 = (uint8_t const*) info.ptr_wrap;
-  } else {
-    // Combine last linear bytes + first wrapped bytes to form fsdev bus width data
-    fsdev_bus_t temp = 0;
-    uint16_t i;
-    for(i = 0; i < lin_odd; i++) {
-      temp |= *src8++ << (i * 8);
-    }
-
-    src8 = (uint8_t const*) info.ptr_wrap;
-    for(; i < FSDEV_BUS_SIZE && cnt_wrap > 0; i++, cnt_wrap--) {
-      temp |= *src8++ << (i * 8);
-    }
-
-    dcd_write_packet_memory(dst, &temp, FSDEV_BUS_SIZE);
-    dst += FSDEV_BUS_SIZE;
-  }
-
-  // write the rest of the wrapped part
-  dcd_write_packet_memory(dst, src8, cnt_wrap);
-
-  tu_fifo_advance_read_pointer(ff, cnt_total);
-  return true;
+#if defined(USB_BCDR_DPPU) || defined(SYSCFG_PMC_USB_PU)
+void dcd_connect(uint8_t rhport) {
+  fsdev_connect(rhport);
 }
 
-// Read from PMA to FIFO
-static bool dcd_read_packet_memory_ff(tu_fifo_t *ff, uint16_t src, uint16_t wNBytes) {
-  if (wNBytes == 0) return true;
-
-  // Since we copy into a ring buffer FIFO, a wrap might occur making it necessary to conduct two copies
-  // Check for first linear part
-  tu_fifo_buffer_info_t info;
-  tu_fifo_get_write_info(ff, &info); // We want to read from the FIFO
-
-  uint16_t cnt_lin = tu_min16(wNBytes, info.len_lin);
-  uint16_t cnt_wrap = tu_min16(wNBytes - cnt_lin, info.len_wrap);
-  uint16_t cnt_total = cnt_lin + cnt_wrap;
-
-  // We want to read from the FIFO and write it into the PMA, if LIN part is ODD and has WRAPPED part,
-  // last lin byte will be combined with wrapped part To ensure PMA is always access aligned
-
-  uint16_t lin_even = cnt_lin & ~(FSDEV_BUS_SIZE - 1);
-  uint16_t lin_odd = cnt_lin & (FSDEV_BUS_SIZE - 1);
-  uint8_t *dst8 = (uint8_t *) info.ptr_lin;
-
-  // read even linear part
-  dcd_read_packet_memory(dst8, src, lin_even);
-  dst8 += lin_even;
-  src += lin_even;
-
-  if (lin_odd == 0) {
-    dst8 = (uint8_t *) info.ptr_wrap;
-  } else {
-    // Combine last linear bytes + first wrapped bytes to form fsdev bus width data
-    fsdev_bus_t temp;
-    dcd_read_packet_memory(&temp, src, FSDEV_BUS_SIZE);
-    src += FSDEV_BUS_SIZE;
-
-    uint16_t i;
-    for (i = 0; i < lin_odd; i++) {
-      *dst8++ = (uint8_t) (temp & 0xfful);
-      temp >>= 8;
-    }
-
-    dst8 = (uint8_t *) info.ptr_wrap;
-    for (; i < FSDEV_BUS_SIZE && cnt_wrap > 0; i++, cnt_wrap--) {
-      *dst8++ = (uint8_t) (temp & 0xfful);
-      temp >>= 8;
-    }
-  }
-
-  // read the rest of the wrapped part
-  dcd_read_packet_memory(dst8, src, cnt_wrap);
-
-  tu_fifo_advance_write_pointer(ff, cnt_total);
-  return true;
+void dcd_disconnect(uint8_t rhport) {
+  fsdev_disconnect(rhport);
 }
+#endif
 
 #endif

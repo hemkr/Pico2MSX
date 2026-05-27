@@ -27,6 +27,23 @@ uint16_t display_backend_get_stride(void);  // Words per line
 // Wait for vsync (optional, for frame timing)
 void display_backend_vsync(void);
 
+// ---------------------------------------------------------------------------
+// Audio API (PicoDVI backend only – routes PCM into the HDMI audio stream)
+// ---------------------------------------------------------------------------
+
+// Register the application fill-callback and pre-fill the ring buffer.
+// `callback` receives a mono int16_t buffer of `samplesize` samples.
+// Call this once before the main loop (replaces multicore_launch_core1 for audio).
+void display_backend_audio_begin(void (*callback)(short *stream, int len),
+                                 int samplesize);
+
+// Push `count` mono int16_t samples into the audio ring buffer.
+// Returns the number of samples actually written (may be less if ring is full).
+uint32_t display_backend_write_audio(const int16_t *samples, uint32_t count);
+
+// Returns the number of free sample slots in the audio ring buffer.
+uint32_t display_backend_get_free_audio(void);
+
 #ifdef __cplusplus
 }
 #endif

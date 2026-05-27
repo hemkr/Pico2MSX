@@ -1,7 +1,7 @@
 #ifndef audioplaysystem_h_
 #define audioplaysystem_h_
 
-#ifdef HAS_SND
+#ifdef USE_LIBDVI
 
 #include "platform_config.h"
 

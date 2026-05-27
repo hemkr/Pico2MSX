@@ -25,6 +25,32 @@ static uint16_t fb_width = 0;
 static uint16_t fb_height = 0;
 static uint16_t fb_stride = 0; // bytes per line
 
+static volatile bool vsync_flag = false;
+
+// ---------------------------------------------------------------------------
+// HDMI Audio support
+// Audio samples are fed into the DVI audio ring buffer from Core0 via a
+// repeating hardware timer.  This avoids any conflict with Core1 which is
+// fully occupied running the TMDS encoder.
+// ---------------------------------------------------------------------------
+#define AUDIO_BUFFER_SIZE 1024  // samples per DVI audio buffer
+
+// Application-supplied callback: fills `len` stereo 16-bit samples into buf.
+// Signature matches pico_dsp begin_audio() callback (mono short*).
+static void (*audio_fill_callback)(short *stream, int len) = NULL;
+
+// Intermediate ring buffer shared between the app (Core0 game loop) and the
+// timer ISR that drains it into the DVI audio ring.
+#define SND_RING_BITS   12
+#define SND_RING_SIZE   (1u << SND_RING_BITS)   // 4096 samples
+#define SND_RING_MASK   (SND_RING_SIZE - 1)
+static int16_t  snd_ring[SND_RING_SIZE];
+static volatile uint32_t snd_wr = 0;   // written by game loop / timer
+static volatile uint32_t snd_rd = 0;   // consumed by timer ISR → DVI ring
+
+static struct repeating_timer audio_timer;
+static audio_sample_t audio_buf[AUDIO_BUFFER_SIZE];
+
 // Core1 scanline callback - feeds lines to DVI encoder
 static void __not_in_flash_func(core1_scanline_callback)(uint scanline_id) {
     // Discard any scanline pointers passed back
@@ -37,7 +63,10 @@ static void __not_in_flash_func(core1_scanline_callback)(uint scanline_id) {
     bufptr = &framebuffer[fb_stride * next_line];
     queue_add_blocking_u32(&dvi0.q_colour_valid, &bufptr);
     next_line = (next_line + 1) % fb_height;
-    (void)scanline_id;
+    // Signal vsync at start of each frame (scanline 0 from VGA timing)
+    if (scanline_id == 0) {
+        vsync_flag = !vsync_flag;
+    }
 }
 
 // Core1 main loop - runs DVI encoder
@@ -49,68 +78,124 @@ static void __not_in_flash_func(dvi_core1_main)(void) {
     dvi_scanbuf_main_8bpp(&dvi0);
 }
 
+// ---------------------------------------------------------------------------
+// Audio timer ISR (Core0) – runs every ~2 ms, drains snd_ring into DVI ring
+// ---------------------------------------------------------------------------
+static bool __not_in_flash_func(audio_timer_cb)(struct repeating_timer *t) {
+    (void)t;
+
+    // ① 콜백이 있으면 snd_ring 여유 공간만큼 미리 채움
+    if (audio_fill_callback) {
+        uint32_t free_slots = SND_RING_SIZE - (uint32_t)(snd_wr - snd_rd);
+        if (free_slots >= 64) {
+            int16_t tmp[256];
+            uint32_t chunk = free_slots > 256 ? 256 : free_slots;
+            audio_fill_callback(tmp, (int)chunk);
+            for (uint32_t i = 0; i < chunk; i++) {
+                snd_ring[snd_wr & SND_RING_MASK] = tmp[i];
+                snd_wr++;
+            }
+        }
+    }
+
+    // ② snd_ring → DVI 오디오 링으로 드레인 (기존 코드 유지)
+    uint32_t avail = get_write_size(&dvi0.audio_ring, false);
+    if (avail == 0) return true;
+
+    audio_sample_t *dst = get_write_pointer(&dvi0.audio_ring);
+    uint32_t written = 0;
+
+    for (uint32_t i = 0; i < avail; i++) {
+        int16_t s = 0;
+        uint32_t rd = snd_rd;
+        if (rd != snd_wr) {
+            s = snd_ring[rd & SND_RING_MASK];
+            snd_rd = rd + 1;
+        }
+        dst->channels[0] = s;
+        dst->channels[1] = s;
+        dst++;
+        written++;
+    }
+    increase_write_pointer(&dvi0.audio_ring, written);
+    return true;
+}
+
+// ---------------------------------------------------------------------------
+// Public audio API (called by pico_dsp begin_audio / WriteAudio)
+// ---------------------------------------------------------------------------
+
+// Register the app-level fill callback (optional – direct WriteAudio also works).
+void display_backend_audio_begin(void (*callback)(short *stream, int len),
+                                 int samplesize) {
+    audio_fill_callback = callback;
+    // pre-fill 제거 - 타이머 ISR에서 처리
+                                 }
+
+// Write PCM samples (int16_t mono) directly into the ring buffer.
+// Returns the number of samples actually written.
+uint32_t display_backend_write_audio(const int16_t *samples, uint32_t count) {
+    uint32_t free_slots = SND_RING_SIZE - (uint32_t)(snd_wr - snd_rd);
+    if (count > free_slots) count = free_slots;
+    for (uint32_t i = 0; i < count; i++) {
+        snd_ring[snd_wr & SND_RING_MASK] = samples[i];
+        snd_wr++;
+    }
+    return count;
+}
+
+// Query how many sample slots are free in our ring buffer.
+uint32_t display_backend_get_free_audio(void) {
+    return SND_RING_SIZE - (uint32_t)(snd_wr - snd_rd);
+}
+
 void display_backend_init(uint16_t width, uint16_t height) {
-    // Boost core voltage and system clock to meet TMDS encode throughput
-    // VESA 640x480@60 requires 252 MHz bit clock; PicoDVI typically runs sysclk at this rate
+    // CRITICAL: DO NOT change sysclk here!
+    // sysclk is set to 240 MHz in main() to give PIO USB an integer divider
+    // (240/48 = 5.0). PicoDVI at 240 MHz bit clock works fine (~57 Hz).
+    // If you change sysclk here, PIO USB dividers become stale and USB breaks.
     vreg_set_voltage(VREG_VOLTAGE_1_20);
     sleep_ms(10);
-    set_sys_clock_khz(dvi_timing_640x480p_60hz.bit_clk_khz, true);
-    // Re-init default UART after clock change to avoid garbled output
-    setup_default_uart();
 
     printf("[PicoDVI] Initializing display backend...\n");
     printf("[PicoDVI] Resolution: %dx%d\n", width, height);
     
     fb_width = width;
     fb_height = height;
-    // For 640x480 timing, the 8bpp scanbuf path consumes half-res scanlines of 320 pixels.
-    // Ensure stride is at least 320 bytes so the encoder doesn't read past row bounds
-    // when emulation width is narrower (e.g., 256x240).
     fb_stride = (width < 320) ? 320 : width;  // bytes per line
     
-    // Allocate framebuffer (8bpp RGB332)
     size_t fb_size = (size_t)fb_stride * fb_height;
     framebuffer = (uint8_t*)malloc(fb_size);
     if (!framebuffer) {
         printf("[PicoDVI] ERROR: Failed to allocate framebuffer!\n");
         return;
     }
-    
-    // Clear framebuffer to black
     memset(framebuffer, 0x00, fb_size);
-    // Draw simple color bars test pattern (helps verify HDMI signal)
+    // Color bars test pattern
     {
         const uint8_t bars[8] = {
-            0xFF, // white
-            0xFC, // yellow (R=7,G=7,B=0)
-            0xE3, // magenta (R=7,G=0,B=3)
-            0x1F, // cyan (R=0,G=7,B=3)
-            0xE0, // red
-            0x1C, // green
-            0x03, // blue
-            0x00  // black
+            0xFF, 0xFC, 0xE3, 0x1F,
+            0xE0, 0x1C, 0x03, 0x00
         };
         uint band_h = fb_height / 8u;
         for (uint b = 0; b < 8; ++b) {
             uint y0 = b * band_h;
             uint y1 = (b == 7) ? fb_height : y0 + band_h;
-            for (uint y = y0; y < y1; ++y) {
-                uint8_t *row = &framebuffer[y * fb_stride];
-                // Fill the entire stride so bars span the full active width (320 half-res → 640 output)
-                memset(row, bars[b], fb_stride);
-            }
+            for (uint y = y0; y < y1; ++y)
+                memset(&framebuffer[y * fb_stride], bars[b], fb_stride);
         }
     }
-    printf("[PicoDVI] Framebuffer allocated at %p (%zu bytes)\n", framebuffer, fb_size);
+    printf("[PicoDVI] Framebuffer at %p (%zu bytes)\n", framebuffer, fb_size);
+
+    // Use VGA 640x480 timing but with 240 MHz bit clock (~57 Hz refresh).
+    // Most HDMI monitors accept this lower frame rate.
+    static struct dvi_timing dvi_timing_240mhz;
+    memcpy(&dvi_timing_240mhz, &dvi_timing_640x480p_60hz, sizeof(dvi_timing_240mhz));
+    dvi_timing_240mhz.bit_clk_khz = 240000;
     
-    // Set up PIO for DVI on GPIO16+ (base)
-    // PicoDVI expects the TMDS pairs on consecutive GPIO pins starting from base
-    // For Waveshare, we need to route to GPIO32-39 via pio_set_gpio_base
-    // The example uses GPIO16 as base and then routes via PIO
     pio_set_gpio_base(DVI_DEFAULT_SERIAL_CONFIG.pio, 16);
     
-    // Configure DVI instance
-    dvi0.timing = &dvi_timing_640x480p_60hz;  // Standard VGA timing
+    dvi0.timing = &dvi_timing_240mhz;
     dvi0.ser_cfg = DVI_DEFAULT_SERIAL_CONFIG;
     dvi0.scanline_callback = core1_scanline_callback;
     dvi_init(&dvi0, next_striped_spin_lock_num(), next_striped_spin_lock_num());
@@ -131,7 +216,27 @@ void display_backend_init(uint16_t width, uint16_t height) {
     queue_add_blocking_u32(&dvi0.q_colour_valid, &bufptr);
     bufptr += fb_stride;
     queue_add_blocking_u32(&dvi0.q_colour_valid, &bufptr);
-    
+
+    // -----------------------------------------------------------------------
+    // HDMI Audio setup
+    // Allocate the DVI audio sample buffer and set 44100 Hz timing constants.
+    // CTS=30000 / N=7056 gives 44100 Hz for 24 MHz pixel clock (240 MHz bit clock).
+    // (For 25.2 MHz pixel clock the standard pair was CTS=28000 / N=6272.)
+    // Matches Sound.c SndRate=44100 (forced in InitSound line 661).
+    // -----------------------------------------------------------------------
+    memset(audio_buf, 0, sizeof(audio_buf));
+    dvi_get_blank_settings(&dvi0)->top    = 0;
+    dvi_get_blank_settings(&dvi0)->bottom = 0;
+    dvi_audio_sample_buffer_set(&dvi0, audio_buf, AUDIO_BUFFER_SIZE);
+    dvi_set_audio_freq(&dvi0, 44100, 30000, 7056);
+    printf("[PicoDVI] HDMI audio enabled: 44100 Hz stereo\n");
+
+    // Start Core0 repeating timer that drains snd_ring → DVI audio ring.
+    // 2 ms period gives ~88 samples per tick at 44100 Hz – small enough
+    // to keep latency low while leaving CPU time for the game loop.
+    add_repeating_timer_ms(-2, audio_timer_cb, NULL, &audio_timer);
+    printf("[PicoDVI] Audio timer started (2 ms period)\n");
+
     // Launch Core1 to run DVI encoder
     printf("[PicoDVI] Launching Core1 for DVI encoding...\n");
     multicore_launch_core1(dvi_core1_main);
@@ -156,6 +261,8 @@ uint16_t display_backend_get_stride(void) {
 }
 
 void display_backend_vsync(void) {
-    // PicoDVI handles vsync internally; no action needed
-    // Could add frame timing here if needed
+    volatile bool vb = vsync_flag;
+    while (vsync_flag == vb) {
+        __dmb();
+    }
 }

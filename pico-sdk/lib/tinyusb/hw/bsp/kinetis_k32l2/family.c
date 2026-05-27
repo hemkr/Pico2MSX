@@ -25,6 +25,10 @@
  * This file is part of the TinyUSB stack.
  */
 
+/* metadata:
+   manufacturer: NXP
+*/
+
 #include "fsl_gpio.h"
 #include "fsl_port.h"
 #include "fsl_clock.h"
@@ -163,6 +167,7 @@ TU_ATTR_UNUSED void _start(void) {
 
 #ifdef __clang__
 void	_exit (int __status) {
+  (void) __status;
   while (1) {}
 }
 #endif

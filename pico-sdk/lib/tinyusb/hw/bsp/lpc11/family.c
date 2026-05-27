@@ -24,6 +24,10 @@
  * This file is part of the TinyUSB stack.
  */
 
+/* metadata:
+   manufacturer: NXP
+*/
+
 #ifdef __GNUC__
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wunused-parameter"
@@ -37,6 +41,10 @@
 
 #include "bsp/board_api.h"
 #include "board.h"
+
+extern void USB_IRQHandler(void);
+extern void SysTick_Handler(void);
+void SystemInit(void);
 
 //--------------------------------------------------------------------+
 // Forward USB interrupt events to TinyUSB IRQ Handler
@@ -66,6 +74,8 @@ void board_init(void) {
   // 1ms tick timer
   SysTick_Config(SystemCoreClock / 1000);
 #elif CFG_TUSB_OS == OPT_OS_FREERTOS
+  // Explicitly disable systick to prevent its ISR from running before scheduler start
+  SysTick->CTRL &= ~1U;
   // If freeRTOS is used, IRQ priority is limit by max syscall ( smaller is higher )
   NVIC_SetPriority(USB0_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY );
 #endif

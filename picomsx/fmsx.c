@@ -30,6 +30,8 @@
 
 #include "flash_t.h"
 
+
+
 static void RefreshLineTx80(byte Y);
 static void RefreshLine0(byte Y);
 static void RefreshLine1(byte Y);
@@ -295,6 +297,10 @@ static int ik;     // joypad key
 static int ihk;    // I2C keyboard key
 static int iusbhk; // USB keyboard key
 static int iusbhk_flags; // USB keyboard modifier flags
+#define MAX_PRESSED_KEYS 8
+static int pressed_keys[MAX_PRESSED_KEYS];
+static int pressed_keys_count = 0;
+
 static int prevhk; // previous keyboard key
 static bool caps_lock_state = false; // CAPS LOCK toggle state
 
@@ -305,31 +311,39 @@ char *Disks[2][MAXDISKS+1];     /* Disk names for each drive */
 
 
 void emu_KeyboardOnDown(int keymodifer, int key) {
-  // Handle CAPS LOCK as a toggle
-  if (key == 1010) { // KBD_KEY_CAPS
-    caps_lock_state = !caps_lock_state; // Toggle on key press
-    iusbhk = 0; // Don't pass CAPS as a regular key
+  if (key == 1010) { // CAPS LOCK toggle
+    caps_lock_state = !caps_lock_state;
     iusbhk_flags = keymodifer;
     return;
   }
-  
-  // Accept all key codes (ASCII and special keys like arrows, backspace, etc.)
-  // If this is a pure modifier update (key==0), don't change iusbhk
   if (key != 0) {
-    iusbhk = key;
+    // 중복 없이 배열에 추가
+    for (int i = 0; i < pressed_keys_count; i++) {
+      if (pressed_keys[i] == key) {
+        iusbhk_flags = keymodifer;
+        return;
+      }
+    }
+    if (pressed_keys_count < MAX_PRESSED_KEYS) {
+      pressed_keys[pressed_keys_count++] = key;
+    }
   }
-  iusbhk_flags = keymodifer; // Store modifier flags (shift, ctrl, alt)
+  iusbhk_flags = keymodifer;
 }
 
 void emu_KeyboardOnUp(int keymodifer, int key) {
-  // Don't clear CAPS state on key release
-  if (key == 1010) { // KBD_KEY_CAPS
+  if (key == 1010) { // CAPS LOCK - release 무시
     return;
   }
   if (key != 0) {
-    iusbhk = 0;
+    // 배열에서 해당 키 제거
+    for (int i = 0; i < pressed_keys_count; i++) {
+      if (pressed_keys[i] == key) {
+        pressed_keys[i] = pressed_keys[--pressed_keys_count];
+        break;
+      }
+    }
   }
-  // Keep current modifier flags as reported by USB (so Shift-only holds are visible)
   iusbhk_flags = keymodifer;
 }
 
@@ -418,7 +432,7 @@ void msx_Start(char * Cartridge)
   word A;
   //FILE *F;
 
-#ifdef HAS_SND  
+#ifdef USE_LIBDVI
   emu_sndInit();
   InitSound(22050,0);
 #endif  
@@ -1066,107 +1080,77 @@ struct { byte Pos,Mask; } Keys[] =
 
 
 void msx_Step(void) {
-  int k  = ik;
-  int hk = ihk;
-  int keyflags = 0;
-  // Always reflect current modifier flags (even when no key is actively pressed)
-  keyflags = iusbhk_flags;
-  if (iusbhk) {
-    hk = iusbhk;
-  }
-  
-  // Convert special key codes from kbd.h to MSX keycodes
-  // KBD_KEY_BS=0x14 -> 0x7F (backspace in MSX)
-  if (hk == 0x14) hk = 0x7F; // Backspace
-  
-  JoyState = 0;
-  if (k & MASK_JOY2_DOWN)  JoyState|=0x02;
-  if (k & MASK_JOY2_UP)    JoyState|=0x01;
-  if (k & MASK_JOY2_RIGHT)  JoyState|=0x04;
-  if (k & MASK_JOY2_LEFT) JoyState|=0x08;
-  if (k & MASK_JOY2_BTN) JoyState|=0x10; 
-  if (k & MASK_KEY_USER2) JoyState|=0x20;  
+  int k = ik;
+  int keyflags = iusbhk_flags;
 
-  if (hk != 0) {
-    // Handle special keys (arrows, etc.) that have codes >= 1000
+  // 조이패드 상태 처리 (기존과 동일)
+  JoyState = 0;
+  if (k & MASK_JOY2_DOWN)  JoyState |= 0x02;
+  if (k & MASK_JOY2_UP)    JoyState |= 0x01;
+  if (k & MASK_JOY2_RIGHT) JoyState |= 0x04;
+  if (k & MASK_JOY2_LEFT)  JoyState |= 0x08;
+  if (k & MASK_JOY2_BTN)   JoyState |= 0x10;
+  if (k & MASK_KEY_USER2)  JoyState |= 0x20;
+
+  // KeyMap 전체 초기화 (모든 키 해제 상태)
+  memset(KeyMap, 0xFF, 16);
+
+  // 현재 눌린 키 전부 KeyMap에 반영
+  for (int ki = 0; ki < pressed_keys_count; ki++) {
+    int hk = pressed_keys[ki];
+
+    // KBD_KEY_BS(0x14) → MSX backspace(0x7F)
+    if (hk == 0x14) hk = 0x7F;
+
     if (hk >= 1000 && hk <= 1022) {
-      // Map special keys to MSX cursor/control keys
-      // Intercambio: UP/DOWN estaban cruzadas con LEFT/RIGHT
-      switch(hk) {
-        case 1000: // KBD_KEY_DOWN
-          KeyMap[8] &= ~0x80; // DOWN arrow in MSX
-          break;
-        case 1001: // KBD_KEY_UP
-          KeyMap[8] &= ~0x40; // UP arrow in MSX
-          break;
-        case 1004: // KBD_KEY_RIGHT
-          KeyMap[8] &= ~0x10; // RIGHT arrow in MSX
-          break;
-        case 1005: // KBD_KEY_LEFT
-          KeyMap[8] &= ~0x20; // LEFT arrow in MSX
-          break;
-        case 1008: // KBD_KEY_ESC
-          KeyMap[7] &= ~0x04; // ESC in MSX
-          break;
-        // CAPS (1010) is handled as toggle in emu_KeyboardOnDown
-        case 1011: // KBD_KEY_F1
-          KeyMap[6] &= ~0x20; // F1 in MSX
-          break;
-        case 1012: // KBD_KEY_F2
-          KeyMap[6] &= ~0x10; // F2 in MSX
-          break;
-        case 1013: // KBD_KEY_F3
-          KeyMap[6] &= ~0x08; // F3 in MSX
-          break;
-        case 1014: // KBD_KEY_F4
-          KeyMap[6] &= ~0x04; // F4 in MSX
-          break;
-        case 1015: // KBD_KEY_F5
-          KeyMap[7] &= ~0x01; // F5 in MSX
-          break;
-        default:
-          // Other special keys - ignore for now
-          break;
+      switch (hk) {
+        case 1000: KeyMap[8] &= ~0x80; break; // DOWN
+        case 1001: KeyMap[8] &= ~0x40; break; // UP
+        case 1004: KeyMap[8] &= ~0x10; break; // RIGHT
+        case 1005: KeyMap[8] &= ~0x20; break; // LEFT
+        case 1008: KeyMap[7] &= ~0x04; break; // ESC
+        case 1011: KeyMap[6] &= ~0x20; break; // F1
+        case 1012: KeyMap[6] &= ~0x10; break; // F2
+        case 1013: KeyMap[6] &= ~0x08; break; // F3
+        case 1014: KeyMap[6] &= ~0x04; break; // F4
+        case 1015: KeyMap[7] &= ~0x01; break; // F5
+        default: break;
       }
     }
     else if (hk < 256) {
-      // Normal ASCII keys - use Keys[] lookup table
-      KeyMap[Keys[hk].Pos] &=~ Keys[hk].Mask;
+      if (Keys[hk].Pos != 255) {
+        KeyMap[Keys[hk].Pos] &= ~Keys[hk].Mask;
+      }
     }
-    
-    // Apply modifiers and CAPS
-    if (keyflags & 0x09) KeyMap[6] &= ~0x01; // SHIFT
-    if (keyflags & 0x12) KeyMap[6] &= ~0x02; // CTRL
-    if (caps_lock_state) KeyMap[6] &= ~0x01; // CAPS as SHIFT
   }
-  else  {
-    memset(KeyMap,0xFF,16);
-    
-    // Keep modifiers visible even when no key is actively pressed
-    if (keyflags & 0x09) KeyMap[6] &= ~0x01; // SHIFT
-    if (keyflags & 0x12) KeyMap[6] &= ~0x02; // CTRL
-    if (caps_lock_state) KeyMap[6] &= ~0x01; // CAPS as SHIFT
-  }
+
+  // modifier / CAPS는 눌린 키 유무와 관계없이 항상 반영
+  if (keyflags & 0x09) KeyMap[6] &= ~0x01; // LSHIFT or RSHIFT
+  if (keyflags & 0x12) KeyMap[6] &= ~0x02; // LCTRL or RCTRL
+  if (caps_lock_state) KeyMap[6] &= ~0x01; // CAPS → SHIFT
 
   RunZ80(&CPU);
-
-  emu_DrawVsync();    
+  emu_DrawVsync();
 }
 
 
 
 
-#ifdef HAS_SND
+#ifdef USE_LIBDVI
 static int wave[256];
 #endif
 
 void SND_Process(void *stream, int len) {
-#ifdef HAS_SND
+#ifdef USE_LIBDVI
   audio_sample * snd_buf =  (audio_sample *)stream;
   memset(wave,0,256*sizeof(wave[0]));
   RenderAudio(&wave[0], len);
-  for (int i = 0; i< len; i++ )
-    *snd_buf++ = (wave[i]>>8)+128;
+  for (int i = 0; i< len; i++ ) {
+    int s = wave[i];
+    if (s > 32767) s = 32767;
+    else if (s < -32768) s = -32768;
+    *snd_buf++ = (audio_sample)s;
+  }
 #endif  
 } 
 
@@ -3164,6 +3148,11 @@ word LoopZ80(register Z80 *R, int * ras)
     Sync8910(&PSG,AY8910_FLUSH|(UseDrums? AY8910_DRUMS:0));
     SyncSCC(&SCChip,SCC_FLUSH);
     Sync2413(&OPLL,YM2413_FLUSH);
+
+    /* Render and play audio (sync'd to emulation, like PicoMsx0.3)
+     * 735 samples/frame at 60 Hz = 44100 s/s (252 MHz bit clock).
+     * At 240 MHz bit clock → 57.14 Hz → 44100/57.14 ≈ 772 samples/frame. */
+    RenderAndPlayAudio(772);
 
     /* Check keyboard */
     Keyboard();

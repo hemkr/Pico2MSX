@@ -113,14 +113,16 @@ static uint8_t nbTransfer = 0;
 
 #undef B16
 /* VGA structures / constants */
-#define R16(rgb) ((rgb>>8)&0xf8) 
-#define G16(rgb) ((rgb>>3)&0xfc) 
-#define B16(rgb) ((rgb<<3)&0xf8) 
+#define R16(rgb) ((rgb>>8)&0xf8)
+#define G16(rgb) ((rgb>>3)&0xfc)
+#define B16(rgb) ((rgb<<3)&0xf8)
 #ifdef VGA222
 #define VGA_RGB(r,g,b)   ( (((r>>6)&0x03)<<4) | (((g>>6)&0x03)<<2) | (((b>>6)&0x3)<<0) )
 #else
 #define VGA_RGB(r,g,b)   ( (((r>>5)&0x07)<<5) | (((g>>5)&0x07)<<2) | (((b>>6)&0x3)<<0) )
 #endif
+
+
 
 // 8 bits 320x240 frame buffer => 64K
 static vga_pixel * visible_framebuffer = NULL;
@@ -189,9 +191,6 @@ static void VgaCore(void)
   while (1)
   {
     __dmb();
-#ifdef HAS_SND
-//    handle_fill_samples();
-#endif
     // execute remote function
     fnc = Core1Fnc;
     if (fnc != NULL)
@@ -1294,7 +1293,38 @@ void PICO_DSP::drawTextNoDma(int16_t x, int16_t y, const char * text, dsp_pixel 
 }
 
 
-#ifdef HAS_SND
+#ifdef USE_LIBDVI
+
+// USE_LIBDVI 오디오 경로: display_backend_picodvi.c 의 함수들을 사용
+// (I2S, I2C 코덱 코드는 사용하지 않음)
+
+#include "display_backend.h"
+
+static void (*fillsamples)(short *stream, int len) = nullptr;
+struct audio_buffer_pool *producer_pool = nullptr;
+
+void PICO_DSP::begin_audio(int samplesize, void (*callback)(short *stream, int len))
+{
+    if (!callback) return;
+    fillsamples = callback;
+    display_backend_audio_begin(callback, samplesize);
+}
+
+void PICO_DSP::end_audio() {}
+
+void PICO_DSP::handle_audio(int samplesize)
+{
+    if (!fillsamples || samplesize <= 0) return;
+    uint32_t free_slots = display_backend_get_free_audio();
+    if (free_slots < (uint32_t)samplesize) return;
+    int16_t tmp[samplesize];
+    fillsamples(tmp, samplesize);
+    display_backend_write_audio(tmp, (uint32_t)samplesize);
+}
+
+void *PICO_DSP::get_buffer_audio(void) { return NULL; }
+
+#else // !USE_LIBDVI  →  기존 I2S / I2C 코덱 경로
 
 #include "hardware/dma.h"
 #include "hardware/gpio.h"
@@ -1619,22 +1649,18 @@ static void core1_func_tft() {
 void PICO_DSP::begin_audio(int samplesize, void (*callback)(short * stream, int len))
 {
   if (!callback) return;
-
   producer_pool = audio_new_producer_pool(&producer_format, 3, samplesize);
   fillsamples = callback;
   multicore_launch_core1(core1_func_tft);
 }
 
-void PICO_DSP::end_audio()
-{
-}
+void PICO_DSP::end_audio() {}
 
-void * PICO_DSP::get_buffer_audio(void)
-{
-    return NULL; // not implemented
-}
+void PICO_DSP::handle_audio(int samplesize) { (void)samplesize; }
 
-#endif
+void *PICO_DSP::get_buffer_audio(void) { return NULL; }
+
+#endif // !USE_LIBDVI
 
  
 

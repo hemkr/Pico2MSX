@@ -24,6 +24,10 @@
  * This file is part of the TinyUSB stack.
  */
 
+/* metadata:
+   manufacturer: STMicroelectronics
+*/
+
 #include "stm32f1xx_hal.h"
 #include "bsp/board_api.h"
 #include "board.h"
@@ -73,8 +77,9 @@ void board_init(void) {
 #if CFG_TUSB_OS == OPT_OS_NONE
   // 1ms tick timer
   SysTick_Config(SystemCoreClock / 1000);
-
 #elif CFG_TUSB_OS == OPT_OS_FREERTOS
+  // Explicitly disable systick to prevent its ISR from running before scheduler start
+  SysTick->CTRL &= ~1U;
   // If freeRTOS is used, IRQ priority is limit by max syscall ( smaller is higher )
   NVIC_SetPriority(USB_HP_CAN1_TX_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
   NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);

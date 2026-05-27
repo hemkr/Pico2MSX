@@ -2,8 +2,8 @@
 #include "pico/stdlib.h"
 
 extern "C" {
-  #include "iopins.h"  
-  #include "emuapi.h"  
+  #include "iopins.h"
+  #include "emuapi.h"
 }
 #include "keyboard_osd.h"
 
@@ -15,6 +15,8 @@ extern "C" {
 #include <stdio.h>
 #include "pico_dsp.h"
 
+extern "C" unsigned int sAudioSamples;
+
 volatile bool vbl=true;
 
 bool repeating_timer_callback(struct repeating_timer *t) {
@@ -22,7 +24,7 @@ bool repeating_timer_callback(struct repeating_timer *t) {
         vbl = false;
     } else {
         vbl = true;
-    }   
+    }
     return true;
 }
 
@@ -36,21 +38,25 @@ static int skip=0;
 
 int main(void) {
 //    vreg_set_voltage(VREG_VOLTAGE_1_05);
-//    set_sys_clock_khz(125000, true);    
-//    set_sys_clock_khz(150000, true);    
-//    set_sys_clock_khz(133000, true);    
-//    set_sys_clock_khz(200000, true);    
-//    set_sys_clock_khz(210000, true);    
-//    set_sys_clock_khz(230000, true);    
-//    set_sys_clock_khz(225000, truxe);    
-//    set_sys_clock_khz(250000, true);  
+//    set_sys_clock_khz(125000, true);
+//    set_sys_clock_khz(150000, true);
+//    set_sys_clock_khz(133000, true);
+//    set_sys_clock_khz(200000, true);
+//    set_sys_clock_khz(210000, true);
+//    set_sys_clock_khz(230000, true);
+//    set_sys_clock_khz(225000, truxe);
+//    set_sys_clock_khz(250000, true);
 
 #ifdef HAS_USBPIO
     // PIO USB requires multiple of 48 MHz for USB timing
-    // 132 MHz = 48 MHz * 2.75, good compromise between USB and HDMI
-    // HDMI: 132/5 = 26.4 MHz pixel clock (close enough to VGA 25.175 MHz for capture devices)
-    set_sys_clock_khz(132000, true);
-    *((uint32_t *)(0x40010000+0x58)) = 5 << 16; // HSTX clock/5 = 26.4MHz
+    // 240 MHz = 48 MHz * 5 → integer TX divider (5.0) for glitch-free PIO USB
+    //
+    // CRITICAL: display_backend_init in PicoDVI builds MUST NOT change sysclk
+    // afterward, or PIO USB dividers become stale. PicoDVI at 240 MHz bit clock
+    // gives 24 MHz pixel clock (~57 Hz) - most HDMI monitors accept this.
+    // HSTX clock at 240/8 = 30 MHz for HDMI framebuffer builds.
+    set_sys_clock_khz(240000, true);
+    *((uint32_t *)(0x40010000+0x58)) = 8 << 16; // HSTX clock/8 = 30.0MHz
 #else
     // For HDMI: sysclk=250MHz, then HSTX gets sysclk/2=125MHz via CLK_HSTX_DIV
     // This matches the configuration used by all other emulators in this project
@@ -69,19 +75,19 @@ int main(void) {
 */
 
      emu_init();
-   
+
 
 
 
     char * filename;
 #ifdef FILEBROWSER
-    while (true) {      
+    while (true) {
         if (menuActive()) {
             uint16_t bClick = emu_DebounceLocalKeys();
             int action = handleMenu(bClick);
-            filename = menuSelection();   
+            filename = menuSelection();
             if (action == ACTION_RUN) {
-              break;    
+              break;
             }
             tft.waitSync();
         }
@@ -90,12 +96,15 @@ int main(void) {
     emu_start();
     emu_Init(filename);
     tft.startRefresh();
+    //printf("[DBG] About to call emu_sndInit\n");
+    //emu_sndInit();
+    //printf("[DBG] emu_sndInit done\n");
     struct repeating_timer timer;
     add_repeating_timer_ms(25, repeating_timer_callback, NULL, &timer);
     while (true) {
         uint16_t bClick = emu_DebounceLocalKeys();
-        emu_Input(bClick);  
-        emu_Step();               
+        emu_Input(bClick);
+        emu_Step();
     }
 }
 
@@ -103,11 +112,11 @@ static unsigned short palette16[PALETTE_SIZE];
 void emu_SetPaletteEntry(unsigned char r, unsigned char g, unsigned char b, int index)
 {
     if (index<PALETTE_SIZE) {
-        palette16[index]  = RGBVAL16(r,g,b);        
+        palette16[index]  = RGBVAL16(r,g,b);
     }
 }
 
-void emu_DrawLinePal16(unsigned char * VBuf, int width, int height, int line) 
+void emu_DrawLinePal16(unsigned char * VBuf, int width, int height, int line)
 {
     if (skip == 0) {
          tft.writeLinePal(width,height,line, VBuf, palette16);
@@ -130,42 +139,34 @@ void emu_DrawVsync(void)
 {
     skip += 1;
     skip &= VID_FRAME_SKIP;
-#ifdef HAS_USBPIO
-#else
-#ifdef USE_VGA
-    tft.waitSync();            
-#else                      
-    volatile bool vb=vbl;
-    while (vbl==vb) {};
-#endif
-#endif    
+    tft.waitSync();
 }
 
 /*
-void emu_DrawLine8(unsigned char * VBuf, int width, int height, int line) 
+void emu_DrawLine8(unsigned char * VBuf, int width, int height, int line)
 {
     if (skip == 0) {
-#ifdef USE_VGA                        
-      tft.writeLine(width,height,line, VBuf);      
-#endif      
+#ifdef USE_VGA
+      tft.writeLine(width,height,line, VBuf);
+#endif
     }
-} 
+}
 
-void emu_DrawLine16(unsigned short * VBuf, int width, int height, int line) 
+void emu_DrawLine16(unsigned short * VBuf, int width, int height, int line)
 {
     if (skip == 0) {
-#ifdef USE_VGA        
+#ifdef USE_VGA
         tft.writeLine16(width,height,line, VBuf);
 #else
         tft.writeLine(width,height,line, VBuf);
-#endif        
+#endif
     }
-}  
+}
 
-void emu_DrawScreen(unsigned char * VBuf, int width, int height, int stride) 
+void emu_DrawScreen(unsigned char * VBuf, int width, int height, int stride)
 {
     if (skip == 0) {
-#ifdef USE_VGA                
+#ifdef USE_VGA
         tft.writeScreen(width,height-TFT_VBUFFER_YCROP,stride, VBuf+(TFT_VBUFFER_YCROP/2)*stride, palette8);
 #else
         tft.writeScreen(width,height-TFT_VBUFFER_YCROP,stride, VBuf+(TFT_VBUFFER_YCROP/2)*stride, palette16);
@@ -180,69 +181,56 @@ int emu_FrameSkip(void)
 
 void * emu_LineBuffer(int line)
 {
-    return (void*)tft.getLineBuffer(line);    
+    return (void*)tft.getLineBuffer(line);
 }
 */
 
 
-#ifdef HAS_SND
+#ifdef USE_LIBDVI
 
-// Simple PCM ring buffer to feed I2S from fMSX Sound.c (WriteAudio/GetFreeAudio)
+// ---------------------------------------------------------------------------
+// Audio bridge between fMSX Sound.c and the DVI HDMI audio ring.
+//
+// Sound.c calls:
+//   GetFreeAudio() - how many samples can we accept right now?
+//   WriteAudio(buf, n) - push n int16 samples into the audio system
+//
+// We forward these directly to display_backend (display_picodvi.c).
+// No intermediate ring buffer is needed: display_picodvi.c already has
+// its own ring (snd_ring) and a Core0 timer that drains it into the DVI
+// audio ring every 2 ms.
+// ---------------------------------------------------------------------------
+
 extern "C" {
-    // Declarations expected by Sound.c
-    unsigned int GetFreeAudio(void);
-    unsigned int WriteAudio(short *buf, unsigned int n);
+    #include "Sound.h"
+    #include "display_backend.h"
+
 }
-
-#define AUDIO_BUFFER_LEN  (256) // frames pulled per callback
-#define PCM_RING_SIZE     (8192) // samples in ring buffer (tune as needed)
-
-static short pcm_ring[PCM_RING_SIZE];
-static volatile unsigned int pcm_w = 0; // write index
-static volatile unsigned int pcm_r = 0; // read index
-
-static inline unsigned int pcm_count(void) {
-    unsigned int w = pcm_w, r = pcm_r;
-    return (w >= r) ? (w - r) : (PCM_RING_SIZE - (r - w));
-}
-
-static inline unsigned int pcm_free(void) {
-    return PCM_RING_SIZE - 1 - pcm_count();
-}
+#include "AudioPlaySystem.h"
+static AudioPlaySystem audioPlayer;
 
 extern "C" unsigned int GetFreeAudio(void) {
-    return pcm_free();
+    static int cnt = 0;
+    if (cnt++ < 5) printf("[Audio] GetFreeAudio called, free=%u\n", display_backend_get_free_audio());
+    return display_backend_get_free_audio();
 }
 
 extern "C" unsigned int WriteAudio(short *buf, unsigned int n) {
-    unsigned int free = pcm_free();
-    if (n > free) n = free;
-    for (unsigned int i = 0; i < n; ++i) {
-        pcm_ring[pcm_w] = buf[i];
-        pcm_w = (pcm_w + 1) % PCM_RING_SIZE;
-    }
-    return n;
-}
-
-static void msx_audio_fill(short *stream, int len) {
-    // len is number of samples requested
-    for (int i = 0; i < len; ++i) {
-        if (pcm_count() == 0) {
-            stream[i] = 0; // underrun: output silence
-        } else {
-            stream[i] = pcm_ring[pcm_r];
-            pcm_r = (pcm_r + 1) % PCM_RING_SIZE;
-        }
-    }
+    static int cnt = 0;
+    if (cnt++ < 5) printf("[Audio] WriteAudio called: n=%u, SndRate=%u\n", n, GetSndRate());
+    return display_backend_write_audio(buf, n);
 }
 
 void emu_sndInit() {
-    tft.begin_audio(AUDIO_BUFFER_LEN*2, msx_audio_fill);
+    display_backend_audio_begin(NULL, 0);
+    audioPlayer.begin();
+    audioPlayer.start();
 }
 
-void emu_sndPlaySound(int, int, int) { /* Unused by fMSX path */ }
-void emu_sndPlayBuzz(int, int) { /* Unused by fMSX path */ }
+void emu_sndPlaySound(int, int, int) { /* not used on DVI path */ }
+void emu_sndPlayBuzz(int, int)       { /* not used on DVI path */ }
 
 #endif
+
 
 

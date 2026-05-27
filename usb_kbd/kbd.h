@@ -9,12 +9,12 @@
 
 #define KBD_KEY_BS         0x14 //8
 #define KBD_KEY_ENTER      13
-#define KBD_KEY_DOWN       1000
-#define KBD_KEY_UP         1001
+#define KBD_KEY_DOWN    1001
+#define KBD_KEY_UP         1005
 #define KBD_KEY_PGDN       1002
 #define KBD_KEY_PGUP       1003
-#define KBD_KEY_RIGHT      1004
-#define KBD_KEY_LEFT       1005
+#define KBD_KEY_RIGHT      1000
+#define KBD_KEY_LEFT       1004
 #define KBD_KEY_HOME       1006
 #define KBD_KEY_END        1007
 #define KBD_KEY_ESC        1008

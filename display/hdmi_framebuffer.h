@@ -4,6 +4,10 @@
 #include "stdint.h"
 #include <stdio.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     uint32_t *framebuffer;
     size_t framebuffer_len; // in words
@@ -21,5 +25,9 @@ extern void hdmi_framebuffer(hdmi_framebuffer_obj_t *self,
     uint16_t width, uint16_t height,
     uint16_t color_depth);
 extern void hdmi_framebuffer_vsync(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

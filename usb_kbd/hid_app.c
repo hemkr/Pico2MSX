@@ -435,6 +435,41 @@ static void process_kbd_report (hid_keyboard_report_t const *report)
   // Any shift key pressed
   bool is_shift_pressed = is_lshift_pressed || is_rshift_pressed;
   
+  // Process RELEASED keys BEFORE PRESSED keys so that in a single report
+  // transition (e.g. RIGHT→LEFT) the new PRESSED event is the last one
+  // to set iusbhk — otherwise RELEASED would clear the new key's code.
+  for (uint8_t i=0; i < 6; i++) 
+  {
+    if (prev_report.keycode[i]) 
+    {
+      bool found = is_key_held (report, prev_report.keycode[i]);
+      if (!found) 
+      {
+        int ch; 
+        int chshift;
+        if (klayout == KLAYOUT_UK) {
+          ch = conv_table_uk[prev_report.keycode[i]][0];
+          chshift = conv_table_uk[prev_report.keycode[i]][(is_shift_pressed?1:0)];
+        }
+        else if (klayout == KLAYOUT_BE) {
+          ch = conv_table_be[prev_report.keycode[i]][0];
+          chshift = conv_table_be[prev_report.keycode[i]][(is_shift_pressed?1:0)];
+        }
+        else if (klayout == KLAYOUT_ES) {
+          ch = conv_table_es[prev_report.keycode[i]][0];
+          chshift = conv_table_es[prev_report.keycode[i]][(is_shift_pressed?1:0)];
+        }
+        int flags = 0;
+        if (is_lshift_pressed) flags |= KBD_FLAG_LSHIFT;
+        if (is_lctrl_pressed) flags |= KBD_FLAG_LCONTROL;
+        if (is_lalt_pressed) flags |= KBD_FLAG_LALT;
+        if (is_rshift_pressed) flags |= KBD_FLAG_RSHIFT;
+        if (is_rctrl_pressed) flags |= KBD_FLAG_RCONTROL;
+        if (is_ralt_pressed) flags |= KBD_FLAG_RALT;        
+        kbd_signal_raw_key(prev_report.keycode[i], ch, chshift, flags, KEY_RELEASED);
+      } 
+    }
+  } 
   for (uint8_t i=0; i < 6; i++) 
   {
     if (report->keycode[i]) 
@@ -471,38 +506,6 @@ static void process_kbd_report (hid_keyboard_report_t const *report)
       }
     }
   }
-  for (uint8_t i=0; i < 6; i++) 
-  {
-    if (prev_report.keycode[i]) 
-    {
-      bool found = is_key_held (report, prev_report.keycode[i]);
-      if (!found) 
-      {
-        int ch; 
-        int chshift;
-        if (klayout == KLAYOUT_UK) {
-          ch = conv_table_uk[prev_report.keycode[i]][0];
-          chshift = conv_table_uk[prev_report.keycode[i]][(is_shift_pressed?1:0)];
-        }
-        else if (klayout == KLAYOUT_BE) {
-          ch = conv_table_be[prev_report.keycode[i]][0];
-          chshift = conv_table_be[prev_report.keycode[i]][(is_shift_pressed?1:0)];
-        }
-        else if (klayout == KLAYOUT_ES) {
-          ch = conv_table_es[prev_report.keycode[i]][0];
-          chshift = conv_table_es[prev_report.keycode[i]][(is_shift_pressed?1:0)];
-        }
-        int flags = 0;
-        if (is_lshift_pressed) flags |= KBD_FLAG_LSHIFT;
-        if (is_lctrl_pressed) flags |= KBD_FLAG_LCONTROL;
-        if (is_lalt_pressed) flags |= KBD_FLAG_LALT;
-        if (is_rshift_pressed) flags |= KBD_FLAG_RSHIFT;
-        if (is_rctrl_pressed) flags |= KBD_FLAG_RCONTROL;
-        if (is_ralt_pressed) flags |= KBD_FLAG_RALT;        
-        kbd_signal_raw_key(prev_report.keycode[i], ch, chshift, flags, KEY_RELEASED);
-      } 
-    }
-  } 
   // Capture previous modifier before updating prev_report
   uint8_t prev_mod = prev_report.modifier;
   prev_report = *report;
@@ -597,15 +600,22 @@ void tuh_hid_mount_cb(uint8_t dev_addr, uint8_t instance, uint8_t const* desc_re
   printf("HID device address = %d, instance = %d is mounted\r\n", dev_addr, instance);
   printf("VID = %04x, PID = %04x\r\n", vid, pid);
 
-  /* Ask for a report only if this is a keyboard device */
   uint8_t const itf_protocol = tuh_hid_interface_protocol(dev_addr, instance);
-  if (itf_protocol == HID_ITF_PROTOCOL_KEYBOARD) 
+  printf("Interface protocol: %d\r\n", itf_protocol);
+
+  // NOTE: We do NOT call tuh_hid_set_protocol() here because TinyUSB
+  // already calls SET_PROTOCOL internally during hidh_set_config()
+  // (before mount_cb fires). We control which protocol is set via
+  // tuh_hid_set_default_protocol() called before tuh_init().
+
+  bool report_ok = tuh_hid_receive_report(dev_addr, instance);
+  printf("tuh_hid_receive_report() = %d\r\n", report_ok);
+
+  if (itf_protocol == HID_ITF_PROTOCOL_KEYBOARD)
   {
     printf("Keyboard found\n");
-    tuh_hid_receive_report (dev_addr, instance);
   } else {
     printf("not a keyboard found (but asking for reports anyway!)\n");
-    tuh_hid_receive_report (dev_addr, instance);
   }
 }
 
@@ -624,7 +634,7 @@ void tuh_hid_report_received_cb(uint8_t dev_addr, uint8_t instance, uint8_t cons
   //   a keyboard, since we are only asking for reports from keyboards.
   // But, for future expansion, we should be systematic
   int proto = tuh_hid_interface_protocol (dev_addr, instance);
-  
+
   // Debug: print first report from each instance to see what we're getting
   static uint8_t first_report_printed[2] = {0, 0};
   if (!first_report_printed[instance] && len > 0) {
@@ -635,11 +645,21 @@ void tuh_hid_report_received_cb(uint8_t dev_addr, uint8_t instance, uint8_t cons
     printf("\r\n");
     first_report_printed[instance] = 1;
   }
-  
-  switch (proto) 
+
+  // Periodic alive counter — every 100 reports, log that we're still receiving
+  static uint32_t report_count[2] = {0, 0};
+  report_count[instance]++;
+  if ((report_count[instance] % 100) == 0) {
+    printf("[USB] Report received: instance=%d, count=%u, len=%d, proto=%d\r\n",
+           instance, report_count[instance], len, proto);
+  }
+
+  switch (proto)
   {
     case HID_ITF_PROTOCOL_KEYBOARD:
-      process_kbd_report ((hid_keyboard_report_t const*) report);
+      if (len >= 8) {
+        process_kbd_report ((hid_keyboard_report_t const*) report);
+      }
       break;
     case HID_ITF_PROTOCOL_NONE:
 		if (len >= 8) {
@@ -657,7 +677,7 @@ void tuh_hid_report_received_cb(uint8_t dev_addr, uint8_t instance, uint8_t cons
   }
 
   // Ask the device for the next report -- asking for a report is a
-  //   one-off operation, and must be repeated by the application. 
+  //   one-off operation, and must be repeated by the application.
   tuh_hid_receive_report (dev_addr, instance);
 
   /*

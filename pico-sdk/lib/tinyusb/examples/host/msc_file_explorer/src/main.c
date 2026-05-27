@@ -56,20 +56,17 @@
  */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 
 #include "bsp/board_api.h"
 #include "tusb.h"
 
+#include "msc_app.h"
+
 //--------------------------------------------------------------------+
 // MACRO CONSTANT TYPEDEF PROTYPES
 //--------------------------------------------------------------------+
 void led_blinking_task(void);
-
-// from msc_app.c
-extern bool msc_app_init(void);
-extern void msc_app_task(void);
 
 /*------------- MAIN -------------*/
 int main(void) {
@@ -84,9 +81,7 @@ int main(void) {
   };
   tusb_init(BOARD_TUH_RHPORT, &host_init);
 
-  if (board_init_after_tusb) {
-    board_init_after_tusb();
-  }
+  board_init_after_tusb();
 
   msc_app_init();
 

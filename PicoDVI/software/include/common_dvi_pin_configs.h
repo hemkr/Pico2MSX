@@ -131,9 +131,7 @@ static const struct dvi_serialiser_cfg waveshare_rp2040_pizero = {
 static const struct dvi_serialiser_cfg waveshare_rp2350_pizero_cfg = {
     .pio = DVI_DEFAULT_PIO_INST,
     .sm_tmds = {0, 1, 2},
-	// HDMI TMDS channel order is 0=Blue, 1=Green, 2=Red.
-	// Waveshare RP2350-PiZero routes D0->GPIO32 (Blue), D1->GPIO34 (Green), D2->GPIO36 (Red)
-	.pins_tmds = {32, 34, 36},
+    .pins_tmds = {36, 34, 32},
     .pins_clk = 38,
     .invert_diffpairs = false,
     .prog_offs = 0

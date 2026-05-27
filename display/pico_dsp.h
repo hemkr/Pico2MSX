@@ -74,9 +74,10 @@ public:
   void startRefresh(void);
   void stopRefresh();
   
-#ifdef HAS_SND  
+#ifdef USE_LIBDVI
   void begin_audio(int samplesize, void (*callback)(short * stream, int len));
   void end_audio();
+  void handle_audio(int samplesize);
   void * get_buffer_audio();
 #endif
 

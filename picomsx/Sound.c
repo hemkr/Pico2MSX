@@ -658,7 +658,7 @@ unsigned int InitSound(unsigned int Rate,unsigned int Latency)
 #if defined(WINDOWS)
   Rate = WinInitSound(Rate,Latency);
 #else
-  Rate = 22050; //InitAudio(Rate,Latency);
+  Rate = 44100; // DVI HDMI audio ring은 44100 Hz로 초기화됨
 #endif
 
   /* Rate=0 means silence */

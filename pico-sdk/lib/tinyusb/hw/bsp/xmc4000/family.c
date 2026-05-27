@@ -24,6 +24,10 @@
  * This file is part of the TinyUSB stack.
  */
 
+/* metadata:
+   manufacturer: Infineon
+*/
+
 #include "xmc_gpio.h"
 #include "xmc_scu.h"
 #include "xmc_uart.h"
@@ -74,7 +78,7 @@ void board_init(void) {
   SysTick_Config(SystemCoreClock / 1000);
 
 #elif CFG_TUSB_OS == OPT_OS_FREERTOS
-  // Explicitly disable systick to prevent its ISR runs before scheduler start
+  // Explicitly disable systick to prevent its ISR from running before scheduler start
   SysTick->CTRL &= ~1U;
 
   // If freeRTOS is used, IRQ priority is limit by max syscall ( smaller is higher )
