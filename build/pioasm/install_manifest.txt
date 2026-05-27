@@ -1,5 +1,0 @@
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm-install/pioasm/pioasm
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm-install/pioasm/pioasmTargets.cmake
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm-install/pioasm/pioasmTargets-release.cmake
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm-install/pioasm/pioasmConfig.cmake
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm-install/pioasm/pioasmConfigVersion.cmake

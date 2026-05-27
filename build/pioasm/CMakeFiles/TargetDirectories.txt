@@ -1,7 +1,0 @@
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm/CMakeFiles/pioasm.dir
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm/CMakeFiles/edit_cache.dir
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm/CMakeFiles/rebuild_cache.dir
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm/CMakeFiles/list_install_components.dir
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm/CMakeFiles/install.dir
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm/CMakeFiles/install/local.dir
-/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm/CMakeFiles/install/strip.dir

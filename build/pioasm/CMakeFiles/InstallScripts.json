@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/rafa/Devel/minibotsDevel/MCUME_ada/MCUME/picomsx_pico2_standalone/build/pioasm/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
