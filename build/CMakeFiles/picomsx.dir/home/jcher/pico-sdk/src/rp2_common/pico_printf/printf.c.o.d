@@ -25,10 +25,10 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /usr/arm-none-eabi/include/assert.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \

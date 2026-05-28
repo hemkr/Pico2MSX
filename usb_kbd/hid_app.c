@@ -885,33 +885,22 @@ static gamepad_report_info_t *find_gamepad_report_info(uint8_t instance, const u
     return NULL;
 }
 
-static void apply_hat(uint8_t hat, uint16_t *decoded_report)
+static void apply_hat(uint8_t hat, uint16_t *decoded_report, uint8_t instance)
 {
+    uint16_t up    = (instance == 0) ? MASK_JOY2_UP    : MASK_JOY1_UP;
+    uint16_t down  = (instance == 0) ? MASK_JOY2_DOWN  : MASK_JOY1_DOWN;
+    uint16_t left  = (instance == 0) ? MASK_JOY2_LEFT  : MASK_JOY1_LEFT;
+    uint16_t right = (instance == 0) ? MASK_JOY2_RIGHT : MASK_JOY1_RIGHT;
+
     switch (hat) {
-        case GAMEPAD_HAT_UP:
-            *decoded_report |= MASK_JOY2_UP;
-            break;
-        case GAMEPAD_HAT_UP_RIGHT:
-            *decoded_report |= MASK_JOY2_UP | MASK_JOY2_LEFT;
-            break;
-        case GAMEPAD_HAT_RIGHT:
-            *decoded_report |= MASK_JOY2_LEFT;
-            break;
-        case GAMEPAD_HAT_DOWN_RIGHT:
-            *decoded_report |= MASK_JOY2_DOWN | MASK_JOY2_LEFT;
-            break;
-        case GAMEPAD_HAT_DOWN:
-            *decoded_report |= MASK_JOY2_DOWN;
-            break;
-        case GAMEPAD_HAT_DOWN_LEFT:
-            *decoded_report |= MASK_JOY2_DOWN | MASK_JOY2_RIGHT;
-            break;
-        case GAMEPAD_HAT_LEFT:
-            *decoded_report |= MASK_JOY2_RIGHT;
-            break;
-        case GAMEPAD_HAT_UP_LEFT:
-            *decoded_report |= MASK_JOY2_UP | MASK_JOY2_RIGHT;
-            break;
+        case GAMEPAD_HAT_UP:         *decoded_report |= up;           break;
+        case GAMEPAD_HAT_UP_RIGHT:   *decoded_report |= up | left;    break;
+        case GAMEPAD_HAT_RIGHT:      *decoded_report |= left;         break;
+        case GAMEPAD_HAT_DOWN_RIGHT: *decoded_report |= down | left;  break;
+        case GAMEPAD_HAT_DOWN:       *decoded_report |= down;         break;
+        case GAMEPAD_HAT_DOWN_LEFT:  *decoded_report |= down | right; break;
+        case GAMEPAD_HAT_LEFT:       *decoded_report |= right;        break;
+        case GAMEPAD_HAT_UP_LEFT:    *decoded_report |= up | right;   break;
     }
 }
 
@@ -923,13 +912,19 @@ static bool process_parsed_gamepad_report(uint8_t instance, const uint8_t *repor
 
     uint16_t decoded_report = 0;
 
+    uint16_t mask_btn   = (instance == 0) ? MASK_JOY2_BTN   : MASK_JOY1_BTN;
+    uint16_t mask_up    = (instance == 0) ? MASK_JOY2_UP    : MASK_JOY1_UP;
+    uint16_t mask_down  = (instance == 0) ? MASK_JOY2_DOWN  : MASK_JOY1_DOWN;
+    uint16_t mask_left  = (instance == 0) ? MASK_JOY2_LEFT  : MASK_JOY1_LEFT;
+    uint16_t mask_right = (instance == 0) ? MASK_JOY2_RIGHT : MASK_JOY1_RIGHT;
+
     if (info->x_size) {
         int32_t x = (info->x_min < 0) ? extract_signed_bits(report, info->x_offset, info->x_size)
                                       : (int32_t)extract_bits(report, info->x_offset, info->x_size);
         int32_t center = (info->x_min + info->x_max) / 2;
         int32_t deadzone = (info->x_max - info->x_min) / 4;
-        if (x < center - deadzone) decoded_report |= MASK_JOY2_RIGHT;
-        if (x > center + deadzone) decoded_report |= MASK_JOY2_LEFT;
+        if (x < center - deadzone) decoded_report |= mask_right;
+        if (x > center + deadzone) decoded_report |= mask_left;
     }
 
     if (info->y_size) {
@@ -937,39 +932,43 @@ static bool process_parsed_gamepad_report(uint8_t instance, const uint8_t *repor
                                       : (int32_t)extract_bits(report, info->y_offset, info->y_size);
         int32_t center = (info->y_min + info->y_max) / 2;
         int32_t deadzone = (info->y_max - info->y_min) / 4;
-        if (y < center - deadzone) decoded_report |= MASK_JOY2_UP;
-        if (y > center + deadzone) decoded_report |= MASK_JOY2_DOWN;
+        if (y < center - deadzone) decoded_report |= mask_up;
+        if (y > center + deadzone) decoded_report |= mask_down;
     }
 
     if (info->hat_size) {
-        apply_hat((uint8_t)extract_bits(report, info->hat_offset, info->hat_size), &decoded_report);
+        uint8_t hat = (uint8_t)extract_bits(report, info->hat_offset, info->hat_size);
+        printf("[HAT] instance=%d value=%d\r\n", instance, hat);
+        apply_hat(hat, &decoded_report, instance);
     }
 
     if (info->dpad_size) {
-        if (extract_bits(report, info->dpad_up_offset, info->dpad_size)) {
-            decoded_report |= MASK_JOY2_UP;
-        }
-        if (extract_bits(report, info->dpad_down_offset, info->dpad_size)) {
-            decoded_report |= MASK_JOY2_DOWN;
-        }
-        if (extract_bits(report, info->dpad_left_offset, info->dpad_size)) {
-            decoded_report |= MASK_JOY2_LEFT;
-        }
-        if (extract_bits(report, info->dpad_right_offset, info->dpad_size)) {
-            decoded_report |= MASK_JOY2_RIGHT;
-        }
+        if (extract_bits(report, info->dpad_up_offset,    info->dpad_size)) decoded_report |= mask_up;
+        if (extract_bits(report, info->dpad_down_offset,  info->dpad_size)) decoded_report |= mask_down;
+        if (extract_bits(report, info->dpad_left_offset,  info->dpad_size)) decoded_report |= mask_left;
+        if (extract_bits(report, info->dpad_right_offset, info->dpad_size)) decoded_report |= mask_right;
     }
 
     for (uint8_t i = 0; i < info->button_count; i++) {
         uint16_t offset = info->button_offset + (uint16_t)i * info->button_size;
         if (extract_bits(report, offset, info->button_size)) {
-            if (i < 4) decoded_report |= MASK_JOY2_BTN;
-            else if (i == 8 || i == 10) decoded_report |= MASK_KEY_USER1;
-            else if (i == 9 || i == 11) decoded_report |= MASK_KEY_USER2;
+            printf("[BTN] instance=%d index=%d pressed\r\n", instance, i);
+            if      (i == 15)             decoded_report |= mask_btn;        // A버튼
+            else if (i == 14)          decoded_report | MASK_KEY_USER3; //B버튼
+            else if (i == 13)          decoded_report |= MASK_KEY_USER2;
+            else if (i == 1)             decoded_report |= MASK_KEY_USER2;
+            else if (i == 2)             decoded_report |= mask_btn;        // A버튼
+            else if (i == 0)          decoded_report |= MASK_KEY_USER4; //B버튼
+            else if (i == 8  || i == 10) decoded_report |= MASK_KEY_USER1;  // L2, L1
+            else if (i == 9  || i == 11) decoded_report |= MASK_KEY_USER3;  // R2, R1
+            else if (i == 4)             decoded_report |= mask_up;
+            else if (i == 5)             decoded_report |= mask_left;
+            else if (i == 6)             decoded_report |= mask_down;
+            else if (i == 7)             decoded_report |= mask_right;
         }
     }
 
-    kbd_signal_raw_gamepad(decoded_report);
+    kbd_signal_raw_gamepad(instance, decoded_report);
     return true;
 }
 
@@ -980,46 +979,28 @@ static void process_gamepad_report(uint8_t instance, const uint8_t *report, uint
 
     uint16_t decoded_report = 0;
 
+    uint16_t mask_btn   = (instance == 0) ? MASK_JOY2_BTN   : MASK_JOY1_BTN;
+    uint16_t mask_up    = (instance == 0) ? MASK_JOY2_UP    : MASK_JOY1_UP;
+    uint16_t mask_down  = (instance == 0) ? MASK_JOY2_DOWN  : MASK_JOY1_DOWN;
+    uint16_t mask_left  = (instance == 0) ? MASK_JOY2_LEFT  : MASK_JOY1_LEFT;
+    uint16_t mask_right = (instance == 0) ? MASK_JOY2_RIGHT : MASK_JOY1_RIGHT;
+
     // Directional Controls
-    // Left is when byte 2 is close to 0x00
-    if (len > 0 && report[0] < 0x40) { 
-        decoded_report |= MASK_JOY2_RIGHT;  // Note: swapped due to gameboy mapping
-    }
-    // Right is when byte 2 is close to 0xFF
-    if (len > 0 && report[0] > 0xB0) { 
-        decoded_report |= MASK_JOY2_LEFT;   // Note: swapped due to gameboy mapping
-    }
-    // Up is when byte 1 is close to 0x00
-    if (len > 1 && report[1] < 0x40) { 
-        decoded_report |= MASK_JOY2_UP; 
-    }
-    // Down is when byte 1 is close to 0xFF
-    if (len > 1 && report[1] > 0xB0) { 
-        decoded_report |= MASK_JOY2_DOWN; 
-    }
+    if (len > 0 && report[0] < 0x40) decoded_report |= mask_right;
+    if (len > 0 && report[0] > 0xB0) decoded_report |= mask_left;
+    if (len > 1 && report[1] < 0x40) decoded_report |= mask_up;
+    if (len > 1 && report[1] > 0xB0) decoded_report |= mask_down;
 
-    // A Button (check for 0x2F or 0x1F in byte 6)
-    if (len > 5 && ((report[5] & 0x20) || (report[5] & 0x10))) { 
-        decoded_report |= MASK_KEY_USER3; 
-    }
+    // A Button
+    if (len > 5 && ((report[5] & 0x20) || (report[5] & 0x10))) decoded_report |= MASK_KEY_USER3;
+    // B Button
+    if (len > 5 && ((report[5] & 0x40) || (report[5] & 0x80))) decoded_report |= mask_btn;
+    // Select
+    if (len > 6 && report[6] & 0x10) decoded_report |= MASK_KEY_USER1;
+    // Start
+    if (len > 6 && report[6] & 0x20) decoded_report |= MASK_KEY_USER2;
 
-    // B Button (check for 0x4F or 0x8F in byte 6)
-    if (len > 5 && ((report[5] & 0x40) || (report[5] & 0x80))) { 
-        decoded_report |= MASK_JOY2_BTN; 
-    }
-
-    // Select Button (byte 7, bit 0x10)
-    if (len > 6 && report[6] & 0x10) { 
-        decoded_report |= MASK_KEY_USER1; 
-    }
-
-    // Start Button (byte 7, bit 0x20)
-    if (len > 6 && report[6] & 0x20) { 
-        decoded_report |= MASK_KEY_USER2; 
-    }
-
-    // Send the decoded gamepad state
-    kbd_signal_raw_gamepad(decoded_report);
+    kbd_signal_raw_gamepad(instance, decoded_report);
 }
 
 //--------------------------------------------------------------------+

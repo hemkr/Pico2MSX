@@ -1,4 +1,4 @@
-// Padded and checksummed version of: /home/jcher/바탕화면/Pico2MSX/build/pico-sdk/src/rp2350/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-sdk/src/rp2350/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

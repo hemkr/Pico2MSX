@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o: \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_host.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_host.c \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdbool.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdint.h \
  /usr/arm-none-eabi/include/stdint.h \
@@ -30,10 +30,10 @@ CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o: \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /usr/arm-none-eabi/include/assert.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -69,18 +69,18 @@ CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o: \
  /home/jcher/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb.h \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_configuration.h \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_definitions.h \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_ll.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_configuration.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_definitions.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_ll.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sysinfo.h \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_tx.pio.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_tx.pio.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/sdk_compat.h \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_rx.pio.h \
- /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_crc.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/sdk_compat.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_rx.pio.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_crc.h \
  /home/jcher/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
  /home/jcher/pico-sdk/src/common/pico_time/include/pico/time.h \

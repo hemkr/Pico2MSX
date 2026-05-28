@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jcher/바탕화면/Pico2MSX
+CMAKE_SOURCE_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jcher/바탕화면/Pico2MSX/build
+CMAKE_BINARY_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/jcher/바탕화면/Pico2MSX/build/CMakeFiles /home/jcher/바탕화면/Pico2MSX/build/pico-pio-usb//CMakeFiles/progress.marks
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcher/바탕화면/Pico2MSX/build/CMakeFiles 0
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-pio-usb//CMakeFiles/progress.marks
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/clean
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/preinstall
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/preinstall
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir/rule:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir/rule
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir/rule
 .PHONY : pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ pico_pio_usb_usb_tx_pio_h: pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir
 
 # fast build rule for target.
 pico_pio_usb_usb_tx_pio_h/fast:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir/build.make pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir/build
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir/build.make pico-pio-usb/CMakeFiles/pico_pio_usb_usb_tx_pio_h.dir/build
 .PHONY : pico_pio_usb_usb_tx_pio_h/fast
 
 # Convenience name for target.
 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/rule:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/rule
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/rule
 .PHONY : pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/rule
 
 # Convenience name for target.
@@ -141,7 +141,7 @@ pico_pio_usb_usb_rx_pio_h: pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir
 
 # fast build rule for target.
 pico_pio_usb_usb_rx_pio_h/fast:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/build.make pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/build
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(MAKE) $(MAKESILENT) -f pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/build.make pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/build
 .PHONY : pico_pio_usb_usb_rx_pio_h/fast
 
 # Help Target
@@ -165,6 +165,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

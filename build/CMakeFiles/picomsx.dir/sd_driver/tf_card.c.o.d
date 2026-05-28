@@ -1,6 +1,6 @@
 CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o: \
- /home/jcher/바탕화면/Pico2MSX/sd_driver/tf_card.c \
- /home/jcher/바탕화면/Pico2MSX/sd_driver/tf_card.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/sd_driver/tf_card.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/sd_driver/tf_card.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
@@ -18,10 +18,10 @@ CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o: \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stddef.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -43,11 +43,11 @@ CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o: \
  /home/jcher/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/ff.h \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffconf.h \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/../ffconf.h \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/../../ffconf.h \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/diskio.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ff.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffconf.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/../ffconf.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/../../ffconf.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/diskio.h \
  /home/jcher/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdarg.h \
@@ -77,7 +77,7 @@ CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
- /home/jcher/바탕화면/Pico2MSX/config/iopins.h \
- /home/jcher/바탕화면/Pico2MSX/config/platform_config.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/program_config.h \
- /home/jcher/바탕화면/Pico2MSX/config/board_waveshare.h
+ /home/jcher/바탕화면/pico-test/Pico2MSX/config/iopins.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/config/platform_config.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/program_config.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/config/board_waveshare.h

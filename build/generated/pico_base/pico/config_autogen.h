@@ -4,7 +4,7 @@
 
 // based on PICO_CONFIG_HEADER_FILES:
 
-#include "/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h"
+#include "/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h"
 #include "/home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h"
 
 // based on PICO_RP2350_ARM_S_CONFIG_HEADER_FILES:

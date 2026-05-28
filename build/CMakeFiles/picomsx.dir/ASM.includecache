@@ -312,48 +312,48 @@ pico.h
 pico/runtime.h
 /home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/include/pico/pico/runtime.h
 
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h
 
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h
 hardware/platform_defs.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/hardware/platform_defs.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/hardware/platform_defs.h
 pico/config.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/pico/config.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/pico/config.h
 
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.S
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.S
 hardware/regs/addressmap.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/hardware/regs/addressmap.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/hardware/regs/addressmap.h
 hardware/regs/sio.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/hardware/regs/sio.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/hardware/regs/sio.h
 dvi_config_defs.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h
 
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_armv6m.S
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_armv6m.S
 hardware/regs/addressmap.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/hardware/regs/addressmap.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/hardware/regs/addressmap.h
 hardware/regs/sio.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/hardware/regs/sio.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/hardware/regs/sio.h
 sprite_asm_const.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h
 
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h
 
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/tile_armv6m.S
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/tile_armv6m.S
 hardware/regs/addressmap.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/hardware/regs/addressmap.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/hardware/regs/addressmap.h
 hardware/regs/sio.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/hardware/regs/sio.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/hardware/regs/sio.h
 sprite_asm_const.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h
 
-/home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio_utils.S
+/home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio_utils.S
 hardware/regs/addressmap.h
-/home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/hardware/regs/addressmap.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/hardware/regs/addressmap.h
 hardware/regs/sio.h
-/home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/hardware/regs/sio.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/hardware/regs/sio.h
 
 generated/pico_base/pico/config_autogen.h
-/home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h
+/home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h
 -
 /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h
 -

@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/flash/flash_t.c.o: \
- /home/jcher/바탕화면/Pico2MSX/flash/flash_t.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/flash/flash_t.c \
  /usr/arm-none-eabi/include/string.h /usr/arm-none-eabi/include/_ansi.h \
  /usr/arm-none-eabi/include/newlib.h \
  /usr/arm-none-eabi/include/_newlib_version.h \
@@ -17,7 +17,7 @@ CMakeFiles/picomsx.dir/flash/flash_t.c.o: \
  /usr/arm-none-eabi/include/sys/_locale.h \
  /usr/arm-none-eabi/include/strings.h \
  /usr/arm-none-eabi/include/sys/string.h \
- /home/jcher/바탕화면/Pico2MSX/flash/flash_t.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/flash/flash_t.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
@@ -27,10 +27,10 @@ CMakeFiles/picomsx.dir/flash/flash_t.c.o: \
  /usr/arm-none-eabi/include/stdint.h \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -75,10 +75,10 @@ CMakeFiles/picomsx.dir/flash/flash_t.c.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
- /home/jcher/바탕화면/Pico2MSX/config/platform_config.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/program_config.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/config/platform_config.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/program_config.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
- /home/jcher/바탕화면/Pico2MSX/display/emuapi.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/emucfg.h
+ /home/jcher/바탕화면/pico-test/Pico2MSX/display/emuapi.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/emucfg.h

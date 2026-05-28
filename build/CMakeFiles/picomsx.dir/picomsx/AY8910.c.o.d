@@ -1,7 +1,7 @@
 CMakeFiles/picomsx.dir/picomsx/AY8910.c.o: \
- /home/jcher/바탕화면/Pico2MSX/picomsx/AY8910.c \
- /home/jcher/바탕화면/Pico2MSX/picomsx/AY8910.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/Sound.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/AY8910.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/AY8910.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Sound.h \
  /usr/arm-none-eabi/include/string.h /usr/arm-none-eabi/include/_ansi.h \
  /usr/arm-none-eabi/include/newlib.h \
  /usr/arm-none-eabi/include/_newlib_version.h \

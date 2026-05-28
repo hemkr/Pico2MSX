@@ -508,6 +508,11 @@ int emu_ReadKeys(void)
   if (usbnavpad & MASK_JOY2_LEFT) retval |= MASK_JOY2_LEFT;
   if (usbnavpad & MASK_JOY2_RIGHT) retval |= MASK_JOY2_RIGHT;
   if (usbnavpad & MASK_JOY2_BTN) retval |= MASK_JOY2_BTN;
+  if (usbnavpad & MASK_JOY1_UP) retval |= MASK_JOY1_UP;       // 추가
+  if (usbnavpad & MASK_JOY1_DOWN) retval |= MASK_JOY1_DOWN;   // 추가
+  if (usbnavpad & MASK_JOY1_LEFT) retval |= MASK_JOY1_LEFT;   // 추가
+  if (usbnavpad & MASK_JOY1_RIGHT) retval |= MASK_JOY1_RIGHT; // 추가
+  if (usbnavpad & MASK_JOY1_BTN) retval |= MASK_JOY1_BTN;     // 추가
   if (usbnavpad & MASK_KEY_USER1) retval |= MASK_KEY_USER1;
   if (usbnavpad & MASK_KEY_USER2) retval |= MASK_KEY_USER2;
   if (usbnavpad & MASK_KEY_USER3) retval |= MASK_KEY_USER3;
@@ -1290,7 +1295,7 @@ static void signal_joy (int code, int pressed, int flags) {
 void kbd_signal_raw_key (int keycode, int code, int codeshifted, int flags, int pressed) {
   // Debug logging disabled for production use
   // Uncomment below for USB keyboard debugging
-
+/*
   if (pressed == KEY_PRESSED) {
     printf("MSX: Key DOWN - keycode=0x%02X code=0x%02X shifted=0x%02X flags=0x%02X\r\n", 
            keycode, code, codeshifted, flags);
@@ -1298,7 +1303,7 @@ void kbd_signal_raw_key (int keycode, int code, int codeshifted, int flags, int 
     printf("MSX: Key UP   - keycode=0x%02X code=0x%02X shifted=0x%02X flags=0x%02X\r\n", 
            keycode, code, codeshifted, flags);
   }
-
+*/
   
   //printf("k %d\r\n", keycode); 
   // Treat F-keys (F1..F12) as pure keyboard input regardless of joystick mode when not in menu
@@ -1987,8 +1992,16 @@ int keypressed = emu_ReadKeys();
 
 }
 
-void kbd_signal_raw_gamepad(uint16_t new_pad_state) {
-    usbnavpad = new_pad_state;
+void kbd_signal_raw_gamepad(uint8_t instance, uint16_t new_pad_state) {
+    static uint16_t usbnavpad_joy[CFG_TUH_HID] = {0};
+    if (instance < CFG_TUH_HID) {
+        usbnavpad_joy[instance] = new_pad_state;
+    }
+    // 모든 인스턴스 OR 합산
+    usbnavpad = 0;
+    for (int i = 0; i < CFG_TUH_HID; i++) {
+        usbnavpad |= usbnavpad_joy[i];
+    }
 }
 
 void emu_start(void)

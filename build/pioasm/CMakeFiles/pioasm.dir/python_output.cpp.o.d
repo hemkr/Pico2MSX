@@ -195,4 +195,4 @@ CMakeFiles/pioasm.dir/python_output.cpp.o: \
  /usr/include/c++/16.1.1/bits/stl_relops.h \
  /home/jcher/pico-sdk/tools/pioasm/gen/location.h \
  /usr/include/c++/16.1.1/iostream \
- /home/jcher/바탕화면/Pico2MSX/build/pioasm/version.h
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/version.h

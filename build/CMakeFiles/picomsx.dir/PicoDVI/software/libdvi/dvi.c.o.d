@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi.c \
  /usr/arm-none-eabi/include/stdlib.h \
  /usr/arm-none-eabi/include/machine/ieeefp.h \
  /usr/arm-none-eabi/include/_ansi.h /usr/arm-none-eabi/include/newlib.h \
@@ -26,10 +26,10 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: \
  /usr/arm-none-eabi/include/stdint.h \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -55,7 +55,7 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/m33.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/nvic.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi.h \
  /home/jcher/pico-sdk/src/common/pico_util/include/pico/util/queue.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
@@ -64,10 +64,10 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: \
  /home/jcher/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pio.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pio.h \
@@ -80,8 +80,8 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/util_queue_u32_inline.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/data_packet.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/audio_ring.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/util_queue_u32_inline.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/data_packet.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/audio_ring.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_interp/include/hardware/interp.h

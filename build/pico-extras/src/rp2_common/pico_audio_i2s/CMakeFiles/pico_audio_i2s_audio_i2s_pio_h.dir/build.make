@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jcher/바탕화면/Pico2MSX
+CMAKE_SOURCE_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jcher/바탕화면/Pico2MSX/build
+CMAKE_BINARY_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX/build
 
 # Utility rule file for pico_audio_i2s_audio_i2s_pio_h.
 
@@ -68,9 +68,9 @@ include pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audi
 
 pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h: pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio.h
 
-pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio.h: /home/jcher/바탕화면/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating audio_i2s.pio.h"
-	cd /home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s && ../../../../pioasm-install/pioasm/pioasm -o c-sdk -v 1 /home/jcher/바탕화면/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio /home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio.h
+pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio.h: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating audio_i2s.pio.h"
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s && ../../../../pioasm-install/pioasm/pioasm -o c-sdk -v 1 /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.pio.h
 
 pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/codegen:
 .PHONY : pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/codegen
@@ -85,10 +85,10 @@ pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pi
 .PHONY : pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/build
 
 pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/clean:
-	cd /home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s && $(CMAKE_COMMAND) -P CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/cmake_clean.cmake
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s && $(CMAKE_COMMAND) -P CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/cmake_clean.cmake
 .PHONY : pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/clean
 
 pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/depend:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/Pico2MSX /home/jcher/바탕화면/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s /home/jcher/바탕화면/Pico2MSX/build /home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s /home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/DependInfo.cmake "--color=$(COLOR)" pico_audio_i2s_audio_i2s_pio_h
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/pico-test/Pico2MSX /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s /home/jcher/바탕화면/pico-test/Pico2MSX/build /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/DependInfo.cmake "--color=$(COLOR)" pico_audio_i2s_audio_i2s_pio_h
 .PHONY : pico-extras/src/rp2_common/pico_audio_i2s/CMakeFiles/pico_audio_i2s_audio_i2s_pio_h.dir/depend
 

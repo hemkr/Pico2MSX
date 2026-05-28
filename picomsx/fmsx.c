@@ -125,7 +125,7 @@ byte MSXVersion  = DEFAULT_MSX_VERSION; /* 0=MSX1,1=MSX2,2=MSX2+  */
 byte MSXVersion  = 0;              /* Default to MSX1        */
 #endif
 byte JoyTypeA    = 1;              /* 0=None,1=Joystick,     */
-byte JoyTypeB    = 0;              /* 2=MouseAsJstk,3=Mouse  */
+byte JoyTypeB    = 1;              /* 2=MouseAsJstk,3=Mouse  */
 byte ROMTypeA    = MAXMAPPERS;     /* MegaROM types          */
 byte ROMTypeB    = MAXMAPPERS;
 int  RAMPages    = 4;              /* Number of RAM pages    */
@@ -293,6 +293,7 @@ char *ROMNames[MAXMAPPERS+1] =
 };
 
 static byte JoyState;
+static byte JoyState1;
 static int ik;     // joypad key
 static int ihk;    // I2C keyboard key
 static int iusbhk; // USB keyboard key
@@ -1090,7 +1091,15 @@ void msx_Step(void) {
   if (k & MASK_JOY2_RIGHT) JoyState |= 0x04;
   if (k & MASK_JOY2_LEFT)  JoyState |= 0x08;
   if (k & MASK_JOY2_BTN)   JoyState |= 0x10;
-  if (k & MASK_KEY_USER2)  JoyState |= 0x20;
+  if (k & MASK_KEY_USER3)  JoyState |= 0x20;  // B버튼
+
+  JoyState1 = 0;
+  if (k & MASK_JOY1_DOWN)  JoyState1 |= 0x02;
+  if (k & MASK_JOY1_UP)    JoyState1 |= 0x01;
+  if (k & MASK_JOY1_RIGHT) JoyState1 |= 0x04;
+  if (k & MASK_JOY1_LEFT)  JoyState1 |= 0x08;
+  if (k & MASK_JOY1_BTN)   JoyState1 |= 0x10;
+   if (k & MASK_KEY_USER4)  JoyState1 |= 0x20;  // B버튼
 
   // KeyMap 전체 초기화 (모든 키 해제 상태)
   memset(KeyMap, 0xFF, 16);
@@ -1169,7 +1178,7 @@ void Keyboard(void)
 {
 }
 
-byte Joystick(register byte N) { return(JoyState); }
+byte Joystick(register byte N) { return(N ? JoyState1 : JoyState); }
 
 /** Mouse() **************************************************/
 /** Query coordinates of a mouse connected to port N.       **/

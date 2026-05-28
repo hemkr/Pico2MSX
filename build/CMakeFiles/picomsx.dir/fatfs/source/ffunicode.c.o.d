@@ -1,9 +1,9 @@
 CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o: \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffunicode.c \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/ff.h \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffconf.h \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/../ffconf.h \
- /home/jcher/바탕화면/Pico2MSX/fatfs/source/../../ffconf.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffunicode.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ff.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffconf.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/../ffconf.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/../../ffconf.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdint.h \
  /usr/arm-none-eabi/include/stdint.h \
  /usr/arm-none-eabi/include/machine/_default_types.h \

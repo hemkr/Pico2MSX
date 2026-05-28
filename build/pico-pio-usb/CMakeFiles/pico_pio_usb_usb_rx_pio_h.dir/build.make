@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jcher/바탕화면/Pico2MSX
+CMAKE_SOURCE_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jcher/바탕화면/Pico2MSX/build
+CMAKE_BINARY_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX/build
 
 # Utility rule file for pico_pio_usb_usb_rx_pio_h.
 
@@ -68,9 +68,9 @@ include pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/progress.make
 
 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h: pico-pio-usb/usb_rx.pio.h
 
-pico-pio-usb/usb_rx.pio.h: /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_rx.pio
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating usb_rx.pio.h"
-	cd /home/jcher/바탕화면/Pico2MSX/build/pico-pio-usb && ../pioasm-install/pioasm/pioasm -o c-sdk -v 1 /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_rx.pio /home/jcher/바탕화면/Pico2MSX/build/pico-pio-usb/usb_rx.pio.h
+pico-pio-usb/usb_rx.pio.h: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_rx.pio
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating usb_rx.pio.h"
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-pio-usb && ../pioasm-install/pioasm/pioasm -o c-sdk -v 1 /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_rx.pio /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-pio-usb/usb_rx.pio.h
 
 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/codegen:
 .PHONY : pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/codegen
@@ -85,10 +85,10 @@ pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/build: pico_pio_usb_usb_rx
 .PHONY : pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/build
 
 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/clean:
-	cd /home/jcher/바탕화면/Pico2MSX/build/pico-pio-usb && $(CMAKE_COMMAND) -P CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/cmake_clean.cmake
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-pio-usb && $(CMAKE_COMMAND) -P CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/cmake_clean.cmake
 .PHONY : pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/clean
 
 pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/depend:
-	cd /home/jcher/바탕화면/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/Pico2MSX /home/jcher/바탕화면/Pico2MSX/pico-pio-usb /home/jcher/바탕화면/Pico2MSX/build /home/jcher/바탕화면/Pico2MSX/build/pico-pio-usb /home/jcher/바탕화면/Pico2MSX/build/pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/DependInfo.cmake "--color=$(COLOR)" pico_pio_usb_usb_rx_pio_h
+	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/pico-test/Pico2MSX /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb /home/jcher/바탕화면/pico-test/Pico2MSX/build /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-pio-usb /home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/DependInfo.cmake "--color=$(COLOR)" pico_pio_usb_usb_rx_pio_h
 .PHONY : pico-pio-usb/CMakeFiles/pico_pio_usb_usb_rx_pio_h.dir/depend
 

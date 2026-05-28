@@ -10,18 +10,18 @@ if(NOT EXISTS "/home/jcher/pico-sdk/tools/pioasm")
   file(MAKE_DIRECTORY "/home/jcher/pico-sdk/tools/pioasm")
 endif()
 file(MAKE_DIRECTORY
-  "/home/jcher/바탕화면/Pico2MSX/build/pioasm"
-  "/home/jcher/바탕화면/Pico2MSX/build/pioasm-install"
-  "/home/jcher/바탕화면/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp"
-  "/home/jcher/바탕화면/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/pioasmBuild-stamp"
-  "/home/jcher/바탕화면/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src"
-  "/home/jcher/바탕화면/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/pioasmBuild-stamp"
+  "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm"
+  "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm-install"
+  "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp"
+  "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/pioasmBuild-stamp"
+  "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src"
+  "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/pioasmBuild-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/jcher/바탕화면/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/pioasmBuild-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/pioasmBuild-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/jcher/바탕화면/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/pioasmBuild-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/pioasmBuild-stamp${cfgdir}") # cfgdir has leading slash
 endif()

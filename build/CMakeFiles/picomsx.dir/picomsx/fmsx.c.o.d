@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/picomsx/fmsx.c.o: \
- /home/jcher/바탕화면/Pico2MSX/picomsx/fmsx.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/fmsx.c \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdint.h \
  /usr/arm-none-eabi/include/stdint.h \
  /usr/arm-none-eabi/include/machine/_default_types.h \
@@ -21,51 +21,51 @@ CMakeFiles/picomsx.dir/picomsx/fmsx.c.o: \
  /usr/arm-none-eabi/include/sys/_locale.h \
  /usr/arm-none-eabi/include/strings.h \
  /usr/arm-none-eabi/include/sys/string.h \
- /home/jcher/바탕화면/Pico2MSX/display/emuapi.h \
- /home/jcher/바탕화면/Pico2MSX/config/platform_config.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/program_config.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/emucfg.h \
- /home/jcher/바탕화면/Pico2MSX/config/iopins.h \
- /home/jcher/바탕화면/Pico2MSX/config/platform_config.h \
- /home/jcher/바탕화면/Pico2MSX/config/board_waveshare.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/shared.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/Z80.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/MSX.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/V9938.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/AY8910.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/YM2413.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/SCC.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/I8255.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/I8251.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/display/emuapi.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/config/platform_config.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/program_config.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/emucfg.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/config/iopins.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/config/platform_config.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/config/board_waveshare.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/shared.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Z80.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/MSX.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/V9938.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/AY8910.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/YM2413.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/SCC.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8255.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8251.h \
  /usr/arm-none-eabi/include/stdio.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdarg.h \
  /usr/arm-none-eabi/include/sys/stdio.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/Sound.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Sound.h \
  /usr/arm-none-eabi/include/stdlib.h \
  /usr/arm-none-eabi/include/machine/stdlib.h \
  /usr/arm-none-eabi/include/alloca.h /usr/arm-none-eabi/include/ctype.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/program_config.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/cmos.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/disk.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/fmpac.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/italic.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/kanji.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/msx.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/msx2.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/msx2ext.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/msx2p.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/msx2pext.h \
- /home/jcher/바탕화면/Pico2MSX/picomsx/bios/painter.h \
- /home/jcher/바탕화면/Pico2MSX/flash/flash_t.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/program_config.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/cmos.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/disk.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/fmpac.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/italic.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/kanji.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/msx.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/msx2.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/msx2ext.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/msx2p.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/msx2pext.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/bios/painter.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/flash/flash_t.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdbool.h \
  /usr/arm-none-eabi/include/assert.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \

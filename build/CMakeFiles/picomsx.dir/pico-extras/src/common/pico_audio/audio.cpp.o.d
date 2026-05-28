@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: \
- /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp \
  /usr/arm-none-eabi/include/c++/14.2.0/cstring \
  /usr/arm-none-eabi/include/c++/14.2.0/bits/version.h \
  /usr/arm-none-eabi/include/c++/14.2.0/arm-none-eabi/thumb/v8-m.main+fp/softfp/bits/c++config.h \
@@ -23,7 +23,7 @@ CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: \
  /usr/arm-none-eabi/include/sys/_locale.h \
  /usr/arm-none-eabi/include/strings.h \
  /usr/arm-none-eabi/include/sys/string.h \
- /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/include/pico/audio.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/include/pico/audio.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
@@ -34,10 +34,10 @@ CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: \
  /usr/arm-none-eabi/include/stdint.h \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -49,7 +49,7 @@ CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
- /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_util_buffer/include/pico/util/buffer.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_util_buffer/include/pico/util/buffer.h \
  /usr/arm-none-eabi/include/c++/14.2.0/stdlib.h \
  /usr/arm-none-eabi/include/c++/14.2.0/cstdlib \
  /usr/arm-none-eabi/include/stdlib.h \
@@ -61,7 +61,7 @@ CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
- /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/include/pico/sample_conversion.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/include/pico/sample_conversion.h \
  /usr/arm-none-eabi/include/c++/14.2.0/algorithm \
  /usr/arm-none-eabi/include/c++/14.2.0/bits/stl_algobase.h \
  /usr/arm-none-eabi/include/c++/14.2.0/bits/functexcept.h \

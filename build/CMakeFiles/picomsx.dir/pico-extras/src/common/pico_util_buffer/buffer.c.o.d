@@ -1,6 +1,6 @@
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o: \
- /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c \
- /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_util_buffer/include/pico/util/buffer.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_util_buffer/include/pico/util/buffer.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdbool.h \

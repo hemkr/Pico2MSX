@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o: \
- /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c \
  /usr/arm-none-eabi/include/string.h /usr/arm-none-eabi/include/_ansi.h \
  /usr/arm-none-eabi/include/newlib.h \
  /usr/arm-none-eabi/include/_newlib_version.h \
@@ -24,8 +24,8 @@ CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o: \
  /usr/arm-none-eabi/include/stdio.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdarg.h \
  /usr/arm-none-eabi/include/sys/stdio.h \
- /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdbool.h \
- /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf_common.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf_common.h \
  /usr/arm-none-eabi/include/assert.h \
- /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf_block_functions.h
+ /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf_block_functions.h

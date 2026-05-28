@@ -1,6 +1,6 @@
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o: \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite.c \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite.c \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdbool.h \
@@ -16,13 +16,13 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o: \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stddef.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/affine_transform.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/affine_transform.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
