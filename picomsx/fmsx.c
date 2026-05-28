@@ -943,20 +943,20 @@ struct { byte Pos,Mask; } Keys[] =
 
 /* 0x20 */ {8,0x01},  // space
 /* 0x21 */ {0,0x02},   // ! exclamation mark (Shift+1)
-/* 0x22 */ {0,0x04},   // " double quote (Shift+2 on UK layout, pero queremos @)
+/* 0x22 */ {2,0x01},   // " double quote (same as ')
 /* 0x23 */ {0,0x08},   // # hash (Shift+3)
 /* 0x24 */ {0,0x10},   // $ dollar (Shift+4)
 /* 0x25 */ {0,0x20},   // % percent (Shift+5)
 /* 0x26 */ {0,0x80},   // & ampersand (Shift+7)
-/* 0x27 */ {0,0x80},   // ' single quote (same as 7)
+/* 0x27 */ {2,0x01},   // ' single quote
 /* 0x28 */ {1,0x02},   // ( bracket left (Shift+9) - CORREGIDO de 0x01 a 0x02
 /* 0x29 */ {0,0x01},   // ) bracket right (Shift+0) - CORREGIDO de 1,0x02 a 0,0x01
 /* 0x2A */ {1,0x01},   // * asterisk (Shift+8)
-/* 0x2B */ {2,0x02},   // + plus (same as ';')
+/* 0x2B */ {1,0x08},   // + plus (same as =)
 /* 0x2C */ {2,0x04},  // , comma
-/* 0x2D */ {2,0x08},   // - minus
-/* 0x2E */ {2,0x10},   // . period
-/* 0x2F */ {2,0x20},   // / slash
+/* 0x2D */ {1,0x04},   // - minus
+/* 0x2E */ {2,0x08},   // . period
+/* 0x2F */ {2,0x10},   // / slash
 
 /* 0x30 */   {0,0x01}, //'0'
 /* 0x31 */   {0,0x02}, //'1'
@@ -969,12 +969,12 @@ struct { byte Pos,Mask; } Keys[] =
 /* 0x38 */   {1,0x01}, //'8'
 /* 0x39 */   {1,0x02}, //'9'
 
-/* 0x3A */ {2,0x01},    // : colon
-/* 0x3B */ {2,0x02},    // ; semi colon
+/* 0x3A */ {1,0x80},    // : colon (same as ;)
+/* 0x3B */ {1,0x80},    // ; semi colon
 /* 0x3C */ {2,0x04},    // < (same as comma)
-/* 0x3D */ {2,0x08},    // = equal
-/* 0x3E */ {2,0x10},    // > (same as period)
-/* 0x3F */ {2,0x20},    // ? (same as /)
+/* 0x3D */ {1,0x08},    // = equal
+/* 0x3E */ {2,0x08},    // > (same as period)
+/* 0x3F */ {2,0x10},    // ? (same as /)
 /* 0x40 */ {0,0x04},    // @ (Shift+2)
 
 /* 0x41 */  {2,0x40}, //'A'
@@ -1004,12 +1004,12 @@ struct { byte Pos,Mask; } Keys[] =
 /* 0x59 */  {5,0x40}, //'Y'
 /* 0x5A */  {5,0x80}, //'Z'
 
-/* 0x5B */ {1,0x04},  // [ square bracket open
-/* 0x5C */ {1,0x08},  // \ backslash
-/* 0x5D */ {1,0x10},  // ] square bracket close
+/* 0x5B */ {1,0x20},  // [ square bracket open
+/* 0x5C */ {1,0x10},  // \ backslash
+/* 0x5D */ {1,0x40},  // ] square bracket close
 /* 0x5E */ {0,0x40},  // ^ circumflex (Shift+6)
-/* 0x5F */ {2,0x08},  // _ underscore (same as '-')
-/* 0x60 */ {1,0x80},  // ` backquote
+/* 0x5F */ {1,0x04},  // _ underscore (same as '-')
+/* 0x60 */ {2,0x02},  // ` backquote
 
 /* 0x61 */  {2,0x40}, //'a'
 /* 0x62 */  {2,0x80}, //'b'
@@ -1038,10 +1038,10 @@ struct { byte Pos,Mask; } Keys[] =
 /* 0x79 */  {5,0x40}, //'y'
 /* 0x7A */  {5,0x80}, //'z'
 
-/* 0x7B */ INV_KEY,  // curly bracket open
-/* 0x7C */ INV_KEY,  // or
-/* 0x7D */ INV_KEY,  // curly bracket close  
-/* 0x7E */ INV_KEY,  // tilt
+/* 0x7B */ {1,0x20},  // { (same as [)
+/* 0x7C */ {1,0x10},  // | (same as \)
+/* 0x7D */ {1,0x40},  // } (same as ])  
+/* 0x7E */ {2,0x02},  // ~ (same as `)
 /* 0x7F */ {7,0x20}, // backspace
 
 /* 0xC0 */ INV_KEY,

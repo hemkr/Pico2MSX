@@ -35,6 +35,8 @@ extern "C" {
 #endif
 #ifdef HAS_USBPIO
 #include "pio_usb_configuration.h"
+#include "pio_usb.h"
+extern root_port_t pio_usb_root_port[];
 #else
 #include "bsp/board_api.h"
 #endif
@@ -754,7 +756,9 @@ unsigned short emu_DebounceLocalKeys(void)
   COMUpdate();
   #else
   // PIO-USB or other: Call tuh_task() directly
-  tuh_task();
+  for (int i = 0; i < 4; i++) {
+    tuh_task();
+  }
   #endif
 
   // Periodic alive counter - logs every ~500 calls (~10s at 50Hz, ~8s at 60Hz)
@@ -762,6 +766,26 @@ unsigned short emu_DebounceLocalKeys(void)
   tuh_task_count++;
   if ((tuh_task_count % 500) == 0) {
     printf("[USB] tuh_task alive: count=%u\r\n", tuh_task_count);
+#ifdef HAS_USBPIO
+    root_port_t *root = &pio_usb_root_port[0];
+    unsigned dp_level = gpio_get(root->pin_dp) ? 1u : 0u;
+    unsigned dm_level = gpio_get(root->pin_dm) ? 1u : 0u;
+    unsigned line_state = ((dm_level ? 0u : 1u) << 1) |
+                          (dp_level ? 0u : 1u);
+    printf("[PIOUSB] root0 init=%d connected=%d suspended=%d raw_line=%u dp=GP%u:%u dm=GP%u:%u speed=%s\r\n",
+           root->initialized ? 1 : 0,
+           root->connected ? 1 : 0,
+           root->suspended ? 1 : 0,
+           line_state,
+           (unsigned)root->pin_dp,
+           dp_level,
+           (unsigned)root->pin_dm,
+           dm_level,
+           root->is_fullspeed ? "FS" : "LS/unknown");
+    if (!root->connected && dp_level == 0 && dm_level == 0) {
+      printf("[PIOUSB] no device pull-up detected: check 5V VBUS, USB-C host adapter/cable, and GP28/GP29 wiring\r\n");
+    }
+#endif
   }
 #endif
   
@@ -1266,7 +1290,7 @@ static void signal_joy (int code, int pressed, int flags) {
 void kbd_signal_raw_key (int keycode, int code, int codeshifted, int flags, int pressed) {
   // Debug logging disabled for production use
   // Uncomment below for USB keyboard debugging
-/*
+
   if (pressed == KEY_PRESSED) {
     printf("MSX: Key DOWN - keycode=0x%02X code=0x%02X shifted=0x%02X flags=0x%02X\r\n", 
            keycode, code, codeshifted, flags);
@@ -1274,7 +1298,7 @@ void kbd_signal_raw_key (int keycode, int code, int codeshifted, int flags, int 
     printf("MSX: Key UP   - keycode=0x%02X code=0x%02X shifted=0x%02X flags=0x%02X\r\n", 
            keycode, code, codeshifted, flags);
   }
-*/
+
   
   //printf("k %d\r\n", keycode); 
   // Treat F-keys (F1..F12) as pure keyboard input regardless of joystick mode when not in menu
@@ -1293,9 +1317,9 @@ void kbd_signal_raw_key (int keycode, int code, int codeshifted, int flags, int 
     // Always forward function keys to the emulator (BASIC, etc.)
     if (isFunctionKey) {
       if (pressed == KEY_PRESSED) {
-        emu_KeyboardOnDown(flags, codeshifted);
+        emu_KeyboardOnDown(flags, code);
       } else {
-        emu_KeyboardOnUp(flags, codeshifted);
+        emu_KeyboardOnUp(flags, code);
       }
       return;
     }
@@ -1315,11 +1339,11 @@ void kbd_signal_raw_key (int keycode, int code, int codeshifted, int flags, int 
       {    
         //emu_printi(keycode);    
         //emu_printi(codeshifted);    
-        emu_KeyboardOnDown(flags, codeshifted);
+        emu_KeyboardOnDown(flags, code);
       }
       else    
       { 
-        emu_KeyboardOnUp(flags, codeshifted);
+        emu_KeyboardOnUp(flags, code);
       }
     }
   }
@@ -1793,11 +1817,31 @@ void emu_init(void)
     printf("Hint: If using a board without switchable VBUS, power the USB port with a powered hub.\r\n");
   }
 
-  // Give TinyUSB a short window to enumerate already-connected devices
-  printf("[USB] Polling for 2 seconds to detect connected devices...\r\n");
-  for (int i = 0; i < 100; i++) { // 100 * 20ms = 2 seconds
+  // Give TinyUSB enough time to enumerate already-connected PIO-USB devices.
+  printf("[USB] Polling for 5 seconds to detect connected devices...\r\n");
+  for (int i = 0; i < 5000; i++) {
     tuh_task();
-    sleep_ms(20);
+    if ((i % 1000) == 0) {
+#ifdef HAS_USBPIO
+      root_port_t *root = &pio_usb_root_port[0];
+      unsigned dp_level = gpio_get(root->pin_dp) ? 1u : 0u;
+      unsigned dm_level = gpio_get(root->pin_dm) ? 1u : 0u;
+      unsigned line_state = ((dm_level ? 0u : 1u) << 1) |
+                            (dp_level ? 0u : 1u);
+      printf("[PIOUSB] enum poll raw_line=%u connected=%d initialized=%d dp=GP%u:%u dm=GP%u:%u\r\n",
+             line_state,
+             root->connected ? 1 : 0,
+             root->initialized ? 1 : 0,
+             (unsigned)root->pin_dp,
+             dp_level,
+             (unsigned)root->pin_dm,
+             dm_level);
+      if (!root->connected && dp_level == 0 && dm_level == 0) {
+        printf("[PIOUSB] no device pull-up detected: check 5V VBUS, USB-C host adapter/cable, and GP28/GP29 wiring\r\n");
+      }
+#endif
+    }
+    sleep_ms(1);
   }
   printf("[USB] Initial enumeration window complete\r\n");
 #endif

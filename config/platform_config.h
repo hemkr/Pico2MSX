@@ -2,7 +2,7 @@
 #define _PLATFORM_CONFIG_H_
 
 #define PICOHYPERPET   1
-#define KEYLAYOUT      KLAYOUT_ES
+#define KEYLAYOUT      KLAYOUT_US
 
 #define INVX           1
 #define USE_LIBDVI        1

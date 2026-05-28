@@ -40,6 +40,7 @@ typedef enum {
 	KLAYOUT_UK = 0,
 	KLAYOUT_BE,
 	KLAYOUT_ES,
+	KLAYOUT_US,
 } KLAYOUT;
 
 
