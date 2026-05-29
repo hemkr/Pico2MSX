@@ -240,13 +240,13 @@ See `picomsx/CAMBIOS.md` for a detailed list of all modifications.
 **v0.3** (May 28, 2026)
 
 * Support for gamepads including PS3 controllers and 2-player mode.
-* SD card clock was set too high causing file loading failures
-* Performance/speed issues
-* Boot issues caused by I2C issue
-* Keyboard arrow key issues
-* BASIC screen red color issue
-* HDMI audio not working issue 
-* PIO-USB detection issues
+* SD card clock was set too high causing file loading failures issues fix
+* Performance/speed issues fix
+* Boot issues caused by I2C issue fix
+* Keyboard arrow key issues fix
+* BASIC screen red color issue fix
+* HDMI audio not working issue fix 
+* PIO-USB detection issues fix
 * Stuttering when changing keyboard directions
 * Changed keyboard layout to US and fixed non-working keys
 * Support for gamepads including PS3 controllers and 2-player mode.
