@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX
+CMAKE_SOURCE_DIR = /home/jcher/바탕화면/Pico2MSX
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX/build
+CMAKE_BINARY_DIR = /home/jcher/바탕화면/Pico2MSX/build
 
 # Utility rule file for picomsx_psram_spi_pio_h.
 
@@ -68,9 +68,9 @@ include CMakeFiles/picomsx_psram_spi_pio_h.dir/progress.make
 
 CMakeFiles/picomsx_psram_spi_pio_h: psram_spi.pio.h
 
-psram_spi.pio.h: /home/jcher/바탕화면/pico-test/Pico2MSX/psram/psram_spi.pio
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating psram_spi.pio.h"
-	pioasm-install/pioasm/pioasm -o c-sdk -v 1 /home/jcher/바탕화면/pico-test/Pico2MSX/psram/psram_spi.pio /home/jcher/바탕화면/pico-test/Pico2MSX/build/psram_spi.pio.h
+psram_spi.pio.h: /home/jcher/바탕화면/Pico2MSX/psram/psram_spi.pio
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating psram_spi.pio.h"
+	pioasm-install/pioasm/pioasm -o c-sdk -v 1 /home/jcher/바탕화면/Pico2MSX/psram/psram_spi.pio /home/jcher/바탕화면/Pico2MSX/build/psram_spi.pio.h
 
 CMakeFiles/picomsx_psram_spi_pio_h.dir/codegen:
 .PHONY : CMakeFiles/picomsx_psram_spi_pio_h.dir/codegen
@@ -89,6 +89,6 @@ CMakeFiles/picomsx_psram_spi_pio_h.dir/clean:
 .PHONY : CMakeFiles/picomsx_psram_spi_pio_h.dir/clean
 
 CMakeFiles/picomsx_psram_spi_pio_h.dir/depend:
-	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/pico-test/Pico2MSX /home/jcher/바탕화면/pico-test/Pico2MSX /home/jcher/바탕화면/pico-test/Pico2MSX/build /home/jcher/바탕화면/pico-test/Pico2MSX/build /home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles/picomsx_psram_spi_pio_h.dir/DependInfo.cmake "--color=$(COLOR)" picomsx_psram_spi_pio_h
+	cd /home/jcher/바탕화면/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/Pico2MSX /home/jcher/바탕화면/Pico2MSX /home/jcher/바탕화면/Pico2MSX/build /home/jcher/바탕화면/Pico2MSX/build /home/jcher/바탕화면/Pico2MSX/build/CMakeFiles/picomsx_psram_spi_pio_h.dir/DependInfo.cmake "--color=$(COLOR)" picomsx_psram_spi_pio_h
 .PHONY : CMakeFiles/picomsx_psram_spi_pio_h.dir/depend
 

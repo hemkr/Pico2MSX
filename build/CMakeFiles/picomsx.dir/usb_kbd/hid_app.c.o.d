@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o: \
- /home/jcher/바탕화면/pico-test/Pico2MSX/usb_kbd/hid_app.c \
+ /home/jcher/바탕화면/Pico2MSX/usb_kbd/hid_app.c \
  /home/jcher/pico-sdk/src/rp2_common/tinyusb/include/bsp/board.h \
  /home/jcher/pico-sdk/lib/tinyusb/hw/bsp/board_api.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdint.h \
@@ -33,9 +33,9 @@ CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o: \
  /usr/arm-none-eabi/include/sys/stdio.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/tusb_option.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/./tusb_config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/config/platform_config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/program_config.h \
+ /home/jcher/바탕화면/Pico2MSX/./tusb_config.h \
+ /home/jcher/바탕화면/Pico2MSX/config/platform_config.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/program_config.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_mcu.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_verify.h \
@@ -49,10 +49,10 @@ CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o: \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /usr/arm-none-eabi/include/assert.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -83,6 +83,6 @@ CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o: \
  /home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/usb_kbd/kbd.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/./display/emuapi.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/emucfg.h
+ /home/jcher/바탕화면/Pico2MSX/usb_kbd/kbd.h \
+ /home/jcher/바탕화면/Pico2MSX/./display/emuapi.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/emucfg.h

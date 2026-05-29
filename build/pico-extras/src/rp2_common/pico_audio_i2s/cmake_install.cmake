@@ -1,4 +1,4 @@
-# Install script for directory: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s
+# Install script for directory: /home/jcher/바탕화면/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,6 +40,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s/install_local_manifest.txt"
+  file(WRITE "/home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

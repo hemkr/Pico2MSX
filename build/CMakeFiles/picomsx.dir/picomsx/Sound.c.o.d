@@ -1,6 +1,6 @@
 CMakeFiles/picomsx.dir/picomsx/Sound.c.o: \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Sound.c \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Sound.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/Sound.c \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/Sound.h \
  /usr/arm-none-eabi/include/stdio.h /usr/arm-none-eabi/include/_ansi.h \
  /usr/arm-none-eabi/include/newlib.h \
  /usr/arm-none-eabi/include/_newlib_version.h \
@@ -21,4 +21,4 @@ CMakeFiles/picomsx.dir/picomsx/Sound.c.o: \
  /usr/arm-none-eabi/include/sys/_locale.h \
  /usr/arm-none-eabi/include/strings.h \
  /usr/arm-none-eabi/include/sys/string.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/MIDIFreq.h
+ /home/jcher/바탕화면/Pico2MSX/picomsx/MIDIFreq.h

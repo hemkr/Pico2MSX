@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/jcher/pico-sdk/tools/pioasm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm
+CMAKE_BINARY_DIR = /home/jcher/바탕화면/Pico2MSX/build/pioasm
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pioasm.dir/depend.make
@@ -254,6 +254,6 @@ CMakeFiles/pioasm.dir/clean:
 .PHONY : CMakeFiles/pioasm.dir/clean
 
 CMakeFiles/pioasm.dir/depend:
-	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/pico-sdk/tools/pioasm /home/jcher/pico-sdk/tools/pioasm /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/DependInfo.cmake "--color=$(COLOR)" pioasm
+	cd /home/jcher/바탕화면/Pico2MSX/build/pioasm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/pico-sdk/tools/pioasm /home/jcher/pico-sdk/tools/pioasm /home/jcher/바탕화면/Pico2MSX/build/pioasm /home/jcher/바탕화면/Pico2MSX/build/pioasm /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/DependInfo.cmake "--color=$(COLOR)" pioasm
 .PHONY : CMakeFiles/pioasm.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX
+CMAKE_SOURCE_DIR = /home/jcher/바탕화면/Pico2MSX
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX/build
+CMAKE_BINARY_DIR = /home/jcher/바탕화면/Pico2MSX/build
 
 # Utility rule file for libdvi_dvi_serialiser_pio_h.
 
@@ -68,9 +68,9 @@ include PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/progr
 
 PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h: PicoDVI/software/libdvi/dvi_serialiser.pio.h
 
-PicoDVI/software/libdvi/dvi_serialiser.pio.h: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.pio
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dvi_serialiser.pio.h"
-	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build/PicoDVI/software/libdvi && ../../../pioasm-install/pioasm/pioasm -o c-sdk -v 1 /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.pio /home/jcher/바탕화면/pico-test/Pico2MSX/build/PicoDVI/software/libdvi/dvi_serialiser.pio.h
+PicoDVI/software/libdvi/dvi_serialiser.pio.h: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.pio
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dvi_serialiser.pio.h"
+	cd /home/jcher/바탕화면/Pico2MSX/build/PicoDVI/software/libdvi && ../../../pioasm-install/pioasm/pioasm -o c-sdk -v 1 /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.pio /home/jcher/바탕화면/Pico2MSX/build/PicoDVI/software/libdvi/dvi_serialiser.pio.h
 
 PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/codegen:
 .PHONY : PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/codegen
@@ -85,10 +85,10 @@ PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/build: libdvi
 .PHONY : PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/build
 
 PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/clean:
-	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build/PicoDVI/software/libdvi && $(CMAKE_COMMAND) -P CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/cmake_clean.cmake
+	cd /home/jcher/바탕화면/Pico2MSX/build/PicoDVI/software/libdvi && $(CMAKE_COMMAND) -P CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/cmake_clean.cmake
 .PHONY : PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/clean
 
 PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/depend:
-	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/pico-test/Pico2MSX /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi /home/jcher/바탕화면/pico-test/Pico2MSX/build /home/jcher/바탕화면/pico-test/Pico2MSX/build/PicoDVI/software/libdvi /home/jcher/바탕화면/pico-test/Pico2MSX/build/PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/DependInfo.cmake "--color=$(COLOR)" libdvi_dvi_serialiser_pio_h
+	cd /home/jcher/바탕화면/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/Pico2MSX /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi /home/jcher/바탕화면/Pico2MSX/build /home/jcher/바탕화면/Pico2MSX/build/PicoDVI/software/libdvi /home/jcher/바탕화면/Pico2MSX/build/PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/DependInfo.cmake "--color=$(COLOR)" libdvi_dvi_serialiser_pio_h
 .PHONY : PicoDVI/software/libdvi/CMakeFiles/libdvi_dvi_serialiser_pio_h.dir/depend
 

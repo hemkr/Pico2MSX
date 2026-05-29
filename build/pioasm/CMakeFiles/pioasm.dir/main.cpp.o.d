@@ -191,4 +191,4 @@ CMakeFiles/pioasm.dir/main.cpp.o: \
  /home/jcher/pico-sdk/tools/pioasm/gen/location.h \
  /usr/include/c++/16.1.1/cassert /usr/include/assert.h \
  /home/jcher/pico-sdk/tools/pioasm/output_format.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/version.h
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/version.h

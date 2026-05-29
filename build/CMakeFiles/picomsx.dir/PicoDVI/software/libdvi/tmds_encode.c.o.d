@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o: \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c \
  /home/jcher/pico-sdk/src/rp2_common/hardware_interp/include/hardware/interp.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
@@ -17,10 +17,10 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o: \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stddef.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -37,8 +37,8 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o: \
  /home/jcher/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
@@ -56,5 +56,5 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o: \
  /home/jcher/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_table.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_table_fullres.h
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_table.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_table_fullres.h

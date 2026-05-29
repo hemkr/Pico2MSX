@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/fatfs/source/ff.c.o: \
- /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ff.c \
+ /home/jcher/바탕화면/Pico2MSX/fatfs/source/ff.c \
  /usr/arm-none-eabi/include/string.h /usr/arm-none-eabi/include/_ansi.h \
  /usr/arm-none-eabi/include/newlib.h \
  /usr/arm-none-eabi/include/_newlib_version.h \
@@ -17,14 +17,14 @@ CMakeFiles/picomsx.dir/fatfs/source/ff.c.o: \
  /usr/arm-none-eabi/include/sys/_locale.h \
  /usr/arm-none-eabi/include/strings.h \
  /usr/arm-none-eabi/include/sys/string.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ff.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffconf.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/../ffconf.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/../../ffconf.h \
+ /home/jcher/바탕화면/Pico2MSX/fatfs/source/ff.h \
+ /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffconf.h \
+ /home/jcher/바탕화면/Pico2MSX/fatfs/source/../ffconf.h \
+ /home/jcher/바탕화면/Pico2MSX/fatfs/source/../../ffconf.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdint.h \
  /usr/arm-none-eabi/include/stdint.h \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/diskio.h \
+ /home/jcher/바탕화면/Pico2MSX/fatfs/source/diskio.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stdarg.h \
  /usr/arm-none-eabi/include/math.h

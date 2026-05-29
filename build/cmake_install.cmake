@@ -1,4 +1,4 @@
-# Install script for directory: /home/jcher/바탕화면/pico-test/Pico2MSX
+# Install script for directory: /home/jcher/바탕화면/Pico2MSX
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,21 +39,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-sdk/cmake_install.cmake")
-  include("/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s/cmake_install.cmake")
-  include("/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/common/pico_audio/cmake_install.cmake")
-  include("/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-extras/src/common/pico_util_buffer/cmake_install.cmake")
-  include("/home/jcher/바탕화면/pico-test/Pico2MSX/build/pico-pio-usb/cmake_install.cmake")
-  include("/home/jcher/바탕화면/pico-test/Pico2MSX/build/PicoDVI/software/libdvi/cmake_install.cmake")
-  include("/home/jcher/바탕화면/pico-test/Pico2MSX/build/PicoDVI/software/libsprite/cmake_install.cmake")
-  include("/home/jcher/바탕화면/pico-test/Pico2MSX/build/sparkfun-pico/sparkfun_pico/cmake_install.cmake")
+  include("/home/jcher/바탕화면/Pico2MSX/build/pico-sdk/cmake_install.cmake")
+  include("/home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/rp2_common/pico_audio_i2s/cmake_install.cmake")
+  include("/home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/common/pico_audio/cmake_install.cmake")
+  include("/home/jcher/바탕화면/Pico2MSX/build/pico-extras/src/common/pico_util_buffer/cmake_install.cmake")
+  include("/home/jcher/바탕화면/Pico2MSX/build/pico-pio-usb/cmake_install.cmake")
+  include("/home/jcher/바탕화면/Pico2MSX/build/PicoDVI/software/libdvi/cmake_install.cmake")
+  include("/home/jcher/바탕화면/Pico2MSX/build/PicoDVI/software/libsprite/cmake_install.cmake")
+  include("/home/jcher/바탕화면/Pico2MSX/build/sparkfun-pico/sparkfun_pico/cmake_install.cmake")
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/jcher/바탕화면/pico-test/Pico2MSX/build/install_local_manifest.txt"
+  file(WRITE "/home/jcher/바탕화면/Pico2MSX/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -69,6 +69,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/jcher/바탕화면/pico-test/Pico2MSX/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/jcher/바탕화면/Pico2MSX/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -1,5 +1,5 @@
 CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: \
- /home/jcher/바탕화면/pico-test/Pico2MSX/display/pico_dsp.cpp \
+ /home/jcher/바탕화면/Pico2MSX/display/pico_dsp.cpp \
  /home/jcher/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
@@ -22,10 +22,10 @@ CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stddef.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -94,7 +94,7 @@ CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: \
  /usr/arm-none-eabi/include/sys/_locale.h \
  /usr/arm-none-eabi/include/strings.h \
  /usr/arm-none-eabi/include/sys/string.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/display/pico_dsp.h \
+ /home/jcher/바탕화면/Pico2MSX/display/pico_dsp.h \
  /usr/arm-none-eabi/include/stdio.h \
  /usr/arm-none-eabi/include/sys/stdio.h \
  /usr/arm-none-eabi/include/c++/14.2.0/math.h \
@@ -140,13 +140,13 @@ CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: \
  /usr/arm-none-eabi/include/c++/14.2.0/tr1/poly_hermite.tcc \
  /usr/arm-none-eabi/include/c++/14.2.0/tr1/poly_laguerre.tcc \
  /usr/arm-none-eabi/include/c++/14.2.0/tr1/riemann_zeta.tcc \
- /home/jcher/바탕화면/pico-test/Pico2MSX/config/platform_config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/program_config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/config/iopins.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/config/platform_config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/config/board_waveshare.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/display/font8x8.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/display/include.h \
+ /home/jcher/바탕화면/Pico2MSX/config/platform_config.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/program_config.h \
+ /home/jcher/바탕화면/Pico2MSX/config/iopins.h \
+ /home/jcher/바탕화면/Pico2MSX/config/platform_config.h \
+ /home/jcher/바탕화면/Pico2MSX/config/board_waveshare.h \
+ /home/jcher/바탕화면/Pico2MSX/display/font8x8.h \
+ /home/jcher/바탕화면/Pico2MSX/display/include.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
@@ -166,4 +166,4 @@ CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: \
  /home/jcher/pico-sdk/src/rp2_common/pico_float/include/pico/float.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/float.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/sf_table.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/display/display_backend.h
+ /home/jcher/바탕화면/Pico2MSX/display/display_backend.h

@@ -1,6 +1,6 @@
 CMakeFiles/picomsx.dir/picomsx/I8251.c.o: \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8251.c \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8251.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/I8251.c \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/I8251.h \
  /usr/arm-none-eabi/include/stdio.h /usr/arm-none-eabi/include/_ansi.h \
  /usr/arm-none-eabi/include/newlib.h \
  /usr/arm-none-eabi/include/_newlib_version.h \

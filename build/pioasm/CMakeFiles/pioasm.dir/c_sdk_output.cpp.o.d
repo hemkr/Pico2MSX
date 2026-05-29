@@ -184,4 +184,4 @@ CMakeFiles/pioasm.dir/c_sdk_output.cpp.o: \
  /usr/include/c++/16.1.1/utility \
  /usr/include/c++/16.1.1/bits/stl_relops.h \
  /home/jcher/pico-sdk/tools/pioasm/gen/location.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/version.h
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/version.h

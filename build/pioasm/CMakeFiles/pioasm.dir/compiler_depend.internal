@@ -8,7 +8,7 @@ CMakeFiles/pioasm.dir/ada_output.cpp.o
  /home/jcher/pico-sdk/tools/pioasm/pio_disassembler.h
  /home/jcher/pico-sdk/tools/pioasm/pio_enums.h
  /home/jcher/pico-sdk/tools/pioasm/pio_types.h
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/version.h
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/version.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
@@ -259,7 +259,7 @@ CMakeFiles/pioasm.dir/c_sdk_output.cpp.o
  /home/jcher/pico-sdk/tools/pioasm/pio_disassembler.h
  /home/jcher/pico-sdk/tools/pioasm/pio_enums.h
  /home/jcher/pico-sdk/tools/pioasm/pio_types.h
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/version.h
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/version.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
@@ -1048,7 +1048,7 @@ CMakeFiles/pioasm.dir/go_output.cpp.o
  /home/jcher/pico-sdk/tools/pioasm/pio_disassembler.h
  /home/jcher/pico-sdk/tools/pioasm/pio_enums.h
  /home/jcher/pico-sdk/tools/pioasm/pio_types.h
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/version.h
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/version.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
@@ -1783,7 +1783,7 @@ CMakeFiles/pioasm.dir/main.cpp.o
  /home/jcher/pico-sdk/tools/pioasm/pio_assembler.h
  /home/jcher/pico-sdk/tools/pioasm/pio_enums.h
  /home/jcher/pico-sdk/tools/pioasm/pio_types.h
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/version.h
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/version.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
@@ -2557,7 +2557,7 @@ CMakeFiles/pioasm.dir/python_output.cpp.o
  /home/jcher/pico-sdk/tools/pioasm/pio_disassembler.h
  /home/jcher/pico-sdk/tools/pioasm/pio_enums.h
  /home/jcher/pico-sdk/tools/pioasm/pio_types.h
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/version.h
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/version.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
@@ -2832,15 +2832,15 @@ pioasm
  /usr/lib/libc_nonshared.a
  /usr/lib/libm.so.6
  /usr/lib/libmvec.so.1
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/ada_output.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/c_sdk_output.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/gen/lexer.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/gen/parser.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/go_output.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/hex_output.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/json_output.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/main.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/pio_assembler.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/pio_disassembler.cpp.o
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/python_output.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/ada_output.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/c_sdk_output.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/gen/lexer.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/gen/parser.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/go_output.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/hex_output.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/json_output.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/main.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/pio_assembler.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/pio_disassembler.cpp.o
+ /home/jcher/바탕화면/Pico2MSX/build/pioasm/CMakeFiles/pioasm.dir/python_output.cpp.o
 

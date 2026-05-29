@@ -1,13 +1,13 @@
 CMakeFiles/picomsx.dir/picomsx/V9938.c.o: \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/V9938.c \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/V9938.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/MSX.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Z80.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/AY8910.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/YM2413.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/SCC.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8255.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8251.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/V9938.c \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/V9938.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/MSX.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/Z80.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/AY8910.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/YM2413.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/SCC.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/I8255.h \
+ /home/jcher/바탕화면/Pico2MSX/picomsx/I8251.h \
  /usr/arm-none-eabi/include/stdio.h /usr/arm-none-eabi/include/_ansi.h \
  /usr/arm-none-eabi/include/newlib.h \
  /usr/arm-none-eabi/include/_newlib_version.h \
@@ -28,4 +28,4 @@ CMakeFiles/picomsx.dir/picomsx/V9938.c.o: \
  /usr/arm-none-eabi/include/sys/_locale.h \
  /usr/arm-none-eabi/include/strings.h \
  /usr/arm-none-eabi/include/sys/string.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/shared.h
+ /home/jcher/바탕화면/Pico2MSX/picomsx/shared.h

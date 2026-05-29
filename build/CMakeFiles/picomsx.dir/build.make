@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX
+CMAKE_SOURCE_DIR = /home/jcher/바탕화면/Pico2MSX
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jcher/바탕화면/pico-test/Pico2MSX/build
+CMAKE_BINARY_DIR = /home/jcher/바탕화면/Pico2MSX/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/picomsx.dir/depend.make
@@ -73,331 +73,331 @@ CMakeFiles/picomsx.dir/codegen:
 .PHONY : CMakeFiles/picomsx.dir/codegen
 
 CMakeFiles/picomsx.dir/picomsx/fmsx.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/fmsx.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/fmsx.c
+CMakeFiles/picomsx.dir/picomsx/fmsx.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/fmsx.c
 CMakeFiles/picomsx.dir/picomsx/fmsx.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/picomsx.dir/picomsx/fmsx.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/fmsx.c.o -MF CMakeFiles/picomsx.dir/picomsx/fmsx.c.o.d -o CMakeFiles/picomsx.dir/picomsx/fmsx.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/fmsx.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/picomsx.dir/picomsx/fmsx.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/fmsx.c.o -MF CMakeFiles/picomsx.dir/picomsx/fmsx.c.o.d -o CMakeFiles/picomsx.dir/picomsx/fmsx.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/fmsx.c
 
 CMakeFiles/picomsx.dir/picomsx/fmsx.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/fmsx.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/fmsx.c > CMakeFiles/picomsx.dir/picomsx/fmsx.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/fmsx.c > CMakeFiles/picomsx.dir/picomsx/fmsx.c.i
 
 CMakeFiles/picomsx.dir/picomsx/fmsx.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/fmsx.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/fmsx.c -o CMakeFiles/picomsx.dir/picomsx/fmsx.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/fmsx.c -o CMakeFiles/picomsx.dir/picomsx/fmsx.c.s
 
 CMakeFiles/picomsx.dir/picomsx/AY8910.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/AY8910.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/AY8910.c
+CMakeFiles/picomsx.dir/picomsx/AY8910.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/AY8910.c
 CMakeFiles/picomsx.dir/picomsx/AY8910.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/picomsx.dir/picomsx/AY8910.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/AY8910.c.o -MF CMakeFiles/picomsx.dir/picomsx/AY8910.c.o.d -o CMakeFiles/picomsx.dir/picomsx/AY8910.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/AY8910.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/picomsx.dir/picomsx/AY8910.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/AY8910.c.o -MF CMakeFiles/picomsx.dir/picomsx/AY8910.c.o.d -o CMakeFiles/picomsx.dir/picomsx/AY8910.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/AY8910.c
 
 CMakeFiles/picomsx.dir/picomsx/AY8910.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/AY8910.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/AY8910.c > CMakeFiles/picomsx.dir/picomsx/AY8910.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/AY8910.c > CMakeFiles/picomsx.dir/picomsx/AY8910.c.i
 
 CMakeFiles/picomsx.dir/picomsx/AY8910.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/AY8910.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/AY8910.c -o CMakeFiles/picomsx.dir/picomsx/AY8910.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/AY8910.c -o CMakeFiles/picomsx.dir/picomsx/AY8910.c.s
 
 CMakeFiles/picomsx.dir/picomsx/Boot.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/Boot.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Boot.c
+CMakeFiles/picomsx.dir/picomsx/Boot.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/Boot.c
 CMakeFiles/picomsx.dir/picomsx/Boot.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/picomsx.dir/picomsx/Boot.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Boot.c.o -MF CMakeFiles/picomsx.dir/picomsx/Boot.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Boot.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Boot.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/picomsx.dir/picomsx/Boot.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Boot.c.o -MF CMakeFiles/picomsx.dir/picomsx/Boot.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Boot.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/Boot.c
 
 CMakeFiles/picomsx.dir/picomsx/Boot.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/Boot.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Boot.c > CMakeFiles/picomsx.dir/picomsx/Boot.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/Boot.c > CMakeFiles/picomsx.dir/picomsx/Boot.c.i
 
 CMakeFiles/picomsx.dir/picomsx/Boot.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/Boot.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Boot.c -o CMakeFiles/picomsx.dir/picomsx/Boot.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/Boot.c -o CMakeFiles/picomsx.dir/picomsx/Boot.c.s
 
 CMakeFiles/picomsx.dir/picomsx/Disk.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/Disk.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Disk.c
+CMakeFiles/picomsx.dir/picomsx/Disk.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/Disk.c
 CMakeFiles/picomsx.dir/picomsx/Disk.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/picomsx.dir/picomsx/Disk.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Disk.c.o -MF CMakeFiles/picomsx.dir/picomsx/Disk.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Disk.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Disk.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/picomsx.dir/picomsx/Disk.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Disk.c.o -MF CMakeFiles/picomsx.dir/picomsx/Disk.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Disk.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/Disk.c
 
 CMakeFiles/picomsx.dir/picomsx/Disk.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/Disk.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Disk.c > CMakeFiles/picomsx.dir/picomsx/Disk.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/Disk.c > CMakeFiles/picomsx.dir/picomsx/Disk.c.i
 
 CMakeFiles/picomsx.dir/picomsx/Disk.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/Disk.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Disk.c -o CMakeFiles/picomsx.dir/picomsx/Disk.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/Disk.c -o CMakeFiles/picomsx.dir/picomsx/Disk.c.s
 
 CMakeFiles/picomsx.dir/picomsx/I8251.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/I8251.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8251.c
+CMakeFiles/picomsx.dir/picomsx/I8251.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/I8251.c
 CMakeFiles/picomsx.dir/picomsx/I8251.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/picomsx.dir/picomsx/I8251.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/I8251.c.o -MF CMakeFiles/picomsx.dir/picomsx/I8251.c.o.d -o CMakeFiles/picomsx.dir/picomsx/I8251.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8251.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/picomsx.dir/picomsx/I8251.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/I8251.c.o -MF CMakeFiles/picomsx.dir/picomsx/I8251.c.o.d -o CMakeFiles/picomsx.dir/picomsx/I8251.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/I8251.c
 
 CMakeFiles/picomsx.dir/picomsx/I8251.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/I8251.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8251.c > CMakeFiles/picomsx.dir/picomsx/I8251.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/I8251.c > CMakeFiles/picomsx.dir/picomsx/I8251.c.i
 
 CMakeFiles/picomsx.dir/picomsx/I8251.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/I8251.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8251.c -o CMakeFiles/picomsx.dir/picomsx/I8251.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/I8251.c -o CMakeFiles/picomsx.dir/picomsx/I8251.c.s
 
 CMakeFiles/picomsx.dir/picomsx/I8255.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/I8255.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8255.c
+CMakeFiles/picomsx.dir/picomsx/I8255.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/I8255.c
 CMakeFiles/picomsx.dir/picomsx/I8255.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/picomsx.dir/picomsx/I8255.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/I8255.c.o -MF CMakeFiles/picomsx.dir/picomsx/I8255.c.o.d -o CMakeFiles/picomsx.dir/picomsx/I8255.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8255.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/picomsx.dir/picomsx/I8255.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/I8255.c.o -MF CMakeFiles/picomsx.dir/picomsx/I8255.c.o.d -o CMakeFiles/picomsx.dir/picomsx/I8255.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/I8255.c
 
 CMakeFiles/picomsx.dir/picomsx/I8255.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/I8255.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8255.c > CMakeFiles/picomsx.dir/picomsx/I8255.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/I8255.c > CMakeFiles/picomsx.dir/picomsx/I8255.c.i
 
 CMakeFiles/picomsx.dir/picomsx/I8255.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/I8255.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/I8255.c -o CMakeFiles/picomsx.dir/picomsx/I8255.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/I8255.c -o CMakeFiles/picomsx.dir/picomsx/I8255.c.s
 
 CMakeFiles/picomsx.dir/picomsx/Patch.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/Patch.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Patch.c
+CMakeFiles/picomsx.dir/picomsx/Patch.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/Patch.c
 CMakeFiles/picomsx.dir/picomsx/Patch.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/picomsx.dir/picomsx/Patch.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Patch.c.o -MF CMakeFiles/picomsx.dir/picomsx/Patch.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Patch.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Patch.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/picomsx.dir/picomsx/Patch.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Patch.c.o -MF CMakeFiles/picomsx.dir/picomsx/Patch.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Patch.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/Patch.c
 
 CMakeFiles/picomsx.dir/picomsx/Patch.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/Patch.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Patch.c > CMakeFiles/picomsx.dir/picomsx/Patch.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/Patch.c > CMakeFiles/picomsx.dir/picomsx/Patch.c.i
 
 CMakeFiles/picomsx.dir/picomsx/Patch.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/Patch.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Patch.c -o CMakeFiles/picomsx.dir/picomsx/Patch.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/Patch.c -o CMakeFiles/picomsx.dir/picomsx/Patch.c.s
 
 CMakeFiles/picomsx.dir/picomsx/SCC.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/SCC.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/SCC.c
+CMakeFiles/picomsx.dir/picomsx/SCC.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/SCC.c
 CMakeFiles/picomsx.dir/picomsx/SCC.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/picomsx.dir/picomsx/SCC.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/SCC.c.o -MF CMakeFiles/picomsx.dir/picomsx/SCC.c.o.d -o CMakeFiles/picomsx.dir/picomsx/SCC.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/SCC.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/picomsx.dir/picomsx/SCC.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/SCC.c.o -MF CMakeFiles/picomsx.dir/picomsx/SCC.c.o.d -o CMakeFiles/picomsx.dir/picomsx/SCC.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/SCC.c
 
 CMakeFiles/picomsx.dir/picomsx/SCC.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/SCC.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/SCC.c > CMakeFiles/picomsx.dir/picomsx/SCC.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/SCC.c > CMakeFiles/picomsx.dir/picomsx/SCC.c.i
 
 CMakeFiles/picomsx.dir/picomsx/SCC.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/SCC.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/SCC.c -o CMakeFiles/picomsx.dir/picomsx/SCC.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/SCC.c -o CMakeFiles/picomsx.dir/picomsx/SCC.c.s
 
 CMakeFiles/picomsx.dir/picomsx/Sound.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/Sound.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Sound.c
+CMakeFiles/picomsx.dir/picomsx/Sound.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/Sound.c
 CMakeFiles/picomsx.dir/picomsx/Sound.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/picomsx.dir/picomsx/Sound.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Sound.c.o -MF CMakeFiles/picomsx.dir/picomsx/Sound.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Sound.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Sound.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/picomsx.dir/picomsx/Sound.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Sound.c.o -MF CMakeFiles/picomsx.dir/picomsx/Sound.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Sound.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/Sound.c
 
 CMakeFiles/picomsx.dir/picomsx/Sound.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/Sound.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Sound.c > CMakeFiles/picomsx.dir/picomsx/Sound.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/Sound.c > CMakeFiles/picomsx.dir/picomsx/Sound.c.i
 
 CMakeFiles/picomsx.dir/picomsx/Sound.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/Sound.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Sound.c -o CMakeFiles/picomsx.dir/picomsx/Sound.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/Sound.c -o CMakeFiles/picomsx.dir/picomsx/Sound.c.s
 
 CMakeFiles/picomsx.dir/picomsx/V9938.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/V9938.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/V9938.c
+CMakeFiles/picomsx.dir/picomsx/V9938.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/V9938.c
 CMakeFiles/picomsx.dir/picomsx/V9938.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/picomsx.dir/picomsx/V9938.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/V9938.c.o -MF CMakeFiles/picomsx.dir/picomsx/V9938.c.o.d -o CMakeFiles/picomsx.dir/picomsx/V9938.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/V9938.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/picomsx.dir/picomsx/V9938.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/V9938.c.o -MF CMakeFiles/picomsx.dir/picomsx/V9938.c.o.d -o CMakeFiles/picomsx.dir/picomsx/V9938.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/V9938.c
 
 CMakeFiles/picomsx.dir/picomsx/V9938.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/V9938.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/V9938.c > CMakeFiles/picomsx.dir/picomsx/V9938.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/V9938.c > CMakeFiles/picomsx.dir/picomsx/V9938.c.i
 
 CMakeFiles/picomsx.dir/picomsx/V9938.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/V9938.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/V9938.c -o CMakeFiles/picomsx.dir/picomsx/V9938.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/V9938.c -o CMakeFiles/picomsx.dir/picomsx/V9938.c.s
 
 CMakeFiles/picomsx.dir/picomsx/YM2413.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/YM2413.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/YM2413.c
+CMakeFiles/picomsx.dir/picomsx/YM2413.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/YM2413.c
 CMakeFiles/picomsx.dir/picomsx/YM2413.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/picomsx.dir/picomsx/YM2413.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/YM2413.c.o -MF CMakeFiles/picomsx.dir/picomsx/YM2413.c.o.d -o CMakeFiles/picomsx.dir/picomsx/YM2413.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/YM2413.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/picomsx.dir/picomsx/YM2413.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/YM2413.c.o -MF CMakeFiles/picomsx.dir/picomsx/YM2413.c.o.d -o CMakeFiles/picomsx.dir/picomsx/YM2413.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/YM2413.c
 
 CMakeFiles/picomsx.dir/picomsx/YM2413.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/YM2413.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/YM2413.c > CMakeFiles/picomsx.dir/picomsx/YM2413.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/YM2413.c > CMakeFiles/picomsx.dir/picomsx/YM2413.c.i
 
 CMakeFiles/picomsx.dir/picomsx/YM2413.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/YM2413.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/YM2413.c -o CMakeFiles/picomsx.dir/picomsx/YM2413.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/YM2413.c -o CMakeFiles/picomsx.dir/picomsx/YM2413.c.s
 
 CMakeFiles/picomsx.dir/picomsx/Z80.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/Z80.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Z80.c
+CMakeFiles/picomsx.dir/picomsx/Z80.c.o: /home/jcher/바탕화면/Pico2MSX/picomsx/Z80.c
 CMakeFiles/picomsx.dir/picomsx/Z80.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/picomsx.dir/picomsx/Z80.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Z80.c.o -MF CMakeFiles/picomsx.dir/picomsx/Z80.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Z80.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Z80.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/picomsx.dir/picomsx/Z80.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/Z80.c.o -MF CMakeFiles/picomsx.dir/picomsx/Z80.c.o.d -o CMakeFiles/picomsx.dir/picomsx/Z80.c.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/Z80.c
 
 CMakeFiles/picomsx.dir/picomsx/Z80.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/picomsx/Z80.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Z80.c > CMakeFiles/picomsx.dir/picomsx/Z80.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/Z80.c > CMakeFiles/picomsx.dir/picomsx/Z80.c.i
 
 CMakeFiles/picomsx.dir/picomsx/Z80.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/picomsx/Z80.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/Z80.c -o CMakeFiles/picomsx.dir/picomsx/Z80.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/Z80.c -o CMakeFiles/picomsx.dir/picomsx/Z80.c.s
 
 CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o: /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/picomsx.cpp
+CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o: /home/jcher/바탕화면/Pico2MSX/picomsx/picomsx.cpp
 CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o -MF CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o.d -o CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/picomsx.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o -MF CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o.d -o CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.o -c /home/jcher/바탕화면/Pico2MSX/picomsx/picomsx.cpp
 
 CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.i"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/picomsx.cpp > CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.i
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/picomsx/picomsx.cpp > CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.i
 
 CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.s"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/picomsx/picomsx.cpp -o CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.s
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/picomsx/picomsx.cpp -o CMakeFiles/picomsx.dir/picomsx/picomsx.cpp.s
 
 CMakeFiles/picomsx.dir/flash/flash_t.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/flash/flash_t.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/flash/flash_t.c
+CMakeFiles/picomsx.dir/flash/flash_t.c.o: /home/jcher/바탕화면/Pico2MSX/flash/flash_t.c
 CMakeFiles/picomsx.dir/flash/flash_t.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/picomsx.dir/flash/flash_t.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/flash/flash_t.c.o -MF CMakeFiles/picomsx.dir/flash/flash_t.c.o.d -o CMakeFiles/picomsx.dir/flash/flash_t.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/flash/flash_t.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/picomsx.dir/flash/flash_t.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/flash/flash_t.c.o -MF CMakeFiles/picomsx.dir/flash/flash_t.c.o.d -o CMakeFiles/picomsx.dir/flash/flash_t.c.o -c /home/jcher/바탕화면/Pico2MSX/flash/flash_t.c
 
 CMakeFiles/picomsx.dir/flash/flash_t.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/flash/flash_t.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/flash/flash_t.c > CMakeFiles/picomsx.dir/flash/flash_t.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/flash/flash_t.c > CMakeFiles/picomsx.dir/flash/flash_t.c.i
 
 CMakeFiles/picomsx.dir/flash/flash_t.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/flash/flash_t.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/flash/flash_t.c -o CMakeFiles/picomsx.dir/flash/flash_t.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/flash/flash_t.c -o CMakeFiles/picomsx.dir/flash/flash_t.c.s
 
 CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: /home/jcher/바탕화면/pico-test/Pico2MSX/display/pico_dsp.cpp
+CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: /home/jcher/바탕화면/Pico2MSX/display/pico_dsp.cpp
 CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o -MF CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o.d -o CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/display/pico_dsp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o -MF CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o.d -o CMakeFiles/picomsx.dir/display/pico_dsp.cpp.o -c /home/jcher/바탕화면/Pico2MSX/display/pico_dsp.cpp
 
 CMakeFiles/picomsx.dir/display/pico_dsp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/picomsx.dir/display/pico_dsp.cpp.i"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/display/pico_dsp.cpp > CMakeFiles/picomsx.dir/display/pico_dsp.cpp.i
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/display/pico_dsp.cpp > CMakeFiles/picomsx.dir/display/pico_dsp.cpp.i
 
 CMakeFiles/picomsx.dir/display/pico_dsp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/picomsx.dir/display/pico_dsp.cpp.s"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/display/pico_dsp.cpp -o CMakeFiles/picomsx.dir/display/pico_dsp.cpp.s
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/display/pico_dsp.cpp -o CMakeFiles/picomsx.dir/display/pico_dsp.cpp.s
 
 CMakeFiles/picomsx.dir/display/emuapi.cpp.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/display/emuapi.cpp.o: /home/jcher/바탕화면/pico-test/Pico2MSX/display/emuapi.cpp
+CMakeFiles/picomsx.dir/display/emuapi.cpp.o: /home/jcher/바탕화면/Pico2MSX/display/emuapi.cpp
 CMakeFiles/picomsx.dir/display/emuapi.cpp.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/picomsx.dir/display/emuapi.cpp.o"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/display/emuapi.cpp.o -MF CMakeFiles/picomsx.dir/display/emuapi.cpp.o.d -o CMakeFiles/picomsx.dir/display/emuapi.cpp.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/display/emuapi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/picomsx.dir/display/emuapi.cpp.o"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/display/emuapi.cpp.o -MF CMakeFiles/picomsx.dir/display/emuapi.cpp.o.d -o CMakeFiles/picomsx.dir/display/emuapi.cpp.o -c /home/jcher/바탕화면/Pico2MSX/display/emuapi.cpp
 
 CMakeFiles/picomsx.dir/display/emuapi.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/picomsx.dir/display/emuapi.cpp.i"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/display/emuapi.cpp > CMakeFiles/picomsx.dir/display/emuapi.cpp.i
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/display/emuapi.cpp > CMakeFiles/picomsx.dir/display/emuapi.cpp.i
 
 CMakeFiles/picomsx.dir/display/emuapi.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/picomsx.dir/display/emuapi.cpp.s"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/display/emuapi.cpp -o CMakeFiles/picomsx.dir/display/emuapi.cpp.s
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/display/emuapi.cpp -o CMakeFiles/picomsx.dir/display/emuapi.cpp.s
 
 CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o: /home/jcher/바탕화면/pico-test/Pico2MSX/display/AudioPlaySystem.cpp
+CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o: /home/jcher/바탕화면/Pico2MSX/display/AudioPlaySystem.cpp
 CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o -MF CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o.d -o CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/display/AudioPlaySystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o -MF CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o.d -o CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.o -c /home/jcher/바탕화면/Pico2MSX/display/AudioPlaySystem.cpp
 
 CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.i"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/display/AudioPlaySystem.cpp > CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.i
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/display/AudioPlaySystem.cpp > CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.i
 
 CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.s"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/display/AudioPlaySystem.cpp -o CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.s
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/display/AudioPlaySystem.cpp -o CMakeFiles/picomsx.dir/display/AudioPlaySystem.cpp.s
 
 CMakeFiles/picomsx.dir/display/display_picodvi.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/display/display_picodvi.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/display/display_picodvi.c
+CMakeFiles/picomsx.dir/display/display_picodvi.c.o: /home/jcher/바탕화면/Pico2MSX/display/display_picodvi.c
 CMakeFiles/picomsx.dir/display/display_picodvi.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/picomsx.dir/display/display_picodvi.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/display/display_picodvi.c.o -MF CMakeFiles/picomsx.dir/display/display_picodvi.c.o.d -o CMakeFiles/picomsx.dir/display/display_picodvi.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/display/display_picodvi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/picomsx.dir/display/display_picodvi.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/display/display_picodvi.c.o -MF CMakeFiles/picomsx.dir/display/display_picodvi.c.o.d -o CMakeFiles/picomsx.dir/display/display_picodvi.c.o -c /home/jcher/바탕화면/Pico2MSX/display/display_picodvi.c
 
 CMakeFiles/picomsx.dir/display/display_picodvi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/display/display_picodvi.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/display/display_picodvi.c > CMakeFiles/picomsx.dir/display/display_picodvi.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/display/display_picodvi.c > CMakeFiles/picomsx.dir/display/display_picodvi.c.i
 
 CMakeFiles/picomsx.dir/display/display_picodvi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/display/display_picodvi.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/display/display_picodvi.c -o CMakeFiles/picomsx.dir/display/display_picodvi.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/display/display_picodvi.c -o CMakeFiles/picomsx.dir/display/display_picodvi.c.s
 
 CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/sd_driver/tf_card.c
+CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o: /home/jcher/바탕화면/Pico2MSX/sd_driver/tf_card.c
 CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o -MF CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o.d -o CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/sd_driver/tf_card.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o -MF CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o.d -o CMakeFiles/picomsx.dir/sd_driver/tf_card.c.o -c /home/jcher/바탕화면/Pico2MSX/sd_driver/tf_card.c
 
 CMakeFiles/picomsx.dir/sd_driver/tf_card.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/sd_driver/tf_card.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/sd_driver/tf_card.c > CMakeFiles/picomsx.dir/sd_driver/tf_card.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/sd_driver/tf_card.c > CMakeFiles/picomsx.dir/sd_driver/tf_card.c.i
 
 CMakeFiles/picomsx.dir/sd_driver/tf_card.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/sd_driver/tf_card.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/sd_driver/tf_card.c -o CMakeFiles/picomsx.dir/sd_driver/tf_card.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/sd_driver/tf_card.c -o CMakeFiles/picomsx.dir/sd_driver/tf_card.c.s
 
 CMakeFiles/picomsx.dir/fatfs/source/ff.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/fatfs/source/ff.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ff.c
+CMakeFiles/picomsx.dir/fatfs/source/ff.c.o: /home/jcher/바탕화면/Pico2MSX/fatfs/source/ff.c
 CMakeFiles/picomsx.dir/fatfs/source/ff.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/picomsx.dir/fatfs/source/ff.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/fatfs/source/ff.c.o -MF CMakeFiles/picomsx.dir/fatfs/source/ff.c.o.d -o CMakeFiles/picomsx.dir/fatfs/source/ff.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ff.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/picomsx.dir/fatfs/source/ff.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/fatfs/source/ff.c.o -MF CMakeFiles/picomsx.dir/fatfs/source/ff.c.o.d -o CMakeFiles/picomsx.dir/fatfs/source/ff.c.o -c /home/jcher/바탕화면/Pico2MSX/fatfs/source/ff.c
 
 CMakeFiles/picomsx.dir/fatfs/source/ff.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/fatfs/source/ff.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ff.c > CMakeFiles/picomsx.dir/fatfs/source/ff.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/fatfs/source/ff.c > CMakeFiles/picomsx.dir/fatfs/source/ff.c.i
 
 CMakeFiles/picomsx.dir/fatfs/source/ff.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/fatfs/source/ff.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ff.c -o CMakeFiles/picomsx.dir/fatfs/source/ff.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/fatfs/source/ff.c -o CMakeFiles/picomsx.dir/fatfs/source/ff.c.s
 
 CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffunicode.c
+CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o: /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffunicode.c
 CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o -MF CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o.d -o CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffunicode.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o -MF CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o.d -o CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.o -c /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffunicode.c
 
 CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffunicode.c > CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffunicode.c > CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.i
 
 CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffunicode.c -o CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffunicode.c -o CMakeFiles/picomsx.dir/fatfs/source/ffunicode.c.s
 
 CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffsystem.c
+CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o: /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffsystem.c
 CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o -MF CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o.d -o CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffsystem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o -MF CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o.d -o CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.o -c /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffsystem.c
 
 CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffsystem.c > CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffsystem.c > CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.i
 
 CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/fatfs/source/ffsystem.c -o CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/fatfs/source/ffsystem.c -o CMakeFiles/picomsx.dir/fatfs/source/ffsystem.c.s
 
 CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/usb_kbd/hid_app.c
+CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o: /home/jcher/바탕화면/Pico2MSX/usb_kbd/hid_app.c
 CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o -MF CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o.d -o CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/usb_kbd/hid_app.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o -MF CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o.d -o CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.o -c /home/jcher/바탕화면/Pico2MSX/usb_kbd/hid_app.c
 
 CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/usb_kbd/hid_app.c > CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/usb_kbd/hid_app.c > CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.i
 
 CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/usb_kbd/hid_app.c -o CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/usb_kbd/hid_app.c -o CMakeFiles/picomsx.dir/usb_kbd/hid_app.c.s
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c.i: cmake_force
@@ -411,7 +411,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i: cmake_force
@@ -425,7 +425,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_multicore/multico
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.o: /home/jcher/pico-sdk/src/common/pico_sync/sem.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.o -c /home/jcher/pico-sdk/src/common/pico_sync/sem.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.i: cmake_force
@@ -439,7 +439,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/sem.c.s: cmake_f
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.o: /home/jcher/pico-sdk/src/common/pico_sync/lock_core.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.o -c /home/jcher/pico-sdk/src/common/pico_sync/lock_core.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.i: cmake_force
@@ -453,7 +453,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/lock_core.c.s: c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.o: /home/jcher/pico-sdk/src/common/pico_sync/mutex.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.o -c /home/jcher/pico-sdk/src/common/pico_sync/mutex.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.i: cmake_force
@@ -467,7 +467,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/mutex.c.s: cmake
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.o: /home/jcher/pico-sdk/src/common/pico_sync/critical_section.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.o -c /home/jcher/pico-sdk/src/common/pico_sync/critical_section.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section.c.i: cmake_force
@@ -481,7 +481,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_sync/critical_section
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.o: /home/jcher/pico-sdk/src/common/pico_time/time.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.o -c /home/jcher/pico-sdk/src/common/pico_time/time.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.i: cmake_force
@@ -495,7 +495,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/time.c.s: cmake_
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.o: /home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.o -c /home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c.i: cmake_force
@@ -509,7 +509,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_time/timeout_helper.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c.i: cmake_force
@@ -523,7 +523,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_timer/timer.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.o: /home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.o -c /home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.i: cmake_force
@@ -537,7 +537,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2350/pico_platform/platform.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/common.c.i: cmake_force
@@ -551,7 +551,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_common/c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.i: cmake_force
@@ -565,7 +565,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/pa
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.o: /home/jcher/pico-sdk/src/common/hardware_claim/claim.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.o -c /home/jcher/pico-sdk/src/common/hardware_claim/claim.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.i: cmake_force
@@ -579,7 +579,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/hardware_claim/claim.c.s: 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.i: cmake_force
@@ -593,7 +593,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i: cmake_force
@@ -607,7 +607,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_sync_spin_loc
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.i: cmake_force
@@ -620,7 +620,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq.c.s: 
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o: /home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o   -c /home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.i: cmake_force
@@ -634,7 +634,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handl
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.o: /home/jcher/pico-sdk/src/common/pico_util/datetime.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.o -c /home/jcher/pico-sdk/src/common/pico_util/datetime.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.i: cmake_force
@@ -648,7 +648,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/datetime.c.s: cm
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.o: /home/jcher/pico-sdk/src/common/pico_util/pheap.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.o -c /home/jcher/pico-sdk/src/common/pico_util/pheap.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.i: cmake_force
@@ -662,7 +662,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/pheap.c.s: cmake
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.o: /home/jcher/pico-sdk/src/common/pico_util/queue.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.o -c /home/jcher/pico-sdk/src/common/pico_util/queue.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.i: cmake_force
@@ -676,7 +676,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/common/pico_util/queue.c.s: cmake
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i: cmake_force
@@ -690,7 +690,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i: cmake_force
@@ -704,7 +704,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.i: cmake_force
@@ -718,7 +718,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i: cmake_force
@@ -732,7 +732,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_clocks/clocks
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.i: cmake_force
@@ -746,7 +746,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pll/pll.c.s: 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i: cmake_force
@@ -760,7 +760,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i: cmake_force
@@ -774,7 +774,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_watchdog/watc
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.i: cmake_force
@@ -788,7 +788,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_ticks/ticks.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i: cmake_force
@@ -802,7 +802,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.i: cmake_force
@@ -816,7 +816,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bootrom/bootrom_l
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.i: cmake_force
@@ -830,7 +830,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_boot_lock/boo
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.i: cmake_force
@@ -844,7 +844,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_flash/flash.c.s: 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i: cmake_force
@@ -858,7 +858,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divider.c.i: cmake_force
@@ -872,7 +872,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_divider/divid
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i: cmake_force
@@ -886,7 +886,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime/runtime.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.i: cmake_force
@@ -900,7 +900,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runt
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i: cmake_force
@@ -914,7 +914,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runt
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i: cmake_force
@@ -927,7 +927,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/runt
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.i: cmake_force
@@ -941,7 +941,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_a
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_compiler.c.i: cmake_force
@@ -955,7 +955,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_divider/divider_c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_math.c.i: cmake_force
@@ -968,7 +968,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_mat
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S.i: cmake_force
@@ -981,7 +981,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aea
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S.i: cmake_force
@@ -994,7 +994,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S.i: cmake_force
@@ -1007,7 +1007,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S.i: cmake_force
@@ -1021,7 +1021,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_con
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.c.i: cmake_force
@@ -1034,7 +1034,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_math.
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S.i: cmake_force
@@ -1047,7 +1047,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv3
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S.i: cmake_force
@@ -1060,7 +1060,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_commo
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S.i: cmake_force
@@ -1074,7 +1074,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.i: cmake_force
@@ -1088,7 +1088,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_malloc/malloc.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.i: cmake_force
@@ -1102,7 +1102,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_atomic/atomic.c.s
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o: /home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o"
 	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o -c /home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.i: cmake_force
@@ -1116,7 +1116,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_cxx_options/new_d
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i: cmake_force
@@ -1130,7 +1130,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_standard_binary_i
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.i: cmake_force
@@ -1143,7 +1143,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o: /home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building ASM object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o   -c /home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.i: cmake_force
@@ -1157,7 +1157,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.s: cm
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.i: cmake_force
@@ -1171,7 +1171,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_clib_interface/ne
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i: cmake_force
@@ -1185,7 +1185,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s: 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i: cmake_force
@@ -1199,7 +1199,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.i: cmake_force
@@ -1213,7 +1213,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_dma/dma.c.s: 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.i: cmake_force
@@ -1227,7 +1227,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_spi/spi.c.s: 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.i: cmake_force
@@ -1241,7 +1241,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_adc/adc.c.s: 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.i: cmake_force
@@ -1255,7 +1255,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_pio/pio.c.s: 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/hcd_rp2040.c.i: cmake_force
@@ -1269,7 +1269,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i: cmake_force
@@ -1283,7 +1283,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/portable/raspberrypi/
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.i: cmake_force
@@ -1297,7 +1297,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/usbh.c.s: cmake_
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.i: cmake_force
@@ -1311,7 +1311,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/host/hub.c.s: cmake_f
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.i: cmake_force
@@ -1325,7 +1325,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/cdc/cdc_host.c.
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.i: cmake_force
@@ -1339,7 +1339,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/hid/hid_host.c.
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.i: cmake_force
@@ -1353,7 +1353,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/msc/msc_host.c.
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_host.c.i: cmake_force
@@ -1367,7 +1367,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/class/vendor/vendor_h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/tusb.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/tusb.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.i: cmake_force
@@ -1381,7 +1381,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/tusb.c.s: cmake_force
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: /home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o -c /home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i: cmake_force
@@ -1395,7 +1395,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s:
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.o: /home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.o -c /home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.i: cmake_force
@@ -1409,7 +1409,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.s:
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: /home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o -c /home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i: cmake_force
@@ -1423,7 +1423,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_unique_id/unique_
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c.i: cmake_force
@@ -1437,7 +1437,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_flash/flash.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i: cmake_force
@@ -1449,37 +1449,37 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s
 
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c
+CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o: /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o -MF CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o.d -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o -MF CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o.d -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.o -c /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c
 
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c > CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c > CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.i
 
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_util_buffer/buffer.c -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_util_buffer/buffer.c.s
 
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp
+CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o -MF CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o.d -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o -MF CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o.d -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.o -c /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp
 
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.i"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp > CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.i
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp > CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.i
 
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.s"
-	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.s
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio.cpp -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio.cpp.s
 
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.o: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio_utils.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building ASM object CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.o"
-	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.o   -c /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio_utils.S
+CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.o: /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio_utils.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building ASM object CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.o"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.o   -c /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio_utils.S
 
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.i"
@@ -1490,23 +1490,23 @@ CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.s: cmake_
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c
+CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o: /home/jcher/바탕화면/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c
 CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o -MF CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o.d -o CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o -MF CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o.d -o CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.o -c /home/jcher/바탕화면/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c
 
 CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c > CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c > CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.i
 
 CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c -o CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c -o CMakeFiles/picomsx.dir/pico-extras/src/rp2_common/pico_audio_i2s/audio_i2s.c.s
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i: cmake_force
@@ -1518,107 +1518,107 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s: 
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb.c
+CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o: /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb.c
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o -MF CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o.d -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o -MF CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o.d -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.o -c /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb.c
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb.c > CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb.c > CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.i
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb.c -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb.c -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb.c.s
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_device.c
+CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o: /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_device.c
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o -MF CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o.d -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_device.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o -MF CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o.d -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.o -c /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_device.c
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_device.c > CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_device.c > CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.i
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_device.c -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_device.c -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_device.c.s
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_host.c
+CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o: /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_host.c
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o -MF CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o.d -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_host.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o -MF CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o.d -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.o -c /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_host.c
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_host.c > CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_host.c > CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.i
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/pio_usb_host.c -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/pio_usb_host.c -o CMakeFiles/picomsx.dir/pico-pio-usb/src/pio_usb_host.c.s
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_crc.c
+CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o: /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_crc.c
 CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o -MF CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o.d -o CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_crc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o -MF CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o.d -o CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.o -c /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_crc.c
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_crc.c > CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_crc.c > CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.i
 
 CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/pico-pio-usb/src/usb_crc.c -o CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/pico-pio-usb/src/usb_crc.c -o CMakeFiles/picomsx.dir/pico-pio-usb/src/usb_crc.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi.c
+CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi.c
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.o -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi.c
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.i
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.c
+CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.c
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.o -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.c
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.i
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_serialiser.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c
+CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.i
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building ASM object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.o"
-	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.o   -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.S
+CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building ASM object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.o"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.o   -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.S
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.i"
@@ -1629,51 +1629,51 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.s: cmake_force
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c
+CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.o -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.i
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/data_packet.c
+CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/data_packet.c
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/data_packet.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.o -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/data_packet.c
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/data_packet.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/data_packet.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.i
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/data_packet.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/data_packet.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/data_packet.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/audio_ring.c
+CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/audio_ring.c
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/audio_ring.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.o -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/audio_ring.c
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/audio_ring.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/audio_ring.c > CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.i
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/audio_ring.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/audio_ring.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/audio_ring.c.s
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.i: cmake_force
@@ -1685,37 +1685,37 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_interp/interp.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite.c
+CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite.c
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.o -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite.c
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite.c > CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite.c > CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.i
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/tile.c
+CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/tile.c
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/tile.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o -MF CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o.d -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.o -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/tile.c
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/tile.c > CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/tile.c > CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.i
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/tile.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/tile.c -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile.c.s
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_armv6m.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building ASM object CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.o"
-	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.o   -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_armv6m.S
+CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_armv6m.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building ASM object CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.o"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.o   -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_armv6m.S
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.i"
@@ -1726,9 +1726,9 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.s: cmake_force
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.o: /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/tile_armv6m.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building ASM object CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.o"
-	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.o   -c /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/tile_armv6m.S
+CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.o: /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/tile_armv6m.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building ASM object CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.o"
+	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.o   -c /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/tile_armv6m.S
 
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.i"
@@ -1739,51 +1739,51 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.s: cmake_force
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_ASM_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c
+CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o: /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o -MF CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o.d -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o -MF CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o.d -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.o -c /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c > CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c > CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.i
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_pico_alloc.c.s
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_psram.c
+CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o: /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_psram.c
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o -MF CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o.d -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_psram.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o -MF CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o.d -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.o -c /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_psram.c
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_psram.c > CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_psram.c > CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.i
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_psram.c -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/sfe_psram.c -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/sfe_psram.c.s
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o: CMakeFiles/picomsx.dir/flags.make
-CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o: /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c
+CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o: /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o -MF CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o.d -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o -c /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o -MF CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o.d -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.o -c /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c > CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c > CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.i
 
 CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/pico-test/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jcher/바탕화면/Pico2MSX/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c -o CMakeFiles/picomsx.dir/sparkfun-pico/sparkfun_pico/tlsf/tlsf.c.s
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.o: CMakeFiles/picomsx.dir/flags.make
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.o: /home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.o: CMakeFiles/picomsx.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.o -MF CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.o.d -o CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.o -c /home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c
 
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_exception/exception.c.i: cmake_force
@@ -2052,14 +2052,14 @@ picomsx.elf: CMakeFiles/picomsx.dir/build.make
 picomsx.elf: pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default_library.dir/bs2_default_padded_checksummed.S.o
 picomsx.elf: /home/jcher/pico-sdk/src/rp2_common/pico_crt0/rp2350/memmap_default.ld
 picomsx.elf: CMakeFiles/picomsx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Linking CXX executable picomsx.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jcher/바탕화면/Pico2MSX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Linking CXX executable picomsx.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/picomsx.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/arm-none-eabi-objdump -h /home/jcher/바탕화면/pico-test/Pico2MSX/build/picomsx.elf > picomsx.dis
-	/usr/bin/arm-none-eabi-objdump -d /home/jcher/바탕화면/pico-test/Pico2MSX/build/picomsx.elf >> picomsx.dis
+	/usr/bin/arm-none-eabi-objdump -h /home/jcher/바탕화면/Pico2MSX/build/picomsx.elf > picomsx.dis
+	/usr/bin/arm-none-eabi-objdump -d /home/jcher/바탕화면/Pico2MSX/build/picomsx.elf >> picomsx.dis
 	/usr/bin/picotool coprodis --quiet picomsx.dis picomsx.dis
-	/usr/bin/arm-none-eabi-objcopy -Oihex /home/jcher/바탕화면/pico-test/Pico2MSX/build/picomsx.elf picomsx.hex
-	/usr/bin/arm-none-eabi-objcopy -Obinary /home/jcher/바탕화면/pico-test/Pico2MSX/build/picomsx.elf picomsx.bin
-	/usr/bin/picotool uf2 convert --quiet /home/jcher/바탕화면/pico-test/Pico2MSX/build/picomsx.elf picomsx.uf2 --family rp2350-arm-s --abs-block
+	/usr/bin/arm-none-eabi-objcopy -Oihex /home/jcher/바탕화면/Pico2MSX/build/picomsx.elf picomsx.hex
+	/usr/bin/arm-none-eabi-objcopy -Obinary /home/jcher/바탕화면/Pico2MSX/build/picomsx.elf picomsx.bin
+	/usr/bin/picotool uf2 convert --quiet /home/jcher/바탕화면/Pico2MSX/build/picomsx.elf picomsx.uf2 --family rp2350-arm-s --abs-block
 
 # Rule to build all files generated by this target.
 CMakeFiles/picomsx.dir/build: picomsx.elf
@@ -2070,6 +2070,6 @@ CMakeFiles/picomsx.dir/clean:
 .PHONY : CMakeFiles/picomsx.dir/clean
 
 CMakeFiles/picomsx.dir/depend:
-	cd /home/jcher/바탕화면/pico-test/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/pico-test/Pico2MSX /home/jcher/바탕화면/pico-test/Pico2MSX /home/jcher/바탕화면/pico-test/Pico2MSX/build /home/jcher/바탕화면/pico-test/Pico2MSX/build /home/jcher/바탕화면/pico-test/Pico2MSX/build/CMakeFiles/picomsx.dir/DependInfo.cmake "--color=$(COLOR)" picomsx
+	cd /home/jcher/바탕화면/Pico2MSX/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jcher/바탕화면/Pico2MSX /home/jcher/바탕화면/Pico2MSX /home/jcher/바탕화면/Pico2MSX/build /home/jcher/바탕화면/Pico2MSX/build /home/jcher/바탕화면/Pico2MSX/build/CMakeFiles/picomsx.dir/DependInfo.cmake "--color=$(COLOR)" picomsx
 .PHONY : CMakeFiles/picomsx.dir/depend
 

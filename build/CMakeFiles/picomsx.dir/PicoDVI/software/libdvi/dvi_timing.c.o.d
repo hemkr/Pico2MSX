@@ -1,6 +1,6 @@
 CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o: \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.c \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi.h \
  /home/jcher/pico-sdk/src/common/pico_util/include/pico/util/queue.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
@@ -18,10 +18,10 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o: \
  /usr/arm-none-eabi/include/sys/_intsup.h \
  /usr/arm-none-eabi/include/sys/_stdint.h \
  /usr/lib/gcc/arm-none-eabi/14.2.0/include/stddef.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/version.h \
+ /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/version.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/build/generated/pico_base/pico/config_autogen.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/jcher/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
@@ -45,15 +45,15 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_timing.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_serialiser.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pio.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pio.h \
@@ -72,6 +72,6 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/dvi_timing.c.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/scb.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio_coproc.h \
  /home/jcher/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/util_queue_u32_inline.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/data_packet.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/audio_ring.h
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/util_queue_u32_inline.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/data_packet.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/audio_ring.h

@@ -7,22 +7,22 @@ CMakeFiles/picomsx.dir/PicoDVI/software/libdvi/tmds_encode.S.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
  /home/jcher/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.S \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/dvi_config_defs.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libdvi/tmds_encode.S \
  generated/pico_base/pico/config_autogen.h
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/sprite_armv6m.S.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_armv6m.S \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_armv6m.S \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h
 CMakeFiles/picomsx.dir/PicoDVI/software/libsprite/tile_armv6m.S.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/libsprite/tile_armv6m.S
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/sprite_asm_const.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/libsprite/tile_armv6m.S
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o: \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jcher/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
@@ -51,7 +51,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/hardware_irq/irq_handl
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o: \
@@ -87,7 +87,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_a
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_runtime/include/pico/runtime.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_runtime_init/include/pico/runtime_init.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o: \
@@ -130,7 +130,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o: \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aeabi_dcp.S.o: \
@@ -153,7 +153,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_aea
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_conv_m33.S.o: \
@@ -174,7 +174,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_con
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma_dcp.S.o: \
@@ -197,7 +197,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_fma
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci_m33.S.o: \
@@ -218,7 +218,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_double/double_sci
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_common_m33.S.o: \
@@ -239,7 +239,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_commo
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv32_vfp.S.o: \
@@ -260,7 +260,7 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_conv3
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m33_vfp.S.o: \
@@ -281,11 +281,11 @@ CMakeFiles/picomsx.dir/home/jcher/pico-sdk/src/rp2_common/pico_float/float_sci_m
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
  /home/jcher/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
+ /home/jcher/바탕화면/Pico2MSX/PicoDVI/software/boards/waveshare_rp2350_pizero.h \
  generated/pico_base/pico/config_autogen.h \
  generated/pico_base/pico/version.h
 CMakeFiles/picomsx.dir/pico-extras/src/common/pico_audio/audio_utils.S.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
- /home/jcher/바탕화면/pico-test/Pico2MSX/pico-extras/src/common/pico_audio/audio_utils.S
+ /home/jcher/바탕화면/Pico2MSX/pico-extras/src/common/pico_audio/audio_utils.S
