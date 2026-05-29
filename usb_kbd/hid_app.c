@@ -952,9 +952,9 @@ static bool process_parsed_gamepad_report(uint8_t instance, const uint8_t *repor
     for (uint8_t i = 0; i < info->button_count; i++) {
         uint16_t offset = info->button_offset + (uint16_t)i * info->button_size;
         if (extract_bits(report, offset, info->button_size)) {
-            printf("[BTN] instance=%d index=%d pressed\r\n", instance, i);
+            //printf("[BTN] instance=%d index=%d pressed\r\n", instance, i);
             if      (i == 15)             decoded_report |= mask_btn;        // A버튼
-            else if (i == 14)          decoded_report | MASK_KEY_USER3; //B버튼
+            else if (i == 14)          decoded_report |= MASK_KEY_USER3; //B버튼
             else if (i == 13)          decoded_report |= MASK_KEY_USER2;
             else if (i == 1)             decoded_report |= MASK_KEY_USER2;
             else if (i == 2)             decoded_report |= mask_btn;        // A버튼
