@@ -242,10 +242,10 @@ See `picomsx/CAMBIOS.md` for a detailed list of all modifications.
 * Support for gamepads including PS3 controllers and 2-player mode.
 * SD card clock was set too high causing file loading failures
 * Performance/speed issues
-* Boot issues caused by I2C
+* Boot issues caused by I2C issue
 * Keyboard arrow key issues
 * BASIC screen red color issue
-* HDMI audio not working
+* HDMI audio not working issue 
 * PIO-USB detection issues
 * Stuttering when changing keyboard directions
 * Changed keyboard layout to US and fixed non-working keys
