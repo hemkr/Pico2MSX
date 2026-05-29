@@ -162,7 +162,7 @@ byte CCount;                       /* Number of memory blcks */
 
 
 /** Cartridge files used by fMSX *****************************/
-char CartA[128]; //"CARTA.ROM";    /* Cartridge A ROM file   */
+char CartA[272]; //"CARTA.ROM";    /* Cartridge A ROM file   */
 char *CartB      = "CARTB.ROM";    /* Cartridge B ROM file   */
 
 /** Disk images used by fMSX *********************************/

@@ -52,23 +52,25 @@ static bool emu_eraseGfxConfig(void);
 #include "pico_dsp.h"
 extern PICO_DSP tft;
 
-#define MAX_FILENAME_PATH   64
+#define MAX_FILENAME_PATH   260
 #define NB_FILE_HANDLER     4
 #define AUTORUN_FILENAME    "autorun.txt"
 #define GFX_CFG_FILENAME    "gfxmode.txt"
 #define KBD_CFG_FILENAME    "kbdmode.txt"
 
 #define MAX_FILES           64
-#define MAX_FILENAME_SIZE   32
-#define MAX_MENULINES       9
+#define MAX_FILENAME_SIZE   256
+#define MAX_MENULINES       11
 #define TEXT_HEIGHT         16
 #define TEXT_WIDTH          8
 #define MENU_FILE_XOFFSET   (6*TEXT_WIDTH)
 #define MENU_FILE_YOFFSET   (2*TEXT_HEIGHT)
-#define MENU_FILE_W         (MAX_FILENAME_SIZE*TEXT_WIDTH)
+#define MENU_FILE_W         (42*TEXT_WIDTH)   /* Display width only — actual filename buffer is MAX_FILENAME_SIZE */
 #define MENU_FILE_H         (MAX_MENULINES*TEXT_HEIGHT)
+#define MENU_FILE_DISP_CHARS  ((MENU_FILE_W - 8) / (TEXT_WIDTH * 2)) + 10
+#define MENU_FILE_NAME_PAD  4
 #define MENU_FILE_BGCOLOR   RGBVAL16(0x00,0x00,0x40)
-#define MENU_JOYS_YOFFSET   (12*TEXT_HEIGHT)
+#define MENU_JOYS_YOFFSET   (MENU_FILE_YOFFSET + MENU_FILE_H + 4)
 #define MENU_VBAR_XOFFSET   (0*TEXT_WIDTH)
 #define MENU_VBAR_YOFFSET   (MENU_FILE_YOFFSET)
 
@@ -1066,12 +1068,14 @@ static int readNbFiles(char * rootdir) {
     if ( !(entry.fattrib & AM_DIR) ) {
       if (strcmp(filename,AUTORUN_FILENAME)) {
         strncpy(&files[totalFiles][0], filename, MAX_FILENAME_SIZE-1);
+        files[totalFiles][MAX_FILENAME_SIZE-1] = '\0';
         totalFiles++;
       }  
     }
     else {
       if ( (strcmp(filename,".")) && (strcmp(filename,"..")) ) {
         strncpy(&files[totalFiles][0], filename, MAX_FILENAME_SIZE-1);
+        files[totalFiles][MAX_FILENAME_SIZE-1] = '\0';
         totalFiles++;
       }
     }
@@ -1211,18 +1215,31 @@ int handleMenu(uint16_t bClick)
     int i=0;
     while (i<MAX_MENULINES) {
       if (fileIndex>=nbFiles) {
-          // no more files
           break;
       }
       char * filename = &files[fileIndex][0];    
       if (fileIndex >= topFile) {              
         if ((i+topFile) < nbFiles ) {
+          char dispBuf[MAX_FILENAME_SIZE];
+          int fnLen = strlen(filename);
+          if (fnLen > MENU_FILE_DISP_CHARS) {
+              int showLen = MENU_FILE_DISP_CHARS - 3;
+              if (showLen < 0) showLen = 0;
+              memcpy(dispBuf, filename, showLen);
+              dispBuf[showLen] = '.';
+              dispBuf[showLen+1] = '.';
+              dispBuf[showLen+2] = '.';
+              dispBuf[showLen+3] = '\0';
+          } else {
+              memcpy(dispBuf, filename, fnLen);
+              dispBuf[fnLen] = '\0';
+          }
           if ((i+topFile)==curFile) {
-            tft.drawTextNoDma(MENU_FILE_XOFFSET,i*TEXT_HEIGHT+MENU_FILE_YOFFSET, filename, RGBVAL16(0xff,0xff,0x00), RGBVAL16(0xff,0x00,0x00), true);
+            tft.drawTextNoDma(MENU_FILE_XOFFSET+MENU_FILE_NAME_PAD,i*TEXT_HEIGHT+MENU_FILE_YOFFSET, dispBuf, RGBVAL16(0xff,0xff,0x00), RGBVAL16(0xff,0x00,0x00), true);
             strcpy(selected_filename,filename);            
           }
           else {
-            tft.drawTextNoDma(MENU_FILE_XOFFSET,i*TEXT_HEIGHT+MENU_FILE_YOFFSET, filename, RGBVAL16(0xff,0xff,0xff), MENU_FILE_BGCOLOR, true);      
+            tft.drawTextNoDma(MENU_FILE_XOFFSET+MENU_FILE_NAME_PAD,i*TEXT_HEIGHT+MENU_FILE_YOFFSET, dispBuf, RGBVAL16(0xff,0xff,0xff), MENU_FILE_BGCOLOR, true);      
           }
         }
         i++; 
@@ -1230,7 +1247,17 @@ int handleMenu(uint16_t bClick)
       fileIndex++;    
     }
 
-     
+    {
+      int sx = MENU_FILE_XOFFSET + MENU_FILE_W - 25;
+      if (topFile > 0) {
+        tft.drawTextNoDma(sx, MENU_FILE_YOFFSET, "^", RGBVAL16(0x00,0xff,0xff), RGBVAL16(0x00,0x00,0x00), false);
+      }
+      if (topFile + MAX_MENULINES < nbFiles) {
+        tft.drawTextNoDma(sx, MENU_FILE_YOFFSET + MENU_FILE_H - 16, "v", RGBVAL16(0x00,0xff,0xff), RGBVAL16(0x00,0x00,0x00), false);
+      }
+    }
+
+         
     tft.drawTextNoDma(48,MENU_JOYS_YOFFSET+8, (emu_SwapJoysticks(1)?(char*)"SWAP=1":(char*)"SWAP=0"), RGBVAL16(0x00,0xff,0xff), RGBVAL16(0x00,0x00,0xff), false);
     menuRedraw=false;     
   }
