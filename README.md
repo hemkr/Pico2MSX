@@ -237,7 +237,7 @@ See `picomsx/CAMBIOS.md` for a detailed list of all modifications.
 
 ## Version
 
-**v0.2** (May 28, 2026)
+**v0.3** (May 28, 2026)
 
 * Support for gamepads including PS3 controllers and 2-player mode.
 * SD card clock was set too high causing file loading failures
@@ -249,3 +249,5 @@ See `picomsx/CAMBIOS.md` for a detailed list of all modifications.
 * PIO-USB detection issues
 * Stuttering when changing keyboard directions
 * Changed keyboard layout to US and fixed non-working keys
+* Support for gamepads including PS3 controllers and 2-player mode.
+* Fixed long filename loading failure issue
