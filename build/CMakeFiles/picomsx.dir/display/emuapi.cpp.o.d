@@ -79,6 +79,9 @@ CMakeFiles/picomsx.dir/display/emuapi.cpp.o: \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/qmi.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/xip.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/xip.h \
+ /home/jcher/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
+ /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+ /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
  /usr/arm-none-eabi/include/stdio.h \
  /usr/arm-none-eabi/include/sys/reent.h \
  /usr/arm-none-eabi/include/_ansi.h \
@@ -101,9 +104,6 @@ CMakeFiles/picomsx.dir/display/emuapi.cpp.o: \
  /home/jcher/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/spi.h \
  /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/spi.h \
- /home/jcher/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
- /home/jcher/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
- /home/jcher/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
  /usr/arm-none-eabi/include/ctype.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/tusb.h \
  /home/jcher/pico-sdk/lib/tinyusb/src/common/tusb_common.h \

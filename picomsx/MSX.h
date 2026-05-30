@@ -52,7 +52,7 @@
 #define MAXSPRITE2  8       /* Sprites/line in SCREEN 4-8    */
 #define MAXDRIVES   2       /* Number of disk drives         */
 #define MAXDISKS    32      /* Number of disks for a drive   */
-#define MAXMAPPERS  7       /* Total defined MegaROM mappers */
+#define MAXMAPPERS  11      /* Total defined MegaROM mappers */
 
 #define MAXCHANNELS (AY8910_CHANNELS+YM2413_CHANNELS)
   /* Number of sound channels used by the emulation */

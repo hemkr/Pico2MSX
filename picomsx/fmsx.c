@@ -32,6 +32,7 @@
 
 
 
+
 static void RefreshLineTx80(byte Y);
 static void RefreshLine0(byte Y);
 static void RefreshLine1(byte Y);
@@ -285,11 +286,12 @@ const struct { byte R2,R3,R4,R5,M2,M3,M4,M5; } MSK[MAXSCREEN+2] =
 };
 
 /** MegaROM Mapper Names *************************************/
-char *ROMNames[MAXMAPPERS+1] = 
+char *ROMNames[MAXMAPPERS+2] = 
 { 
   "GENERIC/8kB","GENERIC/16kB","KONAMI5/8kB",
   "KONAMI4/8kB","ASCII/8kB","ASCII/16kB",
-  "GMASTER2/SRAM","UNKNOWN"
+  "GMASTER2/SRAM","ZEMINA126IN1/16kB","ZEMINA90IN1/16kB",
+  "ZEMINA64IN1/16kB","ZEMINA25IN1/8kB","UNKNOWN"
 };
 
 static byte JoyState;
@@ -664,15 +666,53 @@ void msx_Start(char * Cartridge)
   if((ROMTypeA>=MAXMAPPERS)&&(J>0x8000))
   {
     ROMTypeA=GuessROM(ROMData[0],J);
-    if(Verbose) {
-      emu_printf("Cartridge A: Guessed");
-      emu_printf(ROMNames[ROMTypeA]);
-    }
+
+    emu_printf("GuessROM result:");
+    emu_printi(ROMTypeA);
+
   }
 
   /* For Generic/16kB carts, set ROM pages as 0:1:N-2:N-1 */
   if((ROMTypeA==1)&&(J>0x8000))
     SetMegaROM(0,0,1,ROMMask[0]-1,ROMMask[0]);
+
+  /* For Zemina 25-in-1: 초기 뱅크 설정
+   * openMSX: writeMem(0, 0x3F) but 실제 하드웨어 reset 시 레지스터=0일 수도 있음
+   * V=0 → page2=bank0(메뉴?), page3=bank63, page4=bank62, page5=bank61
+   * 뱅크0은 AB 헤더 스캔에서 안 나왔으므로 메뉴 후보
+   * 단, MSX BIOS는 AB 헤더가 있어야 카트리지 실행하므로
+   * 메뉴가 AB 없이 시작하는 구조라면 다른 방식 필요 */
+  if(ROMTypeA==10)
+  {
+    /* 뱅크 0의 내용 확인용 로그 */
+    byte *b0 = ROMData[0];
+    emu_printf("bank0[0..5]:");
+    emu_printi(b0[0]); emu_printi(b0[1]); emu_printi(b0[2]);
+    emu_printi(b0[3]); emu_printi(b0[4]); emu_printi(b0[5]);
+
+    /* V=0 시도: page2=bank0, page3=63, page4=62, page5=61 */
+    byte v    = 0x00;
+    byte vm1  = (byte)((v-1) & ROMMask[0]);   /* 63 */
+    byte vm2  = (byte)((v-2) & ROMMask[0]);   /* 62 */
+    byte vm3  = (byte)((v-3) & ROMMask[0]);   /* 61 */
+
+    MemMap[1][0][0] = ROMData[0] + ((int)(0x3F & ROMMask[0]) << 13); /* 고정 */
+    MemMap[1][0][1] = MemMap[1][0][0];
+    MemMap[1][0][2] = ROMData[0] + ((int)v   << 13);
+    MemMap[1][0][3] = ROMData[0] + ((int)vm1 << 13);
+    MemMap[1][0][4] = ROMData[0] + ((int)vm2 << 13);
+    MemMap[1][0][5] = ROMData[0] + ((int)vm3 << 13);
+    MemMap[1][0][6] = MemMap[1][0][2];
+    MemMap[1][0][7] = MemMap[1][0][3];
+    ROMMapper[0][0] = v;
+    ROMMapper[0][1] = vm1;
+    ROMMapper[0][2] = vm2;
+    ROMMapper[0][3] = vm3;
+
+    emu_printf("25-in-1 init v=0, banks: 0,63,62,61");
+  }
+
+
 
   /* Loading cartridge into slot B... */
   LoadCart(CartB,1);
@@ -682,16 +722,22 @@ void msx_Start(char * Cartridge)
   if((ROMTypeB>=MAXMAPPERS)&&(J>0x8000))
   {
     ROMTypeB=GuessROM(ROMData[1],J);
-    if(Verbose) {
-      emu_printf("Cartridge B: Guessed");
-      emu_printf(ROMNames[ROMTypeB]);
-    }
-  }
 
+    emu_printf("GuessROM result:");
+    emu_printi(ROMTypeA);
+  }
 
   /* For Generic/16kB carts, set ROM pages as 0:1:N-2:N-1 */
   if((ROMTypeB==1)&&(J>0x8000))
     SetMegaROM(1,0,1,ROMMask[1]-1,ROMMask[1]);
+
+  /* For Zemina 25-in-1 in slot B */
+  if(ROMTypeB==10)
+  {
+    SetMegaROM(1, 0, 1, 2, 3);
+    emu_printf("25-in-1 slotB init OK, ROMMask:");
+    emu_printi(ROMMask[1]);
+  }
 
   /* For GameMaster2, allocate and load SRAM */
   if((ROMTypeA==6)||(ROMTypeB==6))
@@ -1081,6 +1127,7 @@ struct { byte Pos,Mask; } Keys[] =
 
 
 void msx_Step(void) {
+
   int k = ik;
   int keyflags = iusbhk_flags;
 
@@ -1938,8 +1985,26 @@ byte RdZ80(word A)
 /*************************************************************/
 void WrZ80(word A,byte V)
 {
+
+  static int wr_log_count = 0;
+  (void)wr_log_count;
+  /* Zemina 멀티카트 뱅크 레지스터 우선 처리 */
+  if (ROMTypeA == 9 && A >= 0x4000 && A <= 0x4003 && !EnWrite[1])
+  {
+    MapROM(A, V);
+    return;
+  }
+
+  /* Zemina 25-in-1: 뱅크 스위치 레지스터 - 0x4000~0xBFFF 전체 범위 */
+  if (ROMTypeA == 10 && A >= 0x4000 && A <= 0xBFFF && !EnWrite[A>>14])
+  {
+    MapROM(A, V);
+    return;
+  }
+
   if(A!=0xFFFF)
   {
+
     if(EnWrite[A>>14]) RAM[A>>13][A&0x1FFF]=V;
     else if((A>0x3FFF)&&(A<0xC000)) MapROM(A,V);
   }
@@ -2116,6 +2181,48 @@ void OutZ80(word Port,byte Value)
   switch(Port)
   {
 
+case 0x77:
+{
+  byte slot, page8_base;
+  if (ROMTypeA == 8 && ROMData[0]) slot = 0;
+  else if (ROMTypeB == 8 && ROMData[1]) slot = 1;
+  else return;
+
+  page8_base = 2 * (Value & 0x3F);
+  page8_base &= ROMMask[slot];
+
+  switch (Value & 0xC0)
+  {
+    case 0x00:
+    case 0x40:
+      MemMap[slot+1][0][2] = ROMData[slot] + ((int)(page8_base    ) << 13);
+      MemMap[slot+1][0][3] = ROMData[slot] + ((int)(page8_base + 1) << 13);
+      MemMap[slot+1][0][4] = ROMData[slot] + ((int)(page8_base    ) << 13);
+      MemMap[slot+1][0][5] = ROMData[slot] + ((int)(page8_base + 1) << 13);
+      break;
+    case 0x80:
+      MemMap[slot+1][0][2] = ROMData[slot] + ((int)((page8_base & ~2)    ) << 13);
+      MemMap[slot+1][0][3] = ROMData[slot] + ((int)((page8_base & ~2) + 1) << 13);
+      MemMap[slot+1][0][4] = ROMData[slot] + ((int)((page8_base | 2)    ) << 13);
+      MemMap[slot+1][0][5] = ROMData[slot] + ((int)((page8_base | 2) + 1) << 13);
+      break;
+    case 0xC0:
+      MemMap[slot+1][0][2] = ROMData[slot] + ((int)(page8_base    ) << 13);
+      MemMap[slot+1][0][3] = ROMData[slot] + ((int)(page8_base + 1) << 13);
+      MemMap[slot+1][0][4] = ROMData[slot] + ((int)(page8_base + 1) << 13);
+      MemMap[slot+1][0][5] = ROMData[slot] + ((int)(page8_base    ) << 13);
+      break;
+  }
+
+  if (slot == 0) {
+    if (PSL[1] == 1) { RAM[2] = MemMap[1][0][2]; RAM[3] = MemMap[1][0][3]; }
+    if (PSL[2] == 1) { RAM[4] = MemMap[1][0][4]; RAM[5] = MemMap[1][0][5]; }
+  } else {
+    if (PSL[1] == 2) { RAM[2] = MemMap[2][0][2]; RAM[3] = MemMap[2][0][3]; }
+    if (PSL[2] == 2) { RAM[4] = MemMap[2][0][4]; RAM[5] = MemMap[2][0][5]; }
+  }
+  return;
+}
 case 0x7C: WrCtrl2413(&OPLL,Value);return;        /* OPLL Register# */
 case 0x7D: WrData2413(&OPLL,Value);return;        /* OPLL Data      */
 case 0x91: Printer(Value);return;                 /* Printer Data   */
@@ -2502,7 +2609,91 @@ printf("(%04Xh) = %02Xh at PC=%04Xh\n",A,V,CPU.PC.W);
       /* Done */
       return;
 
-    default: /*** No MegaROM mapper by default ***/
+    case 7: /*** ZEMINA 126-in-1 (0x6000/0x7000) ***/
+    {
+      byte page;
+      if (A == 0x6000) {
+        /* 126-in-1: 0x6000 → 0x4000~0x7FFF */
+        page = (V << 1) & ROMMask[I];
+        ROMMapper[I][0] = page;
+        MemMap[I+1][0][2] = ROMData[I] + ((int)page << 13);
+        MemMap[I+1][0][3] = MemMap[I+1][0][2] + 0x2000;
+        RAM[2] = MemMap[I+1][0][2];
+        RAM[3] = MemMap[I+1][0][3];
+      } else if (A == 0x7000) {
+        /* 126-in-1: 0x7000 → 0x8000~0xBFFF */
+        page = (V << 1) & ROMMask[I];
+        ROMMapper[I][1] = page;
+        MemMap[I+1][0][4] = ROMData[I] + ((int)page << 13);
+        MemMap[I+1][0][5] = MemMap[I+1][0][4] + 0x2000;
+        RAM[4] = MemMap[I+1][0][4];
+        RAM[5] = MemMap[I+1][0][5];
+      } else {
+        return;
+      }
+    }
+    break;
+
+    case 8: /*** ZEMINA 90-in-1 (I/O port 0x77) ***/
+      return;
+
+    case 9: /*** ZEMINA 64-in-1 (0x4000~0x4003) ***/
+    {
+      byte page;
+      if (A == 0x4000 || A == 0x4001 || A == 0x4002 || A == 0x4003) {
+        /* 64-in-1: 0x4000~0x4003 → 각 8kB 페이지 */
+        J = A & 3;
+        page = V & ROMMask[I];
+        ROMMapper[I][J] = page;
+        MemMap[I+1][0][J+2] = ROMData[I] + ((int)page << 13);
+        RAM[J+2] = MemMap[I+1][0][J+2];
+      }
+    }
+    break;
+
+    case 10: /*** ZEMINA 25-in-1 ***/
+    /*
+     * openMSX RomZemina25in1::writeMem(address, value):
+     *   if (address == 0x0000):  ← 슬롯 내 주소, MSX에서 0x4000
+     *     page0,1 = 0x3F (고정)
+     *     page2 = value
+     *     page3 = value-1
+     *     page4 = value-2
+     *     page5 = value-3
+     *     page6,7 = page2,3 미러
+     * 쓰기 주소 조건: 슬롯 내 0x0000 = MSX 0x4000
+     * 단, 실제 ROM은 0x4000~0xBFFF 어느 주소에나 쓸 수 있으므로
+     * 주소 무관하게 V만으로 전체 뱅크 재설정
+     */
+    {
+      byte base = V & 0x3F & ROMMask[I];
+      byte fixed = 0x3F & ROMMask[I];
+
+      /* page 0,1: 고정 0x3F */
+      MemMap[I+1][0][0] = ROMData[I] + ((int)fixed << 13);
+      MemMap[I+1][0][1] = MemMap[I+1][0][0];
+
+      /* page 2~5: base, base-1, base-2, base-3 */
+      MemMap[I+1][0][2] = ROMData[I] + ((int)(base)              << 13);
+      MemMap[I+1][0][3] = ROMData[I] + ((int)((base-1)&ROMMask[I]) << 13);
+      MemMap[I+1][0][4] = ROMData[I] + ((int)((base-2)&ROMMask[I]) << 13);
+      MemMap[I+1][0][5] = ROMData[I] + ((int)((base-3)&ROMMask[I]) << 13);
+
+      /* page 6,7: page2,3 미러 */
+      MemMap[I+1][0][6] = MemMap[I+1][0][2];
+      MemMap[I+1][0][7] = MemMap[I+1][0][3];
+
+      /* ROMMapper 동기화 */
+      ROMMapper[I][0] = base;
+      ROMMapper[I][1] = (base-1) & ROMMask[I];
+      ROMMapper[I][2] = (base-2) & ROMMask[I];
+      ROMMapper[I][3] = (base-3) & ROMMask[I];
+
+      /* RAM 포인터 즉시 갱신 */
+      if(PSL[1]==I+1) { RAM[2]=MemMap[I+1][0][2]; RAM[3]=MemMap[I+1][0][3]; }
+      if(PSL[2]==I+1) { RAM[4]=MemMap[I+1][0][4]; RAM[5]=MemMap[I+1][0][5]; }
+    }
+    break;
       return; 
   }
 
@@ -2719,6 +2910,17 @@ int LoadCart(const char *Name,int Slot)
     ROMData[Slot] = LoadCARTROM(Name,Size*0x2000,NULL);
   }
 
+  // ↓ 여기에 추가 (2740번째 줄 직후)
+  if (Slot == 0) {
+    emu_printf("ROMData[0] ptr:");
+    emu_printi((int)ROMData[0]);
+    emu_printf("flash_start:");
+    emu_printi((int)flash_start);
+    emu_printf("ROMMask[0]:");
+    emu_printi(ROMMask[0]);
+    emu_printf("ROM 8kB pages:");
+    emu_printi(Size);
+  }
 
   /* Set memory map depending on the ROM size */
   switch(Size)
@@ -3004,6 +3206,8 @@ byte RTCIn(register byte R)
 word LoopZ80(register Z80 *R, int * ras)
 //word LoopZ80(Z80 *R)
 {
+
+
   static byte BFlag=0;
   static byte BCount=0;
   static int  UCount=1;
@@ -3022,6 +3226,8 @@ word LoopZ80(register Z80 *R, int * ras)
 
     /* New scanline */
     ScanLine=ScanLine<(PALVideo? 312:261)? ScanLine+1:0;
+
+
 
     /* If first scanline of the screen... */
     if(!ScanLine)
@@ -3092,6 +3298,7 @@ word LoopZ80(register Z80 *R, int * ras)
     R->IRequest=IRQPending? INT_IRQ:INT_NONE;
     return(R->IRequest);
   }
+
 
   /*********************************/
   /* We come here for HBlanks only */
@@ -3202,14 +3409,14 @@ void CheckSprites(void)
     for(J=0,S=SprTab;J<N;J++,S+=4)
       if((S[3]&0x0F)||M)
         for(I=J+1,D=S+4;I<N;I++,D+=4)
-          if((D[3]&0x0F)||M) 
+          if((D[3]&0x0F)||M)
           {
             DV=S[0]-D[0];
             if((DV<16)||(DV>240))
-      {
+            {
               DH=S[1]-D[1];
               if((DH<16)||(DH>240))
-        {
+              {
                 PS=SprGen+((int)(S[2]&0xFC)<<3);
                 PD=SprGen+((int)(D[2]&0xFC)<<3);
                 if(DV<16) PD+=DV; else { DV=256-DV;PS+=DV; }
@@ -3251,15 +3458,20 @@ void CheckSprites(void)
   }
 }
 
+
+
 /** GuessROM() ***********************************************/
 /** Guess MegaROM mapper of a ROM.                          **/
 /*************************************************************/
 int GuessROM(const byte *Buf,int Size)
 {
-  int J,I,ROMCount[6];
+  int J,I,ROMCount[8];
+  int Zemina6000 = 0, Zemina7000 = 0;
+  int Zemina4000 = 0, Zemina4001 = 0;
+  int ZeminaPort77 = 0;
 
   /* Clear all counters */
-  for(J=0;J<6;J++) ROMCount[J]=1;
+  for(J=0;J<8;J++) ROMCount[J]=1;
   ROMCount[0]+=1; /* Mapper #0 is default */
   ROMCount[4]-=1; /* #5 preferred over #4 */
 
@@ -3272,21 +3484,68 @@ int GuessROM(const byte *Buf,int Size)
       case 0x500032: ROMCount[2]++;break;
       case 0x900032: ROMCount[2]++;break;
       case 0xB00032: ROMCount[2]++;break;
-      case 0x400032: ROMCount[3]++;break;
+      case 0x400032: Zemina4000=1; break;
+      case 0x400132: Zemina4001=1; break;
+      case 0x400232: Zemina4001=1; break;
+      case 0x400332: Zemina4001=1; break;
       case 0x800032: ROMCount[3]++;break;
       case 0xA00032: ROMCount[3]++;break;
       case 0x680032: ROMCount[4]++;break;
       case 0x780032: ROMCount[4]++;break;
-      case 0x600032: ROMCount[3]++;ROMCount[4]++;ROMCount[5]++;break;
-      case 0x700032: ROMCount[2]++;ROMCount[4]++;ROMCount[5]++;break;
+      case 0x600032: ROMCount[3]++;ROMCount[4]++;ROMCount[5]++;Zemina6000=1;break;
+      case 0x700032: ROMCount[2]++;ROMCount[4]++;ROMCount[5]++;Zemina7000=1;break;
       case 0x77FF32: ROMCount[5]++;break;
+      case 0x600022: Zemina6000=1;break;
+      case 0x700022: Zemina7000=1;break;
     }
+    if (Buf[J] == 0xD3 && Buf[J+1] == 0x77) ZeminaPort77++;
   }
 
-  /* Find which mapper type got more hits */
-  for(I=0,J=0;J<6;J++)
+
+  /* Zemina 126-in-1 */
+  if (Size == 2097152)
+    return 7;
+
+  /* Zemina 1MB carts */
+  if (Size == 1048576)
+  {
+    if (Zemina4000)
+      return 8;  /* 90-in-1 */
+
+      return 9;    /* 64-in-1 */
+  }
+
+  /* Zemina 25-in-1: 512KB, switch at address 0x0000, Zemina4000 pattern */
+  if (Size == 524288 && Zemina4000)
+    return 10;  /* 25-in-1 */
+
+
+  emu_printf("===== GuessROM =====");
+
+  emu_printf("Size:");
+  emu_printi(Size);
+
+  emu_printf("Zemina4000:");
+  emu_printi(Zemina4000);
+
+  emu_printf("Zemina4001:");
+  emu_printi(Zemina4001);
+
+  emu_printf("Zemina6000:");
+  emu_printi(Zemina6000);
+
+  emu_printf("Zemina7000:");
+  emu_printi(Zemina7000);
+
+  emu_printf("ZeminaPort77:");
+  emu_printi(ZeminaPort77);
+
+
+
+
+  for(I=0,J=0;J<8;J++)
     if(ROMCount[J]>ROMCount[I]) I=J;
 
-  /* Return the most likely mapper type */
-  return(I);
+    return(I);
 }
+

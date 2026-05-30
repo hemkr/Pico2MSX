@@ -10,6 +10,7 @@
 #include "hardware/structs/xip.h"
 #include "hardware/uart.h"
 #include "hardware/gpio.h"
+#include "hardware/clocks.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -1661,6 +1662,7 @@ static void __no_inline_not_in_flash_func(setup_psram)(void) {
 
     if (kgd != 0x5D) {
         restore_interrupts(save);
+        printf("[PSRAM] PSRAM not detected (KGD=0x%02X, expected 0x5D)\r\n", kgd);
         return;
     }
 
@@ -1694,14 +1696,30 @@ static void __no_inline_not_in_flash_func(setup_psram)(void) {
     // Disable direct csr.
     qmi_hw->direct_csr &= ~(QMI_DIRECT_CSR_ASSERT_CS1N_BITS | QMI_DIRECT_CSR_EN_BITS);
 
+    // Calculate PSRAM timing dynamically from the actual system clock.
+    // APS6404 PSRAM specs: max SCK=109MHz, max select=8us, min deselect=50ns
+    uint32_t sys_hz = clock_get_hz(clk_sys);
+    // femto-seconds per system cycle (fs = 1e-15)
+    uint32_t fs_per_cycle = (uint32_t)(1000000000000000ull / sys_hz);
+    // QMI clock divider: ceil(sys_hz / 109MHz)
+    uint32_t clkdiv = (sys_hz + 109000000 - 1) / 109000000;
+    // maxSelect in units of 64 sysclk cycles: 8us / (64 * cycle_time)
+    // 8us = 8000000fs, so: 8000000fs / (64 * fs_per_cycle) = 125000000 / fs_per_cycle
+    uint32_t max_select = 125000000 / fs_per_cycle;
+    if (max_select > 255) max_select = 255;
+    // minDeselect in sysclk cycles: ceil(50ns / cycle_time)
+    // 50ns = 50000000fs, so: ceil(50000000 / fs_per_cycle)
+    uint32_t min_deselect = (50000000 + fs_per_cycle - 1) / fs_per_cycle;
+    if (min_deselect > 255) min_deselect = 255;
+
     qmi_hw->m[1].timing =
-        QMI_M0_TIMING_PAGEBREAK_VALUE_1024 << QMI_M0_TIMING_PAGEBREAK_LSB | // Break between pages.
-            3 << QMI_M0_TIMING_SELECT_HOLD_LSB | // Delay releasing CS for 3 extra system cycles.
+        QMI_M0_TIMING_PAGEBREAK_VALUE_1024 << QMI_M0_TIMING_PAGEBREAK_LSB |
+            3 << QMI_M0_TIMING_SELECT_HOLD_LSB |
             1 << QMI_M0_TIMING_COOLDOWN_LSB |
             1 << QMI_M0_TIMING_RXDELAY_LSB |
-            16 << QMI_M0_TIMING_MAX_SELECT_LSB | // In units of 64 system clock cycles. PSRAM says 8us max. 8 / 0.00752 / 64 = 16.62
-            7 << QMI_M0_TIMING_MIN_DESELECT_LSB | // In units of system clock cycles. PSRAM says 50ns.50 / 7.52 = 6.64
-            2 << QMI_M0_TIMING_CLKDIV_LSB;
+            max_select << QMI_M0_TIMING_MAX_SELECT_LSB |
+            min_deselect << QMI_M0_TIMING_MIN_DESELECT_LSB |
+            clkdiv << QMI_M0_TIMING_CLKDIV_LSB;
     qmi_hw->m[1].rfmt = (QMI_M0_RFMT_PREFIX_WIDTH_VALUE_Q << QMI_M0_RFMT_PREFIX_WIDTH_LSB |
             QMI_M0_RFMT_ADDR_WIDTH_VALUE_Q << QMI_M0_RFMT_ADDR_WIDTH_LSB |
             QMI_M0_RFMT_SUFFIX_WIDTH_VALUE_Q << QMI_M0_RFMT_SUFFIX_WIDTH_LSB |
@@ -1775,6 +1793,14 @@ void emu_init(void)
 #endif
   
   printf("\r\n\r\n=== picomsx starting ===\r\n");
+#ifdef HAS_PSRAM
+  if (_psram_size > 0) {
+      printf("[PSRAM] %lu MB PSRAM detected at 0x11000000\r\n",
+             (unsigned long)(_psram_size / (1024*1024)));
+  } else {
+      printf("[PSRAM] No PSRAM detected - ROMs >32KB will load to internal flash\r\n");
+  }
+#endif
   printf("Board: %s\r\n", BOARD_SELECTED);
 
   bool forceVga = false;

@@ -10,8 +10,16 @@
 #include "pico/stdlib.h"
 #include "platform_config.h"
 
-#define FLASH_SECTOR_SIZE       4096 
-#define HW_FLASH_STORAGE_TOP   (0x400000) // Pico2 = 4MB flash
+#define FLASH_SECTOR_SIZE       4096
+
+// Flash storage top address (end of usable flash for ROM storage).
+// Pico2 has 4MB flash, Waveshare RP2350 PiZero has 16MB flash.
+#ifdef BOARD_WAVESHARE
+#define HW_FLASH_STORAGE_TOP   (0x1000000) // Waveshare = 16MB flash
+#else
+#define HW_FLASH_STORAGE_TOP   (0x400000)  // Pico2 = 4MB flash
+#endif
+
 #ifdef FLASH_STORE_START
 #define HW_FLASH_STORAGE_BASE  (FLASH_STORE_START)
 #else
